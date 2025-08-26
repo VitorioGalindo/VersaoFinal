@@ -53,23 +53,37 @@ def calculate_portfolio_summary(portfolio_id: int):
                 try:
                     # Obter o preço atual do ativo
                     last_price = float(pos.metrics.last_price) if pos.metrics.last_price is not None else 0.0
-                    
-                    # Usar a nova coluna previous_close_correct se disponível
-                    previous_close = pos.metrics.get_previous_close() or 0.0
-                    open_price = float(pos.metrics.open_price) if pos.metrics.open_price is not None else 0.0
-                    logger.debug(f"Dados do banco para {pos.symbol}: last_price={last_price}, previous_close={previous_close}, open_price={open_price}")
-                    
-                    # Calcular a variação diária corretamente usando o fechamento anterior
-                    if previous_close and previous_close != 0:
-                        daily_change_pct = ((last_price / previous_close) - 1) * 100
-                        logger.debug(f"Calculando variação para {pos.symbol}: last_price={last_price}, previous_close={previous_close}, variação={daily_change_pct:.4f}%")
-                    else:
-                        daily_change_pct = 0.0
-                        logger.debug(f"Sem previous_close para {pos.symbol}: last_price={last_price}, previous_close={previous_close}")
-                        # Verificar se temos open_price como fallback
-                        if open_price and open_price != 0:
-                            daily_change_pct = ((last_price / open_price) - 1) * 100
-                            logger.debug(f"Usando open_price como fallback para {pos.symbol}: last_price={last_price}, open_price={open_price}, variação={daily_change_pct:.4f}%")
+                    price_change_pct = (
+                        float(pos.metrics.price_change_percent)
+                        if pos.metrics.price_change_percent is not None
+                        else None
+                    )
+                    price_change = (
+                        float(pos.metrics.price_change)
+                        if pos.metrics.price_change is not None
+                        else None
+                    )
+                    open_price = (
+                        float(pos.metrics.open_price)
+                        if pos.metrics.open_price is not None
+                        else 0.0
+                    )
+                    logger.debug(
+                        f"Dados do banco para {pos.symbol}: last_price={last_price}, price_change={price_change}, price_change_pct={price_change_pct}, open_price={open_price}"
+                    )
+
+                    # Priorizar a variação percentual pronta da base
+                    if price_change_pct is not None:
+                        daily_change_pct = price_change_pct
+                    # Caso contrário, tentar derivar a partir do valor da variação
+                    elif price_change is not None:
+                        prev_price = last_price - price_change
+                        daily_change_pct = (
+                            (price_change / prev_price) * 100 if prev_price else 0.0
+                        )
+                    # Como último recurso, usar open_price
+                    elif open_price and open_price != 0:
+                        daily_change_pct = ((last_price / open_price) - 1) * 100
                 except (ValueError, TypeError, ZeroDivisionError) as e:
                     last_price = 0.0
                     daily_change_pct = 0.0
@@ -131,20 +145,13 @@ def calculate_portfolio_summary(portfolio_id: int):
             
         for h in holdings:
             try:
+                # Inicialmente apenas garantir que position_pct esteja presente; será recalculado depois
                 position_value = float(h["position_value"]) if h["position_value"] is not None else 0.0
-                gain = float(h["gain"]) if h["gain"] is not None else 0.0
-                target_pct = float(h["target_pct"]) if h["target_pct"] is not None else 0.0
-                
                 position_pct = (position_value / total_value * 100) if total_value and total_value != 0 else 0.0
                 h["position_pct"] = position_pct
-                # Removido o cálculo da contribuição daqui, será feito depois
-                # target_pct já foi definido anteriormente
-                h["difference"] = target_pct - position_pct
             except (ValueError, TypeError, ZeroDivisionError) as e:
-                logger.error(f"Erro no cálculo das métricas para holding {h.get('symbol', 'unknown')}: {e}")
+                logger.error(f"Erro no cálculo inicial das métricas para holding {h.get('symbol', 'unknown')}: {e}")
                 h["position_pct"] = 0.0
-                h["contribution"] = 0.0
-                h["difference"] = 0.0
 
         # Garantir que os valores sejam números válidos
         try:
@@ -246,19 +253,52 @@ def calculate_portfolio_summary(portfolio_id: int):
         # A caixa bruta precisa ser adicionada para obter o patrimônio líquido total
         patrimonio_liquido_ajustado = patrimonio_liquido + caixa_bruto
         logger.info(f"Patrimônio líquido ajustado (com caixa): {patrimonio_liquido_ajustado}")
-        
-        # Calcular a contribuição de cada ativo para a variação da cota
+
+        # Recalcular position_pct e diferença com base no patrimônio líquido ajustado
+        for h in holdings:
+            try:
+                position_value = float(h["position_value"]) if h["position_value"] is not None else 0.0
+                target_pct = float(h["target_pct"]) if h["target_pct"] is not None else 0.0
+                position_pct = (
+                    (position_value / patrimonio_liquido_ajustado) * 100
+                    if patrimonio_liquido_ajustado and patrimonio_liquido_ajustado != 0
+                    else 0.0
+                )
+                h["position_pct"] = position_pct
+                h["difference"] = target_pct - position_pct
+            except (ValueError, TypeError, ZeroDivisionError) as e:
+                logger.error(
+                    f"Erro no recálculo das métricas para holding {h.get('symbol', 'unknown')}: {e}"
+                )
+                h["position_pct"] = 0.0
+                h["difference"] = 0.0
+
+        # Calcular a contribuição de cada ativo para a variação diária e o ajuste necessário
         # Contribuição = (valor da variação da posição no ativo / patrimonio_liquido_ajustado) * 100
         for h in holdings:
             try:
-                gain = float(h["gain"]) if h["gain"] is not None else 0.0
+                position_value = float(h["position_value"]) if h["position_value"] is not None else 0.0
+                daily_pct = float(h["daily_change_pct"]) if h["daily_change_pct"] is not None else 0.0
+                diff_pct = float(h["difference"]) if h["difference"] is not None else 0.0
+                last_price = float(h["last_price"]) if h["last_price"] is not None else 0.0
+
+                daily_change_value = position_value * daily_pct / 100
                 if patrimonio_liquido_ajustado and patrimonio_liquido_ajustado != 0:
-                    h["contribution"] = (gain / patrimonio_liquido_ajustado * 100)
+                    h["contribution"] = (daily_change_value / patrimonio_liquido_ajustado) * 100
+                    h["adjustment_qty"] = (
+                        (diff_pct / 100 * patrimonio_liquido_ajustado) / last_price
+                        if last_price
+                        else 0.0
+                    )
                 else:
                     h["contribution"] = 0.0
+                    h["adjustment_qty"] = 0.0
             except (ValueError, TypeError, ZeroDivisionError) as e:
-                logger.error(f"Erro no cálculo da contribuição para holding {h.get('symbol', 'unknown')}: {e}")
+                logger.error(
+                    f"Erro no cálculo da contribuição/ajuste para holding {h.get('symbol', 'unknown')}: {e}"
+                )
                 h["contribution"] = 0.0
+                h["adjustment_qty"] = 0.0
         
         # Usar o patrimônio líquido ajustado para os cálculos
         logger.info(f"Usando patrimonio_liquido_ajustado para cálculos: {patrimonio_liquido_ajustado}")
