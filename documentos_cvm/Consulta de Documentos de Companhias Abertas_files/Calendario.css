@@ -1,0 +1,63 @@
+.CSSCalendario
+{
+}
+
+.CSSCalendarStyle
+{
+	background-color:#ffffff;
+	font:normal normal bold 10px Verdana;
+}
+
+.CSSDayHeaderStyle
+{
+	background-color:#c4c2c2;
+}
+
+.CSSDayStyle
+{
+	background-color:#f1f1f6;
+}
+
+.CSSDropDownStyle
+{
+}
+
+.CSSFooterStyle
+{
+}
+
+.CSSNextPrevStyle
+{
+}
+
+.CSSOtherMonthDayStyle
+{
+}
+
+.CSSSelectedDayStyle
+{
+}
+
+.CSSTodayDayStyle
+{
+}
+.CSSWeekendDayStyle
+{
+	background-color:#e6e6e6;
+	
+}
+.CSSDropButtonStyle
+{
+}
+.CSSDropButtonHoverStyle
+{
+}
+
+.CSSEditStyle
+{
+}
+.CSSTitleStyle
+{
+	background-color:Red;
+	color:#ffffff;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "projetofinal",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "test": "npm test --workspace frontend"
+  }
+}

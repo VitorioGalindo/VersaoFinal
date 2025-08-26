@@ -1,0 +1,172 @@
+﻿/* WRAPPER SETTINGS */
+
+.radInput_CVM
+{
+	font:normal normal normal 10px Verdana;	
+	vertical-align: middle;	
+	/*float:left;*/
+}
+
+.radInput_CVM table,
+.radInput_CVM table td
+{	
+	border: 0;
+	margin: 0;
+	padding: 0;
+	border-style: none;
+	overflow: visible;	
+}
+
+.radInput_CVM table
+{
+	vertical-align: bottom;
+}
+
+.radInput_CVM .inputCell input,
+.radInput_CVM .inputCell textarea
+{
+	margin: 0;
+	padding: 0;
+	height:17px;
+}
+
+.radInput_CVM .inputCell
+{	
+	padding: 2px 2px 0 2px;
+	height: 15px;
+}
+
+/* SPIN BUTTONS */
+.radInput_CVM a.spinbutton
+{
+	display: block;
+	text-indent: -9999px;
+	width: 17px;
+	height: 9px;
+	line-height: 9px;
+	background: transparent url('Img/SpinButtonSprites.gif') no-repeat;
+	font-size: 1px;
+	outline: none;
+	position: relative;
+	_position: inherit; /*IE fix*/
+}
+*+html .radInput_CVM a.spinbutton
+{
+	position: inherit;
+}
+
+.radInput_CVM a.spinbutton.up
+{
+	background-position: center 0;
+	margin-top: 3px;
+}
+
+.radInput_CVM a.spinbutton.down
+{
+	background-position: center -9px;
+	height: 6px;
+}
+
+.radInput_CVM a.gobutton
+{
+	display: block;
+	text-indent: -9999px;
+	width: 16px;
+	height: 17px; 
+	line-height: 17px;
+	background: transparent url('Img/button.gif') no-repeat;
+	font-size: 1px;
+	position: relative;
+	_position: inherit; /*IE fix*/
+	outline: none;
+}
+*+html .radInput_CVM a.gobutton
+{
+	position: inherit; /*IE fix*/
+}
+
+/* END OF WRAPPER SETTINGS */
+
+
+/* INPUT STYLES SETTINGS */
+.radEnabledCss_CVM 
+{
+	color:#000000;
+	border:solid 1px #7898b8 !important;
+	padding: 2px 2px 0 2px;
+	height: 15px;
+}
+
+.radHoverCss_CVM 
+{
+	color:#000000;
+	border:solid 1px #7898b8 !important;
+}
+
+.radDisabledCss_CVM
+{
+	color: #ccc;
+	border: solid 1px #aeaeae !important;;
+}
+
+.radDisabledCss_CVM a.gobutton,
+.radDisabledCss_CVM a.spinbutton
+{
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=30);
+	opacity: .3; 
+	-moz-opacity: .3;
+	cursor: no-drop;
+}
+
+.radEmptyMessageCss_CVM
+{
+	color:#000000;
+	border: solid 1px #aeaeae;
+}
+
+.radFocusedCss_CVM
+{
+	border:solid 1px #7898b8 !important;
+	color: #000;	
+}
+
+.radNegativeCss_CVM 
+{
+	border: solid 1px #aeaeae;
+	color:#000000;
+}
+
+.radInvalidCss_CVM 
+{
+	background-image: url('Img/errorSign.gif');
+	background-position: center right;
+	background-repeat: no-repeat;
+	border: solid 1px #f32800;
+	color: #f32800;
+}
+
+.radLabelCss_CVM
+{	  
+	color: #000;
+	font-size: small;
+	white-space:nowrap;
+}
+
+.radHint_CVM 
+{
+	background: infobackground;
+	margin-top: 5px;
+	border: solid 1px black;
+	text-align: left;
+	overflow: auto; 
+}
+
+.radHint_CVM a,
+.radHint_CVM a:visited,
+.radHint_CVM a:hover
+{
+	margin: 2px;
+	color: black;
+	text-decoration: none;
+	font-size: small;
+}

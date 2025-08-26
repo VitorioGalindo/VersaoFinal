@@ -1,0 +1,417 @@
+/*==============================================================================*/
+/*	CSS RESET																	*/
+/*==============================================================================*/
+fieldset {
+	padding:0px;
+	margin:0px;
+	line-height:25px;
+}
+
+select {
+	height:17px;
+	*height:21px;
+	margin:0 5px;
+	font:normal normal normal 10px Verdana;
+}
+
+select option
+{
+	padding:0 5px;
+	font:normal normal normal 10px Verdana;
+	color:#000;
+}
+
+input
+{
+	height:17px;
+	padding:2px 5px 0 5px;
+	font:normal normal normal 10px Verdana;
+	color:#000;
+	border:solid 1px #7898b8;
+}
+
+input[type="hidden"] 
+{
+	display:none !important;
+}
+
+.chkCheckbox
+{
+	float:left;
+	line-height:25px;
+}
+
+input.chkCheckbox
+{
+	padding:0 5px 0 0px;
+	border:none;
+}
+
+input.chkCheckboxHtml
+{
+	padding:0 5px 0 0px;
+	border:none;
+	margin: 5px 5px 0px 0px;
+}
+
+table.chkCheckbox
+{
+	border-spacing:0px;
+	*margin-left:-2px; /*Fix bug IE*/
+}
+
+.chkCheckbox input
+{
+	margin:0px 5px 0px 2px;
+	*margin:0px 2px;
+	border:none !important;
+	vertical-align:middle;
+	float:left;
+}
+
+.chkCheckbox label
+{
+	float:left;
+	margin-right:4px;
+}
+
+.chkRadio
+{
+	float:left;
+}
+
+table.chkRadio
+{
+	border-spacing:0px;
+	*margin-left:-2px; /*Fix bug IE*/
+}
+
+.chkRadio input
+{
+	padding:0px 5px 0px 5px;
+	border:none !important;
+	float:left;
+}
+
+.chkRadio label
+{
+	float:left;
+}
+
+label, legend
+{
+	min-height:15px;
+	_height:15px;
+	display:inline;
+	margin:0;
+	padding:2px 0 0 2px;
+	_padding:2px 0 0;
+	font:normal normal bold 10px Verdana;
+	color:#000;
+}
+
+label span 
+{
+	white-space:nowrap;
+}
+
+/*
+	FRAMEWORK BOVESPA
+*/
+/* RADIOBUTTON LIST */
+
+div.radioButton_FrameworkBovespa {
+	height:auto;
+	clear:both;
+	line-height:25px;
+}
+div.radioButton_FrameworkBovespa span.rotulo {
+	min-width:120px;
+	padding:0 25px 0 0;
+	margin:0;
+	font-weight:bold;
+	line-height:25px;
+}
+div.radioButton_FrameworkBovespa span {
+	width:auto;
+	min-width:0;
+	white-space:nowrap;
+	line-height:25px;
+}
+div.radioButton_FrameworkBovespa span label {
+	clear:none;
+	line-height:25px;
+	padding:0;
+	margin:0;
+}
+div.radioButton_FrameworkBovespa span label span {
+	line-height:25px !important;
+}
+
+div.radioButton_FrameworkBovespa span label span input {
+	border:none;
+	height:23px !important;
+	line-height:25px;
+	margin:2px 5px 0 4px;
+	*margin:2px 2px 0;
+}
+div.radioButton_FrameworkBovespa span label span label {}
+
+/* CHECKBOX LIST */
+div.checkBox_FrameworkBovespa {
+	height:auto;
+	clear:both;
+	line-height:25px;
+}
+div.checkBox_FrameworkBovespa span.rotulo {
+	min-width:120px;
+	padding:0 25px 0 0;
+	margin:0;
+	margin-left:2px;
+	margin-right:2px;
+	font-weight:bold;
+	line-height:25px;
+	
+}
+div.checkBox_FrameworkBovespa span {
+	width:auto;
+	min-width:0;
+	padding:0 0 0 5px;
+	line-height:25px;
+}
+div.checkBox_FrameworkBovespa span input {
+	width:auto !important;
+	border:none;
+	height:23px !important;
+	margin-top:2px;
+	line-height:25px;
+}
+div.checkBox_FrameworkBovespa span label {
+	clear:none;
+	padding:0 8px 0 0;
+	margin:0;
+	font-weight:bold;
+	line-height:25px;
+}
+
+
+/* COMBOBOX */
+div.comboBox_FrameworkBovespa {
+	height:22px !important;
+	display:inline;
+	margin:0;
+	padding:2px 0 0 2px;
+	font:normal normal bold 10px Verdana;
+	color:#000;
+
+}
+div.comboBox_FrameworkBovespa span {
+	font-weight:bold;
+}
+
+/*==============================================================================*/
+/*	CSS RESET																	*/
+/*==============================================================================*/
+span.spnErroPreenchimento
+{
+	width:16px;
+	height:16px;
+	float:left;
+	display:inline;
+	margin:3px 2px 0 0;
+	
+	background-image:url(Imagem/IconeErro.gif);
+	background-repeat:no-repeat;
+	background-position:center bottom;
+	clear:none;
+}
+
+p.pObservacao {}
+
+/*NOVA PESQUISA*/
+div.divNovaPesquisa
+{
+	width:800px;
+	height:28px;
+	margin:0 auto 0;
+	padding:0 0 0 0;
+	clear:both;
+
+	font:normal normal bold 14px Trebuchet MS;
+	color:#0C7766;
+
+	background:url(Imagem/NovaPesquisaFundo.gif) repeat-x center bottom;
+}
+
+div.divNovaPesquisa span
+{
+	float:left;
+	margin:5px 0 0 3px;
+}
+div.divNovaPesquisa div.divNovaPesquisaIconeLupa
+{
+	width:34px;
+	height:28px;
+	float:left;
+	
+	background:url(Imagem/NovaPesquisaIconeLupa.gif) no-repeat left bottom;
+}
+
+div.divNovaPesquisa div.divNovaPesquisaLatDir
+{
+	width:12px;
+	height:28px;
+	float:right;
+		
+	background:url(Imagem/NovaPesquisaLatDir.gif) no-repeat right bottom;
+}
+
+div.divNovaPesquisa div.divNovaPesquisaLatDir input
+{
+	float:right;
+	margin:5px 0 0 0;	
+	cursor:pointer;
+}
+
+div.divNovaPesquisa div.divNovaPesquisaLatEsq
+{
+	width:12px;
+	height:28px;
+	float:left;
+		
+	background:url(Imagem/NovaPesquisaLatEsq.gif) no-repeat left bottom;
+}
+
+div.divNovaPesquisa div.divNovaPesquisaLatEsq input
+{
+	float:left;
+	margin:5px 0 0 0;	
+	cursor:pointer;
+}
+
+div.divNovaPesquisa div.divNovaPesquisaSetaFechado
+{
+	width:15px;
+	height:17px;
+	float:right;
+	position:relative;
+	top:7px;
+	left:8px;
+	cursor:pointer;
+	
+	background:url(Imagem/MarcadorSeta05.gif) no-repeat center center;
+}
+
+div.divNovaPesquisa div.divNovaPesquisaSetaAberto
+{
+	width:15px;
+	height:17px;
+	float:right;
+	position:relative;
+	top:7px;
+	left:8px;
+	cursor:pointer;
+	background:url(Imagem/MarcadorSeta06.gif) no-repeat center center;
+}
+
+.ImagemBotao
+{
+	float:left !important;
+	display:block !important;
+	margin:5px 5px 0 !important;
+	padding:0 !important;
+}
+
+.rotulo
+{
+	float:left;
+	line-height:normal;
+	margin:4px 2px 0;
+}
+
+.rotuloList
+{
+	height:100%;
+	float:left;
+}
+
+.agrupador
+{
+	float:left;
+}
+
+.agrupador select
+{
+	margin-left:0px;
+}
+
+input.btnBotao00
+{
+	width:100px;
+	height:22px;
+	
+	margin:0px;
+	padding:0px 0px 3px 0px; 
+	*padding:0px 0px 1px 0px;
+
+	text-align:center;
+	font-family:Verdana;
+	font-size:10px;
+	font-weight:bold;
+	color:#ffffff;
+
+	background-image:url(Imagem/Botao01Fundo.gif);
+	background-repeat:repeat-x;
+	background-position:center center;
+	background-color:#0C7766;
+
+	border-top:solid 2px #C6DDC6;
+	border-right:solid 2px #A6DCA6;
+	border-bottom:solid 2px #A6DCA6;
+	border-left:solid 2px #C6DDC6;
+
+	cursor:pointer;
+}
+
+/*
+//BOTÃO DE NAVEGAÇÃO
+*/
+
+input.btnBotao01
+{
+	width:100px;
+	height:22px;
+	
+	margin:0px;
+	padding:0px 0px 3px 0px; 
+	*padding:0px 0px 1px 0px;
+
+	text-align:center;
+	cursor:pointer;
+
+	background-color:#e5e5e5;
+
+	border-top:solid 2px #eeeeee;
+	border-right:solid 2px #c5c5c5;
+	border-bottom:solid 2px #c5c5c5;
+	border-left:solid 2px #eeeeee;
+}
+
+.BotaoCinza
+{
+	width:100px;
+	height:22px;
+	margin:20px 0px 0px 0px;
+	padding:0px 0px 3px 0px; *padding:0px0px1px0px;
+
+	text-align:center;
+	cursor:pointer;
+	font:normal normal normal 10px Verdana;
+
+	background-color:#e5e5e5;
+
+	border-top:solid 2px #eeeeee;
+	border-right:solid 2px #c5c5c5;
+	border-bottom:solid 2px #c5c5c5;
+	border-left:solid 2px #eeeeee;
+}

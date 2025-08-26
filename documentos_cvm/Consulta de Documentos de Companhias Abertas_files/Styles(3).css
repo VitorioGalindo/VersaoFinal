@@ -1,0 +1,112 @@
+/* r.a.d.tabstrip Bovespa skin */
+
+.RadTabStrip_CBLC
+{
+	font: normal normal normal 10px Verdana;
+	text-align: center;
+	background:#fff url('img/LapAreaFundo.gif') no-repeat top center;
+}
+
+.RadTabStrip_CBLC ul
+{
+	padding:0;
+}
+.RadTabStrip_CBLC li
+{
+	position:relative;
+	margin-right:7px;
+}
+
+.RadTabStrip_CBLC li a
+{
+	padding-left:6px;
+	color:#000000;
+	line-height: 19px;
+	text-decoration: none;
+	background:transparent url('img/LapSisLatEsq.gif') no-repeat 0 0;
+}
+
+.RadTabStrip_CBLC li a .wrap
+{
+	padding-right: 8px;
+	line-height: 19px;
+	background:transparent url('img/LapSisLatDir.gif') no-repeat right 0;
+}
+
+.RadTabStrip_CBLC li a .innerWrap
+{
+	line-height: 19px;
+	background:transparent url('img/LapSisFundo.gif') repeat-x 0 0;
+	text-align: center;
+	padding:0px 5px 0 5px;
+}
+
+.RadTabStrip_CBLC li a.selected
+{
+	padding-left:6px;
+	color:#00168a;
+	line-height: 19px;
+	text-decoration: none;
+	background:transparent url('img/LapSisLatEsqSel.gif') no-repeat 0 0;
+}
+
+.RadTabStrip_CBLC li a.selected .wrap
+{
+	background:transparent url('img/LapSisLatDirSel.gif') no-repeat right 0;
+}
+
+
+.RadTabStrip_CBLC li a.selected .innerWrap
+{
+	background:transparent url('img/LapSisFundoSel.gif') repeat-x 0 0;
+}
+
+/* arrows */
+.RadTabStrip_CBLC .rightArrow, 
+.RadTabStrip_CBLC .leftArrow,
+.RadTabStrip_CBLC .rightArrowDisabled, 
+.RadTabStrip_CBLC .leftArrowDisabled
+{
+	width:17px;
+	height: 22px;
+	text-indent: -10000px;
+	background-position: left 3px;
+	background-repeat: no-repeat;
+	background-color: White;
+}
+
+.RadTabStrip_CBLC .leftArrow
+{
+	background-image: url(img/ScrollLeft.png);
+}
+
+.RadTabStrip_CBLC .rightArrow
+{
+	background-image: url(img/ScrollRight.png);
+}
+
+/* Disabled Arrows */
+
+.RadTabStrip_CBLC .rightArrowDisabled, 
+.RadTabStrip_CBLC .leftArrowDisabled
+{
+	cursor: default;
+}
+
+.RadTabStrip_CBLC .leftArrowDisabled
+{
+	background-image: url(img/ScrollLeftDisabled.png);
+}
+
+.RadTabStrip_CBLC .rightArrowDisabled
+{
+	background-image: url(img/ScrollRightDisabled.png);
+}
+
+/* Disabled tab */
+
+.RadTabStrip_CBLC li a.disabled,
+.RadTabStrip_CBLC li a.disabled:hover
+{
+	color: gray;
+}

@@ -1,0 +1,193 @@
+/*MENU DE FERRAMENTAS*/
+div.divMenuFerramentas
+{
+	width:156px;
+	height:auto;
+	min-height:31px;
+	
+	/*position:absolute;
+	top:135px;
+	right:37px;*/
+	
+	/*float:right;
+	margin:0px;
+	padding:0px;*/
+	
+	margin-top:5px;
+	margin-left:76%;
+
+	font-family:Verdana;
+	font-size:10px;
+	
+	z-index:101;
+}
+
+div.divMenuFerramentas div.divMenuFerramentasTopo
+{
+	width:114px;
+	height:21px;
+	float:right;
+	display:block;
+
+	margin:0px;
+	padding:8px 0px 0px 42px;
+
+	font-weight:bold;
+	color:#ffffff;
+
+	cursor:pointer;
+
+	background-image:url(Imagem/MenuFerramentasTopoFundo.gif);
+	background-position:center top;
+	background-repeat:no-repeat;
+}
+
+div.divMenuFerramentas div.divMenuFerramentasItens
+{
+	width:149px;
+	height:auto;
+	float:right;
+	display:block;
+	margin:0px;
+}
+
+div.divMenuFerramentas div.divMenuFerramentasItens div.divMenuFerramentasItem
+{
+	width:100%;
+	height:auto;
+	float:left;
+	display:block;
+
+	margin:0px;
+	padding:0px 0px 8px 0px;
+
+	background-image:url(Imagem/MenuFerramentasItemFundo.gif);
+	background-position:center center;
+	background-repeat:repeat-y;
+	border-bottom:solid 1px #cccccc;
+}
+
+div.divMenuFerramentas div.divMenuFerramentasItens div.divMenuFerramentasItem img
+{
+	display:inline;
+	margin:5px 7px -6px 13px;
+	padding:0px;
+}
+
+div.divMenuFerramentas div.divMenuFerramentasItens div.divMenuFerramentasItem a
+{
+	text-decoration:none;
+	cursor:pointer;
+	color:#000000;
+}
+
+div.divMenuFerramentasItens div.divMenuFerramentasItem a:hover
+{
+	color:#0C7766;
+}
+
+div.divMenuFerramentas div.divMenuFerramentasItensRodape
+{
+	width:149px;
+	height:7px;
+	float:right;
+	position:relative;
+	top:-1px;
+	display:block;
+	margin:0px;
+	padding:0px;
+	
+	background-image:url(Imagem/MenuFerramentasItensRodape.gif);
+	background-position:center top;
+	background-repeat:no-repeat;
+}
+
+/*Seleção do Tamanho da Fonte*/
+div.divSelTamFonte
+{
+	width:41px;
+	height:21px;
+	float:right;
+	display:inline;
+	position:absolute;
+	top:112px;
+	right:37px;
+
+	background-image:url(Imagem/SelTamFonte.gif);
+	background-position:left center;
+	background-repeat:no-repeat;
+	z-index:1;
+}
+
+div.divSelTamFonte div
+{
+	float:left;
+	display:inline;
+	margin:1px 0px 1px 1px;
+	text-align:center;
+	font-family: Trebuchet MS;
+	font-weight:bold;
+	cursor:pointer;
+}
+
+div.divSelTamFonte div.divSelTamFonteMenor
+{
+	width:18px;
+	height:17px;
+	padding:2px 0px 0px 1px;
+	font-size:11px;
+}
+
+div.divSelTamFonte div.divSelTamFonteMaior
+{
+	width:17px;
+	height:19px;
+	padding:0px 0px 0px 2px;
+	font-size:14px;
+}
+
+.divExcel
+{
+	width:100px;
+	height:16px;
+	
+	float:left;
+	margin:2px 0px 0px 6px;
+	cursor:pointer;
+	text-align:right;
+	background:url(Imagem/IconeExcel.gif);
+	background-repeat:no-repeat;
+	border:0px;
+	background-color:Transparent;
+}
+
+.divImprimir
+{
+	width:70px;
+	height:16px;
+	
+	float:left;
+	margin:2px 0px 0px 6px;
+	cursor:pointer;
+	text-align:right;
+	background:url(Imagem/IconeImpressora.gif);
+	background-repeat:no-repeat;
+	border:0px;
+	background-color:Transparent;
+}
+
+.divGrafico
+{
+	width:60px;
+	height:16px;
+	
+	float:left;
+	margin:2px 0px 0px 6px;
+	cursor:pointer;
+	text-align:right;
+	
+	background:url(Imagem/IconeGrafico.gif);
+	background-repeat:no-repeat;
+	border:0px;
+	background-color:Transparent;
+}

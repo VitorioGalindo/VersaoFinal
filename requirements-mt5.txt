@@ -1,0 +1,2 @@
+# Dependências extras para integração com MetaTrader5
+MetaTrader5>=5.0; platform_system == "Windows"

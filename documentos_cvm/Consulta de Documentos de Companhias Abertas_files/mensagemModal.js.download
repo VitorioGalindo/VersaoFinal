@@ -1,0 +1,164 @@
+﻿function MensagemModalConfirmacao(titulo, texto, tipo, funcaoOK, funcaoCancelar) {
+    CriarDivMensagem(texto.trim(), tipo);
+    
+    var width = 500;
+    if (tipo == "W") {
+        width = 700;
+    }
+    if (tipo == "C" || tipo == "W") //Confirmação
+    {
+        var tamanhoModal = RetornaTamanho(texto);
+        $("#dialog-message").dialog({
+            modal: true,
+            resizable: true,
+            width: width,
+            height: tamanhoModal,
+            title: titulo,
+            close: function() {
+                $("#dialog-message").remove();
+            },
+            buttons: {
+                Sim: function() {
+                    $(this).dialog("close");
+                    if (funcaoOK != "")
+                        eval(funcaoOK);
+                },
+                Não: function() {
+                    $(this).dialog("close");
+                    if (funcaoCancelar != "")
+                        eval(funcaoCancelar);
+                }
+            }
+        });
+    }    
+}
+
+function MensagemModal(titulo, texto, tipo, alinhamento) {
+    CriarDivMensagem(texto, tipo, alinhamento);
+
+    if (tipo == "I" || tipo == "A" || tipo == "E" || tipo == "X") //Informação, Atenção, Erro, eXtra Size
+    {
+        var tamanhoModal = RetornaTamanho(texto)*1.5;
+        var widthModal = 500;
+        if (tipo == "X") {
+            tamanhoModal = 500;
+            widthModal = 800;
+        }
+        $("#dialog-message").dialog({
+            modal: true,
+            resizable: true,
+            width: widthModal,
+            height: tamanhoModal,
+            title: titulo,
+
+            open: function (event, ui) {
+                $('body').css('overflow', 'auto');
+            },
+
+            close: function() {
+                $("#dialog-message").remove();
+            },                             
+            buttons: {
+                OK: function() {
+                    $(this).dialog("close");
+                    return true;
+                }
+            }
+        });
+    }
+}
+
+function MensagemModalRetorno(titulo, texto, tipo, funcaoOK) {
+    CriarDivMensagem(texto, tipo);
+
+    if (tipo == "I" || tipo == "A" || tipo == "E") //Informação, Atenção ou Erro
+    {
+        var tamanhoModal = RetornaTamanho(texto);
+        $("#dialog-message").dialog({
+            modal: true,
+            resizable: true,
+            width: 500,
+            height: tamanhoModal,
+            title: titulo,
+            close: function() {
+                $("#dialog-message").remove();
+            },
+            buttons: {
+                OK: function() {
+                $(this).dialog("close");
+                    if (funcaoOK != "")
+                        eval(funcaoOK);
+                    return true;
+                }
+            }
+        });
+    }
+}
+
+function CriarDivMensagem(textoMensagem, tipo, alinhamento) {//vou colocar 1 para center e 2 para justify. 3 é o default
+
+    $("#dialog-message").remove();
+    
+    if (tipo == "I") //Mensagem de informação
+    {
+        var classIcone = "fi-info";
+        var colorIcone = "#0C7766";
+        var texto = "Informação";        
+    }
+    else if (tipo == "C") //Mensagem de confirmação
+    {
+        var classIcone = "fi-alert";
+        var colorIcone = "#FFD700";
+        var texto = "Confirmação";                     
+    }
+    else if (tipo == "A") //Mensagem de Advertência
+    {
+        var classIcone = "fi-alert";
+        var colorIcone = "#FFD700";
+        var texto = "Atenção"; 
+    }
+    else if (tipo == "E") //Mensagem de erro
+    {
+        var classIcone = "fi-x-circle";
+        var colorIcone = "#FF0000";
+        var texto = "Erro";
+    }
+
+    var temListaMsg = textoMensagem.indexOf('-') > -1;
+    textoMensagem = RemoveCaracter(textoMensagem, "\n");
+    var alinhamentoTexto; 
+    if (alinhamento == 1)
+        alinhamentoTexto = "center";
+    else if (alinhamento == 2)
+        alinhamentoTexto = "justify";
+    else 
+        alinhamentoTexto = (textoMensagem.length > 300 || temListaMsg) ? "justify" : "center";
+
+    $("body").append("<div id='dialog-message' style='text-align: center; padding-bottom: 3px; overflow: auto'> " +
+                     "<i class='" + classIcone + "' style='font-size: 40px;cursor:pointer;color:" + colorIcone + "; '></i></br>" +
+                     "<label style='text-align: " + alinhamentoTexto + ";font-weight: normal; font-size: 11px;'>" + textoMensagem + "</label>" +
+                     "</div>");
+}
+function RetornaTamanho(texto) {
+    var tamanho = texto.trim().length;
+    
+    if (tamanho < 180)
+        return 210;
+    else if (tamanho < 250)
+        return 270;
+    else 
+        return 340;
+}
+
+
+function RemoveCaracter(valor,caracter)
+{
+    var i = 0;
+    while(i < valor.length)
+    {
+        valor = valor.replace(caracter, "<br/>");	
+        i = i + 1;
+    }    
+    return valor;
+}
+	

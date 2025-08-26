@@ -1,0 +1,567 @@
+/*GERAL*/
+.GridBovespaCSS
+{
+	font:normal normal normal 10px Verdana;
+	min-height:50px;
+}
+.GridBovespaCSS a
+{
+	text-decoration:underline;
+	color:#000000;
+}
+.GridBovespaCSS a:hover
+{
+	text-decoration:underline;
+}
+div.GridBovespaCSS
+{
+	width:80%;
+	margin:0px auto;
+}
+
+/*CABECALHO*/
+.GridBovespaCSS table thead tr
+{
+	height:20px;
+	border-left:solid 1px #cccccc;
+	border-right:solid 1px #cccccc;
+	border-top:solid 1px #ffffff;
+	border-bottom:solid 1px #ffffff;
+}
+
+.GridBovespaHeaderStyle
+{
+	height:20px;
+	padding:0px 4px 0px 4px;
+	font:normal normal bold 10px Verdana;
+	color:#ffffff;
+	text-align:left;
+	border:solid 1px #cccccc;
+	white-space:nowrap;
+	background:#0C7766 url(Imagem/Grid00TopoColFundo.gif) repeat-x center top;
+}
+
+.GridBovespaHeaderStyle a
+{
+	color:#ffffff;
+	text-decoration:none;
+}
+
+.GridBovespaHeaderStyle a:hover
+{
+	text-decoration:underline;
+}
+
+.GridBovespaHeaderStyle input
+{
+	height:5px;
+	width:8px;
+	border:none;
+}
+
+.GridBovespaHeaderStyleCheckBox input
+{
+	height:15px;
+	width:15px;
+	border:none;
+	margin-left:2px;
+	margin-right:2px;
+}
+
+/* DETAIL HEADER */
+.GridBovespaDetailHeaderStyle
+{
+	height:20px;
+	padding:0px 4px 0px 4px;
+	font:normal normal bold 10px Verdana;
+	color:#696969;
+	text-align:left;
+	border:solid 1px #cccccc;
+	white-space:nowrap;
+	background-color:#dcdcdc;
+}
+.GridBovespaDetailHeaderStyle a,
+.GridBovespaDetailHeaderStyle a:hover
+{
+	color:#696969;
+	text-decoration:none;
+}
+
+
+/*FILTRO*/
+.GridBovespaFilterItemStyle td
+{
+	padding:0px 4px 0px 4px;
+	text-align:left;
+	white-space:nowrap;
+	border-left:solid 1px #cccccc;
+	border-right:solid 1px #cccccc;
+	background-image:none;
+	background-color:#0C7766;
+}
+.GridBovespaFilterItemStyle input
+{
+	height:12px;
+	width:80px;
+	padding:0px 0px 1px 2px;
+	margin:1px 4px 0px 0px;
+	text-align:center;
+	border:none;
+}
+
+.GridBovespaFilterItemStyle img
+{
+	cursor:pointer;
+}
+
+/*LINHAS*/
+.GridBovespaEditInPlaceStyle
+{
+	text-indent:4px;
+	height:22px;
+	background-color:#ffffcc;
+	/*background:#ffffcc url() repeat-x center top;*/
+}
+
+.GridBovespaEditInPlaceStyle span
+{
+	text-indent:0px;
+}
+
+.GridBovespaEditInPlaceStyle input
+{
+	margin-left:3px;
+}
+
+.GridBovespaEditInPlaceStyle tr
+{
+	height:22px;
+	background-color:#ffffcc;
+}
+
+.GridBovespaEditInPlaceStyle td
+{
+	height:22px;
+	background-color:#ffffcc;
+	border:solid 1px #cccccc;
+}
+
+.GridEditColumn
+{
+	text-align:center;
+}
+
+.GridEditColumn a
+{
+	color:#000000;
+	text-decoration:underline;
+}
+
+.GridBovespaItemStyle,
+.GridBovespaFooterItemStyle,
+.GridBovespaAlternatingItemStyle
+{
+	height:22px;
+	background-color:#ffffff;
+}
+
+.GridBovespaItemStyleRowClick
+{
+	height:22px;
+	background-color:#ffffff;
+	cursor:pointer;
+}
+
+.GridBovespaAlternatingItemStyleRowClick
+{
+	height:22px;
+	background-color:#f7f7f7;
+	cursor:pointer;
+}
+
+.GridBovespaItemStyleRowClick td,
+.GridBovespaAlternatingItemStyleRowClick td
+{
+	white-space:nowrap;
+	padding:0px 4px 0px 4px;
+	border:solid 1px #cccccc;
+	background-color:#ffffff;
+}
+
+.GridBovespaAlternatingItemStyleRowClick td
+{
+	background-color:#f7f7f7;
+}
+
+.GridBovespaItemStyleRowClick td input,
+.GridBovespaAlternatingItemStyleRowClick td input
+{
+	border:none;
+}
+
+.GridBovespaFooterItemStyle,
+.GridBovespaAlternatingItemStyle
+{
+	background-color:#f7f7f7;
+}
+
+.GridBovespaItemStyle td,
+.GridBovespaFooterItemStyle td,
+.GridBovespaAlternatingItemStyle td
+{
+	white-space:nowrap;
+	padding:0px 4px 0px 4px;
+	border:solid 1px #cccccc;
+	background-color:#ffffff;
+}
+
+.GridBovespaFooterItemStyle td,
+.GridBovespaAlternatingItemStyle td
+{
+	background-color:#f7f7f7;
+}
+
+.GridBovespaItemStyle td input,
+.GridBovespaFooterItemStyle td input,
+.GridBovespaAlternatingItemStyle td input
+{
+	border:none;
+}
+
+.GridBovespaActiveItemStyle,
+.GridBovespaSelectedItemStyle
+{
+	background-color:#ffffcc;
+}
+.GridBovespaActiveItemStyle td,
+.GridBovespaSelectedItemStyle td
+{
+	border:dashed 1px #000000;
+	background-color:#ffffcc;
+}
+
+
+/*RODAPE*/
+.GridBovespaPagerStyle {}
+
+.GridBovespaPagerStyle td {
+	padding:5px 0 4px;
+	font:normal normal bold 10px/38px Verdana;
+	color:#666;
+}
+.GridBovespaPagerStyle a,
+.GridBovespaPagerStyle a:hover 
+{
+	font:normal normal bold 10px/28px Verdana;
+	color:#666666;
+	text-decoration:none;
+}
+
+.CommandItem a,
+.CommandItem a:hover {
+	color:#fff;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+.GridPageTemplatePanelMain {
+	background-color:#f8f8f8;
+	height:28px;
+	
+	border:solid 1px #ccc;
+}
+
+.GridPageTemplatePanelLeft {
+	height:28px;
+	float:left;
+	line-height:28px;
+	padding:1px 0 0;
+}
+
+.GridPageTemplatePanelRight {
+	float:right;
+	width:auto;
+	padding:0 3px 0 0;
+	line-height:28px;
+}
+.GridPageTemplatePanelRight a {
+	float:left;
+	width:auto;
+	line-height:28px;
+	margin:0 3px;
+}
+.GridPageTemplatePanelRight span input {
+	float:left;
+	margin:3px 5px 0;
+	text-align:center !important;
+}
+.GridPageTemplatePanelRight span {
+	float:left;
+	width:auto;
+	line-height:28px;
+}
+
+.GridBovespaPagerStyle select {}
+
+.btnBotaoGridPager
+{
+	width:100px;
+	height:22px;
+
+	margin:3px;
+	padding:0px 0px 3px 0px;
+	*padding:0px 0px 1px 0px;
+
+	vertical-align:middle;
+	text-align:center;
+	font-family:Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color: #ffffff;
+	
+	background-image:url(Imagem/Botao01Fundo.gif);
+	background-repeat:repeat-x;
+	background-position:center center;
+	background-color:#0C7766;
+
+	border-top:solid 2px #C6DDC6;
+	border-right:solid 2px #00a6a6;
+	border-bottom:solid 2px #00a6a6;
+	border-left:solid 2px #C6DDC6;
+	
+	cursor:pointer;
+}
+
+.GridPageTemplatePanelNumber
+{
+	float:left;
+}
+
+.GridPageTemplatePanelNumber input
+{
+	/*text-align:center!important;*/
+	/*padding:3px 0px 0px 0px!important;*/
+}
+
+.GridPageTemplatePanelNumber span
+{
+	/*float:none;*/
+}
+
+.GridBovespaCommandItemStyle
+{
+	color:#000;
+	vertical-align:middle;
+	/*background:Transparent url('Imagem/MsgErroFundo.gif') repeat-x bottom;*/
+}
+
+.GridBovespaCommandItemStyle tr
+{
+	color:#000;
+	/*background:Transparent url('Imagem/MsgErroFundo.gif') repeat-x bottom;*/
+}
+
+.GridBovespaCommandItemStyle td
+{
+	background:Transparent url('Imagem/GridBarraFerramentaFundo.gif') repeat-x bottom;
+	height:25px;
+	border: solid 1px #ccc;
+}
+
+.GridBovespaCommandItemStyle a
+{
+	color:#000000;
+	text-decoration:underline;
+}
+
+.GridBovespaCommandItemStyle a:hover
+{
+	color:#000000;
+	text-decoration:underline;
+}
+
+.GridBovespaCommandItemStyle span
+{
+	vertical-align:bottom;
+}
+
+/*.GridBovespaCommandItemStyle span div
+{
+	vertical-align:bottom;
+	height:36px;
+}*/
+
+.GridBovespaEditForm
+{
+	background-color:#ffffcc;
+	border: solid 1px #ccc;
+	line-height:24px;
+}
+
+.GridBovespaEditForm label
+{
+	float:left;
+}
+
+.GridBovespaEditForm table
+{
+	background-color:#ffffcc;
+}
+
+.GridBovespaEditForm tr
+{
+	background-color:#ffffcc;
+	height:25px;
+}
+
+.GridBovespaEditForm td
+{
+	background-color:#ffffcc;
+	font-weight:bold;
+	padding-left:10px;
+}
+
+.GridBovespaEditForm a
+{
+	color:#000000;
+	text-decoration:underline;
+	font-weight:normal;
+}
+
+.GridToolBarLeft
+{
+	margin:2px 0px 0px 0px;
+	display:inline;
+	float:left;
+	/*height:16px;*/
+}
+
+.GridToolBarRight
+{
+	display:inline;
+	float:right;
+}
+
+
+.GridLineValidator
+{
+	position:relative;
+	border:none;
+	display:none;
+}
+
+.GridLineValidatorImg
+{
+	position:absolute;
+	left:-18px;
+	top:2px;
+	cursor:pointer;
+}
+
+.GridLineValidatorImgForCombo
+{
+	position:absolute;
+	left:-33px;
+	top:4px;
+	cursor:pointer;
+}
+
+.tableGridLineValidator
+{
+	border:none;
+	color:#666666;
+	z-index:1099;
+	position:absolute;
+	top:-10px;
+	left:0px;
+}
+
+.tableGridLineValidator tr
+{
+	border:none;
+}
+
+.tableGridLineValidator td
+{
+	border:none;
+}
+
+.tableGridValidatorMessage
+{
+	background-color:#FFFACD;
+	border:solid 1px #000000 !important; 
+	border-top:none;
+	padding:0px 5px 2px 2px; 
+	font: normal normal normal 10px Verdana; 
+	white-space:nowrap;
+}
+
+.tableGridLineValidator #tdArrow
+{
+	height:14px;
+	vertical-align:bottom;
+	background-color:Transparent;
+}
+
+.tableGridLineValidator #trCloseError
+{
+	height:6px;
+	border:solid 1px #000000 !important; 
+	border-bottom:none;
+}
+
+.tableGridLineValidator #tdCloseError
+{
+	border:solid 1px #000000 !important; 
+	border-bottom:none;
+	background-color:#FFFACD;
+	text-align:right;
+	height:6px;
+}
+
+.tableGridLineValidator #tdCloseError img
+{
+	margin-right:2px;
+	margin-top:2px;
+	cursor:pointer;
+}
+
+.imgGridLineValidator
+{
+	position:relative;
+	right:-5px; 
+	top:1px;
+	z-index:1001;
+	background-color:Transparent;
+}
+
+.GridFilterMenu_None
+{
+	font:normal normal normal 10px Verdana;
+}
+
+.GridCommandTemplate
+{
+	position:relative;
+}
+
+.GridCommandTemplateButtonSeparator
+{
+}
+
+.GridCommandTemplateButtons
+{
+}
+
+/*.GridBovespaActiveItemStyle{}
+.GridBovespaCommandItemStyle{}
+.GridBovespaCommandItemStyle{}
+.GridBovespaEditItemStyle{}
+.GridBovespaFooterItemStyle{}
+.GridBovespaHeaderItemStyle{}
+.GridBovespaGroupPanel{}
+.GridBovespaPanelItemsStyle{}
+.GridBovespaPanelStyle{}
+.GridBovespaFilterMenu{}
+.GridBovespaActiveItemStyle{}
+*/

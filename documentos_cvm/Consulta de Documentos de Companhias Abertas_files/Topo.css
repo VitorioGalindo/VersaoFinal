@@ -1,0 +1,354 @@
+div#divTopo
+{
+	width:100%;
+	height:auto;
+	min-height:88px;
+	float:left;
+	margin:0 0 5px 0;
+	padding:0 0 0 0;
+	clear:both;
+	text-align:center;
+	background:url(Imagem/TopoFundo.gif) repeat center top;
+}
+
+div#divTopoConteudo
+{
+	width:96%;
+	height:auto;
+	float:left;
+	display:inline;
+	margin:15px 0 0 2%;
+	padding:0 0 10px 0;
+}
+
+div#divTopoConteudo div#divTopoConteudoBorda
+{
+	width:100%;
+	height:auto;
+	float:left;
+	display:inline;
+	margin:0;
+	padding:0;
+	background-color:#fff;
+	border:solid 1px #ccc;
+}
+
+div#divTopoApl
+{
+	width:100%;
+	height:41px;
+	float:left;
+	position:relative;
+	display:inline;
+	margin:0;
+	padding:0;
+	background:url(Imagem/TopoAplFundo.gif) repeat-x center top;
+}
+
+div#divTopoApl div#divTopoAplLatEsq
+{
+	width:6px;
+	height:41px;
+	position:absolute;
+	left:-1px;
+	top:-1px;
+	background:url(Imagem/TopoAplLatEsq.gif) no-repeat left top;
+}
+
+div#divTopoApl div#divTopoAplLatDir
+{
+	width:6px;
+	height:41px;
+	position:absolute;
+	right:-1px;
+	top:-1px;
+	background:url(Imagem/TopoAplLatDir.gif) no-repeat right top;
+}
+
+/*IDENTIFICA플O*/
+div.divIdentUsuarioInstituicao
+{
+	width:auto;
+	height:auto;
+	position:absolute;
+	top:-15px;
+	right:10px;
+	
+	margin:0;
+	padding:0;
+
+	text-align:right;
+	font-family:Verdana;
+	font-size:9px;
+}
+
+div.divIdentUsuarioInstituicao input.btnLogout
+{
+	width:48px;
+	height:13px;
+	display:inline;
+	margin:0;
+	padding:0 1px 0 0;
+
+	font-family:Verdana;
+	font-size:9px;
+	
+	background-image:url(Imagem/BotaoLogout.gif);
+	background-position:center center;
+	background-repeat:no-repeat;
+
+	border:0;
+	background-color:Transparent;
+}
+.btnLogout
+{
+	border-style: none;
+	border-color: inherit;
+	border-width: 0;
+	width:48px;
+		height:13px;
+		display:inline;
+		margin:0;
+		padding:0 1px 0 0;
+		font-family:Verdana;
+		font-size:9px;
+	background:url('Imagem/BotaoLogout.gif') no-repeat center;
+		cursor:pointer;
+}
+
+/*IDENTIFICA플O*/
+
+/*LOGO*/
+
+img.imgLogoDominio
+{
+	position:absolute;
+	top:11px;
+	left:9px;
+}
+
+div.divLogoBOVESPANet
+{
+	width:149px;
+	height:20px;
+	position:absolute;
+	top:11px;
+	left:9px;
+	background:url(Imagem/LogoBOVESPANet.gif) no-repeat center center;
+}
+/*LOGO*/
+/*IDENTIFICA플O DO SISTEMA*/
+div.divIdentificacao
+{
+	width:auto;
+	height:auto;
+	position:absolute;
+	top:3px;
+	right:10px;
+
+	margin:0px;
+	padding:0px;
+
+	text-align:right;
+	font:normal normal normal 20px Trebuchet MS;
+}
+
+h2.h2IdentificacaoSistema
+{
+	width:auto;
+	height:auto;
+	float:left;
+	margin:0px 7px 0px 0px;
+	padding:5px 0px 0px 0px;
+
+	font:normal normal normal 20px Trebuchet MS;
+	color:#0C7766;
+}
+/*IDENTIFICA플O DO SISTEMA*/
+/*IDENTIFICA플O DO AMBIENTE*/
+div.divAmbiente
+{
+	width:auto;
+	height:auto;
+	float:left;
+	margin:0px;
+	padding:0px 0px 0px 8px;
+	background:url(Imagem/IdentificacaoAmbienteLatEsq.gif) no-repeat left center;
+	
+}
+div.divAmbiente div
+{
+	width:auto;
+	height:auto;
+	float:left;
+	margin:0px;
+	padding:0px 4px 0px 0px;
+	background:url(Imagem/IdentificacaoAmbienteLatDir.gif) no-repeat right center;
+}
+
+#identAmbiente
+{
+	width:auto;
+	height:28px;
+	float:left;
+	margin:0px;
+	padding:4px 5px 0px 5px;
+	font:normal normal normal 20px Trebuchet MS;
+	color:#000;
+	border-bottom:solid 1px #ccc;
+	border-top:solid 1px #ccc;
+	background:url(Imagem/IdentificacaoAmbienteFundo.gif) repeat-x center center;
+}
+/*IDENTIFICA플O DO AMBIENTE*/
+
+/*MENU*/
+/*핾EA DAS LAPELAS DO SISTEMA*/
+div.divAreaLapSis
+{
+	width:100%;
+	height:auto;
+	min-height:22px;
+	_height:22px;
+
+	float:left;
+	/*position:relative;*/
+	margin:0;
+	padding:0;
+	text-align:left;
+	
+	background:url(Imagem/AreaLapSisFundo.gif) repeat center top;
+	z-index:7000;
+}
+
+div.divAreaLapSis div.divAreaLapSisLatEsq
+{
+	width:6px;
+	height:22px;
+	position:absolute;
+	left:0;
+	top:0;
+	
+	background:url(Imagem/AreaLapSisLatEsq.gif) repeat-y left top;
+}
+
+div.divAreaLapSis div.divAreaLapSisLatDir
+{
+	width:6px;
+	height:22px;
+	position:absolute;
+	right:0;
+	top:0;
+	
+	background:url(Imagem/AreaLapSisLatDir.gif) repeat-y right top;
+}
+/*AGRUPAMENTO DE LAPELAS*/
+
+div.divAreaLapAgrupamento
+{
+	width:auto;
+	height:auto;
+	min-height:19px;
+	float:left;
+	margin:0;
+	padding:0 12px 1px 12px;
+	z-index:7000 !important;
+}
+
+/*SUB ITENS DO MENU .NET*/
+
+div.divAreaLapAgrupamento a
+{
+	color:#000000;
+	text-decoration:none;
+}
+
+div.divAreaLapAgrupamento a:hover{color:#0C7766;}
+/*FIM SUB ITENS DO MENU .NET*/
+
+/*LAPELA*/
+
+div.divAreaLapAgrupamento div.divLapSis
+{
+	width:auto;
+	height:19px;
+	position:relative;
+	bottom:-2px;
+	float:left;
+	display:inline;
+	cursor:pointer;
+	margin:2px 3px 0 0;
+	padding:0;
+}
+
+div.divAreaLapAgrupamento div.divLapSis span
+{
+	width:auto;
+	height:16px;
+	float:left;
+
+	padding:3px 3px 0 3px;
+	margin:0 8px 0 6px;
+
+	white-space:nowrap;
+	font-family: Verdana;
+	font-size: 10px;
+	
+	background:url(Imagem/LapSisFundo.gif) repeat-x center top;
+}
+
+div.divAreaLapAgrupamento div.divLapSis div.divLapSisLatEsq
+{
+	width:6px;
+	height:19px;
+	
+	position:absolute;
+	top:0;
+	left:0;
+	
+	background:url(Imagem/LapSisLatEsq.gif) no-repeat left top;
+}
+
+div.divAreaLapAgrupamento div.divLapSis div.divLapSisLatDir
+{
+	width:8px;
+	height:19px;
+	
+	position:absolute;
+	top:0;
+	right:0;
+	
+	background:url(Imagem/LapSisLatDir.gif) no-repeat right top;
+}
+
+/*MENU*/
+
+.MenuCSS {
+	font-family: Verdana;
+	font-size:10px;
+	color:#000000;
+}
+.StaticHoverStyleCSS{color:#0C7766;}
+.StaticMenuItemStyleCSS{}
+.StaticMenuStyleCSS{}
+.StaticSelectedStyleCSS{}
+.DynamicMenuStyleCSS {
+	border-top:solid 1px #cccccc;
+	background-color:#cccccc;
+}
+.DynamicMenuItemStyleCSS {
+	width:100%;
+	height:17px;
+	text-align:left;
+	font-family: Verdana;
+	font-size:10px;
+	border:solid 1px #ccc;
+	border-top:none;
+	background-color:#f9f9f9;
+}
+
+.DynamicHoverStyleCSS {
+	color:#0C7766;
+	background-color:#fbebeb;
+}
+.DynamicSelectedStyleCSS{}
+/*MENU*/

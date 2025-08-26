@@ -1,0 +1,104 @@
+﻿.radTimeTableCss_CVM caption
+{
+    display: none;
+}
+
+.radTimeTableCss_CVM 
+{
+	cursor: default;
+	background: white;
+	font: normal 11px Arial, Verdana, Sans-serif;
+	border: solid 1px #000;
+}
+
+.radTimeTableCss_CVM td
+{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+
+.radHeaderCss_CVM,
+th.radTimeOverCss_CVM
+{
+	color: #000;
+	background: #e3e3e3;
+	text-align: center;
+	font-weight: normal;
+	padding: 5px 0;
+}
+
+.radTimeTableCss_CVM a
+{
+	display: block;
+    text-align: right;
+    text-decoration: none;
+    cursor: hand;
+	cursor: pointer;
+	padding: 5px 8px 7px 2px
+}
+
+.radItemCss_CVM a,
+.radAlternatingItemCss_CVM a
+{
+	color:#666;
+}
+
+.radTimeOverCss_CVM a
+{	
+	background-color: #cdcdcd;
+	color: #666;
+}
+
+.radFooterCss_CVM
+{
+	color: #666;
+	background: white url(Img/calendarWrapperBg.gif) left bottom repeat-x;
+	padding-left: 8px !important;
+	height: 18px;
+}
+
+.radPopupImage_CVM
+{
+     position: relative; 
+     _position: inherit;
+     outline: none;
+}
+*+html .radPopupImage_CVM
+{
+	position: inherit;
+}
+
+.radPopupImage_CVM img
+{
+	vertical-align: middle;
+	_vertical-align: top; /* IE fix */	
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: -1px; /* IE margins fix */
+	_margin-top: 0px; 
+	border-width: 0px;
+}
+
+.radDisabled_CVM img
+{
+	 filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+	-moz-opacity: 0.6;
+	opacity: 0.6;	
+}
+.pickerWrapper_CVM td
+{
+	border: 0;
+	border-style: none;
+	padding: 0;
+	margin: 0;
+}
+.pickerWrapper_CVM table,
+.pickerWrapper_CVM td
+{
+	border: 0;
+	border-style: none;
+	padding: 0;
+	margin: 0;
+}

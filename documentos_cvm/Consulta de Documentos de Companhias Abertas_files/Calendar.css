@@ -1,0 +1,192 @@
+/* calendar styles */
+.calendarWrapper_CVM{
+	border: 2px solid #ffffff !important;
+	background: #ffffff;	
+}
+.calendarWrapper_CVM .titlebar_CVM,
+.calendarWrapper_CVM .TableLayout_CVM{
+	width: 100%;
+	position: relative;
+}
+
+.calendarWrapper_CVM .titlebar_CVM a{
+	color:#FFFFFF;
+	text-decoration:none;
+	
+}
+.calendarWrapper_CVM .titlebar_CVM{
+	background: #fa0000;
+	color: #ffffff;
+	font: normal normal bold 10px Verdana;
+	border-bottom: 1px solid #ffffff;
+}
+.calendarWrapper_CVM .titlebar_CVM td{
+	padding: 3px 5px 3px 5px;
+	text-transform:capitalize;
+}
+.calendarWrapper_CVM .TableLayout_CVM{
+	font: normal normal bold 10px Verdana;
+	text-align: center;
+	cursor: default;
+	width: auto;
+	padding: 0;
+	margin:0px;
+}
+.calendarWrapper_CVM .TableLayout_CVM td{
+	padding: 0;
+	overflow: visible;
+	position: relative;
+	background:#f1f1f6;
+}
+
+.calendarWrapper_CVM .TableLayout_CVM a,
+.calendarWrapper_CVM .TableLayout_CVM td span{	
+	text-decoration: none;
+	height: 100%;
+	position: relative;
+	display: block;
+	padding: 4px 2px 4px 2px;
+	width: 20px;
+	height: 13px;
+	outline: 0;
+	border: 1px solid #fff;
+	border-top:none;
+	text-align: center;
+}
+.calendarWrapper_CVM .TableLayout_CVM a{color: #000000;}
+.calendarWrapper_CVM .TableLayout_CVM .DaysOfWeek_CVM{
+	font-weight: bold;
+	padding-right: 1px;
+	text-align: center;
+	color:#fff;
+	text-transform:uppercase;
+}
+th.DaysOfWeek_CVM{
+	background: #c4c2c2;
+	text-decoration: none;
+	height: 100%;
+	position: relative;
+	padding: 4px 2px;
+	width: 20px;
+	height: 13px;
+	outline: 0;
+	border: 1px solid #fff;
+	border-top:none;
+	text-align: center;
+	color:#fff;
+}
+.calendarWrapper_CVM .TableLayout_CVM .DaysOfWeek_CVM a{}
+.calendarWrapper_CVM .TableLayout_CVM .radCalHover_CVM{background-color: #d3d3d3;}
+.calendarWrapper_CVM .TableLayout_CVM .radCalHover_CVM a{}
+.calendarWrapper_CVM .TableLayout_CVM .radCalDefault_CVM{}
+.calendarWrapper_CVM .TableLayout_CVM .radCalSelect_CVM a{
+	background-color: #fa0000;
+	color:#fff;
+}
+.calendarWrapper_CVM .TableLayout_CVM .radCalToday_CVM a{
+	border: 1px solid #363636;
+	background: #454545 url("Img/todayBg.gif") repeat-x 0 0;
+	margin: 0;
+	color: #fff;
+}
+.calendarWrapper_CVM .TableLayout_CVM .radCalWeekendDefault_CVM{background: #e6e6e6;}
+.calendarWrapper_CVM .otherMonth_CVM a,
+.calendarWrapper_CVM .outOfRange_CVM a,
+.calendarWrapper_CVM .otherMonth_CVM span,
+.calendarWrapper_CVM .outOfRange_CVM span{color: #ccc;}
+
+/* fast navigation styles */
+.MonthYearFastNav_CVM{
+	border: 1px solid #000;
+	font: normal 11px "Arial", sans-serif;
+	border-spacing: 0;
+	color: #707070;
+	cursor: default;
+	background: #fff;
+}
+
+*+html .MonthYearFastNav_CVM{}
+.MonthYearFastNav_CVM #RadCalendar_FastNav_PrevYears,
+.MonthYearFastNav_CVM #RadCalendar_FastNav_NextYears{text-align: center;}
+.MonthYearFastNav_CVM td{
+	padding: 1px 5px 1px 3px;
+	width: 28px;
+	text-align: right;
+	border: 2px solid #fff;
+	border-spacing: 0;
+}
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Feb,
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Apr,
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Jun,
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Aug,
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Oct,
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Dec{
+	border-right: 1px solid #ccc;
+	padding-right: 6px;
+	background: transparent url("Img/whitePixels.gif") repeat-y top right;
+}
+.MonthYearFastNav_CVM .selected_CVM{
+	background-color: #cdcdcd;
+	color: #000;
+}
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Feb.selected_CVM,
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Apr.selected_CVM,
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Jun.selected_CVM,
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Aug.selected_CVM,
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Oct.selected_CVM,
+.MonthYearFastNav_CVM td#RadCalendar_FastNav_Dec.selected_CVM{
+	background: #cdcdcd url("Img/whitePixels.gif") repeat-y top right;
+}
+.MonthYearFastNav_CVM .bottom_CVM{
+	background: #e3e3e3 none;
+	padding: 8px 0 4px 8px;
+	overflow: hidden;
+	border: 0 !important;
+}
+*+html .MonthYearFastNav_CVM .bottom_CVM{padding-left: 4px;}
+.MonthYearFastNav_CVM .bottom_CVM input{
+	height: 18px;
+	background: #474747 url("Img/buttonBg.gif") repeat-x top left;
+	border: 0;
+	font: normal 10px/8px "Arial", sans-serif;
+	color: #fff;
+	padding: 0 2px;
+	outline: 0;
+	display: block;
+	float: left;
+	cursor: pointer;
+	margin: 0;
+}
+#RadCalendar_FastNav_TodayButton{margin-right: 12px;}
+* html #RadCalendar_FastNav_TodayButton{margin-right: 8px;}
+#RadCalendar_FastNav_OkButton{margin-right: 4px;}
+* html #RadCalendar_FastNav_OkButton{margin-right: 2px;}
+.radPopupImage_CVM{
+	position: relative;  
+	_position: inherit;
+	outline: none;
+}
+*+html .radPopupImage_CVM{position: inherit;}
+.radPopupImage_CVM img{
+	left:13px;
+	/*top:3px;*/
+	*top:0;
+	padding-left:2px;
+	position:relative;
+}
+.pickerWrapper_CVM
+{
+	float:left;
+}
+
+.pickerWrapper_CVM table
+{
+	vertical-align: bottom;
+}
+.pickerWrapper_CVM table,
+.pickerWrapper_CVM td{
+	border: 0;
+	border-style: none;
+	padding: 0;
+	margin: 0;
+}

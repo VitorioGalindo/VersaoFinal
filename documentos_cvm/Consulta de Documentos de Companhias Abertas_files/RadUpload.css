@@ -1,0 +1,108 @@
+.RadUploadTable{}
+.RadUploadTable td{padding: 2px;}
+.RadUploadButtonArea{background: transparent;}
+.RadUploadButton,
+.radUploadButtonMedium{
+	width:100px;
+	height:22px;
+
+	margin:0px;
+	padding:0px 0px 3px 0px;
+	*padding:0px 0px 1px 0px;
+
+	text-align:center;
+	font-family:Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color: #ffffff;
+	
+	background-image:url(Img/Botao01Fundo.gif);
+	background-repeat:repeat-x;
+	background-position:center center;
+	background-color:#0C7766;
+
+	border-top:solid 2px #C6DDC6;
+	border-right:solid 2px #A6DCA6;
+	border-bottom:solid 2px #A6DCA6;
+	border-left:solid 2px #C6DDC6;
+	
+	cursor:pointer;
+}
+.RadUploadButtonDisabled{display:none;}
+.RadUploadFileSelector{border:none;}
+.RadUploadInputField{
+	background:url('Img/RadUploadInputField.gif') no-repeat 0 1px;
+	_background-attachment: fixed;
+	border: 0px;
+	padding-top: 3px;
+	margin-bottom:2px;
+}
+* html .RadUploadInputField{background-position:0 0}
+*+html .RadUploadInputField{background-position:0 0}
+input.RealFileInput{
+	height:22px;
+	position: relative;
+	-moz-opacity: 0;
+	filter: alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+}
+.RadUploadSelectButton{
+	
+	width:65px;
+	height:22px;
+
+	margin:0px;
+	padding:0px 0px 3px 0px;
+	*padding:0px 0px 1px 0px;
+
+	text-align:center;
+	font-family:Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color: #ffffff;
+	
+	background-image:url(Img/Botao01Fundo.gif);
+	background-repeat:repeat-x;
+	background-position:center center;
+	background-color:#0C7766;
+
+	border-top:solid 2px #C6DDC6;
+	border-right:solid 2px #A6DCA6;
+	border-bottom:solid 2px #A6DCA6;
+	border-left:solid 2px #C6DDC6;
+	
+	cursor:pointer;
+}
+
+.RadUploadRemoveButton{
+	float: right;
+
+	width:65px;
+	height:22px;
+
+	margin:0px;
+	padding:0px 0px 3px 0px;
+	*padding:0px 0px 1px 0px;
+	margin-bottom:2px;
+
+	text-align:center;
+	font-family:Verdana;
+	font-size: 10px;
+	font-weight: bold;
+	color: #ffffff;
+	
+	background-image:url(Img/Botao01Fundo.gif);
+	background-repeat:repeat-x;
+	background-position:center center;
+	background-color:#0C7766;
+
+	border-top:solid 2px #C6DDC6;
+	border-right:solid 2px #A6DCA6;
+	border-bottom:solid 2px #A6DCA6;
+	border-left:solid 2px #C6DDC6;
+	
+	cursor:pointer;
+}
+.RadUploadClearButton{}
+input.NoSkinnedFileUnput{}

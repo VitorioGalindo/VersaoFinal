@@ -1,0 +1,36 @@
+div#divCaixaCentralizadora
+{
+	width: 800px;
+	height: auto;
+	margin: 0px auto 20px;
+	padding: 0px 0px 0px 0px;
+	clear: both;
+	color: #000000;
+	background-color: #fff;
+}
+
+h3.h3DescricaoLapela
+{
+	width:100%;
+	height:16px;
+	float:left;
+	margin:0px 0px 2px 0px;
+	font:normal normal bold 10px Verdana;
+	color:#0C7766;
+	text-align:center;
+	border-bottom:solid 1px #ccc;
+	background:#fff url('Imagem/LapDescBorda.gif') repeat-y right top;
+}
+
+h3.h3DescricaoLapela span.spnLaBordaEsq
+{
+	width:10px;
+	height:100%;
+	float:left;
+	border-left:solid 1px #ccc;
+}
+h3.h3DescricaoLapela span.spnDescricaoLapela
+{
+	display:block;
+	margin:2px 0px 0px 0px;
+}

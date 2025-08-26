@@ -1,0 +1,2758 @@
+﻿$(document).tooltip({
+    track: true
+});
+
+var retornoAutoComplete = '[{key:\'P_\', value: \'\'}]';
+
+
+
+
+function colocarMascaraData() {
+    $('#txtDataReferencia').mask('00/00/0000', { placeholder: '__/__/____' });
+    $('#txtDataIni').mask('00/00/0000', { placeholder: '__/__/____' });
+    $('#txtDataFim').mask('00/00/0000', { placeholder: '__/__/____' });
+
+    $('#txtHoraIni').mask('00:00', { placeholder: '__:__' });
+    $('#txtHoraFim').mask('00:00', { placeholder: '__:__' });
+}
+
+
+function initChosen() {
+    var config = {
+        '.chosen-select': {},
+        '.chosen-select-deselect': { allow_single_deselect: true },
+        '.chosen-select-no-single': { disable_search_threshold: 10 },
+        '.chosen-select-no-results': { no_results_text: 'Oops, nada encontrado!' },
+        '.chosen-select-rtl': { rtl: true },
+        '.chosen-select-width': { width: '100%' },
+        '.search_contains': { contains: true }
+    }
+    for (var selector in config) {
+        $(selector).chosen(config[selector]);
+    }
+
+
+
+    $('#cboPalavraChave').autocomplete({
+
+        multiselect: true,
+        autoFocus: false,
+        matchContains: false,
+        minLength: 3,
+        source: eval(retornoAutoComplete),
+        response: function (event, ui) {
+            event.preventDefault();
+            if (event.target.value.endsWith(' ')) {
+                if (retornoAutoComplete.indexOf('{key: \'P_' + event.target.value.trim() + '\', value: \'' + event.target.value.trim() + '\'}') >= 0) {
+                    return false;
+                }
+                retornoAutoComplete = retornoAutoComplete + ', {key: \'P_' + event.target.value.trim() + '\', value: \'' + event.target.value.trim() + '\'}';
+                preencherAutoComplete('[' + retornoAutoComplete + ']');
+
+                setTimeout(selecionarPalavra, 0, event.target.value.trim());
+
+            }
+        }
+    });
+
+}
+
+function OpenProtocoloEntrega(dataJSON) {
+    //var dataJSON = JSON.parse(data);
+    var url = "html/protocoloModal.html?NumeroSequencialDocumento=" + dataJSON.numeroSequencialDocumento;
+    MostraAjax();
+    if ($("#modalEntrega")[0].classList.length > 0) {
+        if ($("#modalEntrega").dialog('isOpen')) {
+            $("#modalEntrega").dialog('close');
+        }
+    }
+
+    $("#tipoDoc").attr('value', dataJSON.tipoDoc);
+    $('#modalProtocolo').attr('value', dataJSON.numeroSequencialDocumento);
+
+    $('#hdnProtocoloEntrega').attr('value', dataJSON.numeroProtocoloEntrega);
+    $('#hdnSequencialDocto').attr('value', dataJSON.numeroSequencialDocumento);
+    $('#hdnCodigoInstituicao').attr('value', dataJSON.codigoInstituicao);
+    $('#hdnTipoDoc').attr('value', dataJSON.tipoDoc);
+
+    $('#modalProtocolo').load(url, function () {
+        $("#modalEntrega").dialog({
+            modal: true,
+            resizable: false,
+            width: 'auto',
+            height: 'auto',
+            title: 'Protocolo de Entrega',
+            open: function (event, ui) {
+                $("#divSplash").hide();
+            },
+            close: function (event, ui) {
+            }
+        });
+    });
+};
+
+async function TrataEventoFocusInPalavraChave(event) {
+
+    event.preventDefault();
+
+    var encontrado = false;
+    for (var i = 0; i < document.getElementsByName('rdPeriodoDoc').length; i++) {
+        if (document.getElementsByName('rdPeriodoDoc')[i].checked) {
+            codPeriodo = document.getElementsByName('rdPeriodoDoc')[i].value;
+            encontrado = true;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        document.getElementsByName('rdPeriodoDoc')[0].checked = true;
+        codPeriodo = "0";
+    }
+
+    var dataIni = document.getElementById("txtDataIni").value;
+    var dataFim = document.getElementById("txtDataFim").value;
+    var horaIni = document.getElementById("txtHoraIni").value;
+    var horaFim = document.getElementById("txtHoraFim").value;
+
+
+
+
+    var varTemp = document.getElementById("retornoAutoComplete").value.split(",");
+
+    var codCvm = '';
+
+
+    for (i = 0; i < varTemp.length; i++) {
+
+        if (varTemp[i].startsWith('C_')) {
+            codCvm = codCvm + ',' + varTemp[i].split("_")[1];
+        }
+    }
+    var dataRef = document.getElementById("txtDataReferencia").value;
+    var codCategoria = document.getElementById("cboCategoria").value;
+    var codTipo = document.getElementById("cboTipo").value;
+    var codEspecie = document.getElementById("cboEspecie").value;
+    var codPeriodo;
+
+    var codTipoDocumento = "-1";
+    if (parseInt(codCategoria) >= parseInt("900000")) {
+        codTipoDocumento = codCategoria.substr(1, 5).replace(/0/g, "");
+    }
+
+    if (codCategoria == "-1") {
+        //Identificacao de todos
+        codTipoDocumento = "-2";
+        //codTipoDocumento = "-1";
+    }
+
+    var ultimaDtRef = document.getElementById("chkUltimaData").checked;
+
+    if (ultimaDtRef == true && (codCvm == "" || !validaPeriodoEmAnos(2))) {
+        $("#divSplash").hide();
+        MensagemModal("Consulta Externa CVM", "Por favor, ao marcar última data de referência selecionar uma empresa e um período com um intervalo de 2 anos.", "A");
+        return;
+    }
+
+    if (codPeriodo == 2) {
+        if ((dataIni == "" && dataFim == "") &&
+            (ultimaDtRef == false && dataRef == "") &&
+            codCvm == "") {
+            $("#divSplash").hide();
+            MensagemModal("Consulta Externa CVM", "Por favor, informe o período de consulta.", "A");
+            return;
+        }
+    }
+
+    var tipoEmpresa = "0";
+    if (document.getElementsByName('rdTipoEmpresa')[2].checked == true)
+        tipoEmpresa = "1";
+    if (document.getElementsByName('rdTipoEmpresa')[1].checked == true)
+        tipoEmpresa = "2";
+
+
+    var dataValue = "{dataDe: '" + dataIni + "', dataAte: '" + dataFim + "' , empresa: '" + codCvm + "', tipoDocumento: '" + codTipoDocumento +
+        "', dataReferencia: '" + dataRef + "', categoria: '" + codCategoria + "', tipo: '" + codTipo + "', especie: '" + codEspecie +
+        "', periodo: '" + codPeriodo + "', horaIni: '" + horaIni + "', horaFim: '" + horaFim + "', ultimaDtRef:'" + ultimaDtRef + "', tipoEmpresa:'" + tipoEmpresa + "'}";
+
+
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/MontaAutoCompletePalavraChave",
+        data: dataValue,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            retornoAutoComplete = response.d;
+
+            if (retornoAutoComplete != '') {
+                preencherAutoComplete('[' + retornoAutoComplete + ']');
+            }
+        }
+    });
+
+}
+
+var erroPadrao = "Favor tentar novamente. Caso o problema persista favor entrar em contato com a Central de Emissores, telefone (11) 2565-5063.";
+$('link[rel=stylesheet][href="App_Themes/CVM/FormularioReferencia.css"]').remove();
+
+function montaTabelaGridDocumentos() {
+
+    var table = $('#grdDocumentos').DataTable();
+
+    var htmlTabela = '';
+    var htmlLinha = '';
+    var linhaAtual = 0;
+    var qtdLinha = 0;
+
+    var colunas;
+    var classes;
+    var classeColuna;
+    var classeLinha;
+    var qtdColspan;
+    var primeiroIcSemRowSpan;
+    var rowSpanColuna;
+    var row;
+
+
+    var textoAssunto;
+
+    var textoPesquisa;
+
+    table.columns([11]).visible(false);
+
+    opcao = $('#hdnExibeAssunto').val();
+
+    if (opcao === '0') {
+        return;
+    }
+
+    colunas = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; // assunto na 11
+    classes = ['', '', 'centerCol', 'centerCol', 'centerCol', 'centerCol', 'centerCol', 'centerCol', 'centerCol', 'centerCol', 'centerCol'];
+    primeiroIcSemRowSpan = 2;
+    qtdColspan = 9;
+
+
+
+    if (table.row(0).column(0).data()[0] != undefined) {
+
+        var info = table.page.info();
+        linhaAtual = info.page * table.page.len();
+
+        textoPesquisa = $('#buscaTabela').val();
+
+        if (textoPesquisa == '') {
+
+            while (linhaAtual < table.rows().count() && qtdLinha < table.page.len()) {
+
+
+                if (((qtdLinha + 1) % 2) == 0) {
+
+                    classeLinha = 'even';
+
+                }
+                else {
+
+                    classeLinha = 'odd';
+                }
+
+                htmlLinha = '<tr role="row" class="' + classeLinha + '">';
+
+                textoAssunto = table.row(0).column(11).data()[linhaAtual];
+
+                for (ic = 0; ic < colunas.length; ic++) {
+
+                    if (ic < primeiroIcSemRowSpan) {
+
+                        if (textoAssunto != '') {
+                            rowSpanColuna = 'rowspan="2"';
+                        }
+                        else {
+                            rowSpanColuna = '';
+                        }
+                    }
+                    else {
+
+                        rowSpanColuna = '';
+                    }
+
+                    classeColuna = classes[ic];
+
+
+                    htmlLinha = htmlLinha.concat('<td class="' + classeColuna + '" ' + rowSpanColuna + '>' + table.row(0).column(colunas[ic]).data()[linhaAtual] + '</td>');
+
+
+                }
+
+                htmlLinha = htmlLinha.concat('</tr>');
+
+
+
+
+                if (textoAssunto != '') {
+
+                    htmlLinha = htmlLinha.concat('<tr role="row" class="' + classeLinha + '">');
+                    htmlLinha = htmlLinha.concat('<td colspan="' + qtdColspan + '" class="celulaAssunto"><i class="fi-info" style="font-size: 18px;cursor:pointer;color:#0C7766;"> </i>&nbsp;&nbsp;Assunto(s): &nbsp;' + textoAssunto + '</td>');
+                    htmlLinha = htmlLinha.concat('</tr>');
+
+                }
+
+
+
+                htmlTabela = htmlTabela.concat(htmlLinha);
+                qtdLinha++;
+
+                linhaAtual++;
+
+            }
+
+        }
+        else {
+
+            table.rows({ search: 'applied', page: 'current', order: 'current' }).every(function (rowIdx, tableLoop, rowLoop) {
+
+
+                if (((qtdLinha + 1) % 2) == 0) {
+
+                    classeLinha = 'even';
+
+                }
+                else {
+
+                    classeLinha = 'odd';
+                }
+
+                htmlLinha = '<tr role="row" class="' + classeLinha + '">';
+
+                textoAssunto = this.data()[11];
+
+                for (ic = 0; ic < colunas.length; ic++) {
+
+                    if (ic < primeiroIcSemRowSpan) {
+
+                        if (textoAssunto != '') {
+                            rowSpanColuna = 'rowspan="2"';
+                        }
+                        else {
+                            rowSpanColuna = '';
+                        }
+                    }
+                    else {
+
+                        rowSpanColuna = '';
+                    }
+
+                    classeColuna = classes[ic];
+
+
+                    htmlLinha = htmlLinha.concat('<td class="' + classeColuna + '" ' + rowSpanColuna + '>' + this.data()[colunas[ic]] + '</td>');
+
+
+                }
+
+
+                htmlLinha = htmlLinha.concat('</tr>');
+
+
+                if (textoAssunto != '') {
+
+                    htmlLinha = htmlLinha.concat('<tr role="row" class="' + classeLinha + '">');
+                    htmlLinha = htmlLinha.concat('<td colspan="' + qtdColspan + '" class="celulaAssunto"><i class="fi-info" style="font-size: 18px;cursor:pointer;color:#0C7766;"> </i>&nbsp;&nbsp;Assunto(s): &nbsp;' + textoAssunto + '</td>');
+                    htmlLinha = htmlLinha.concat('</tr>');
+
+                }
+
+
+
+                htmlTabela = htmlTabela.concat(htmlLinha);
+                qtdLinha++;
+
+                linhaAtual++;
+
+
+            });
+
+        }
+
+    }
+
+    $('#grdDocumentos').children('tbody').html(htmlTabela);
+}
+
+function carregarComboEspecie(codigoCategoria, codigoTipo) {
+    MostraAjax();
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/PopularComboEspeciePorCategoriaTipo",
+        data: '{"codigoCategoria": "' + codigoCategoria + '", "codigoTipo": "' + codigoTipo + '"}',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            document.getElementById('cboEspecie').innerHTML = response.d;
+            $('#cboEspecie').trigger("chosen:updated");
+            $("#divSplash").hide();
+            incluirCondicao();
+        },
+        error: function (response) {
+            MensagemModal("Gerenciador de Documentos", response.responseText, "E");
+            $("#divSplash").hide();
+        }
+    });
+}
+
+function carregarComboTipo(codigoCategoria) {
+
+    if (codigoCategoria >= 900000) {
+        codigoCategoria = (codigoCategoria - 900000) * (-1);
+    }
+
+    if (codigoCategoria == 'IPE_-1_-1_-1' || codigoCategoria == 'EST_-1') {
+
+        document.getElementById('cboEspecie').innerHTML = '';
+        $('#cboEspecie').trigger("chosen:updated");
+
+        document.getElementById('cboTipo').innerHTML = '';
+        $('#cboTipo').trigger("chosen:updated");
+
+
+        incluirCondicao();
+        return;
+    }
+
+    if (codigoCategoria < -1) {
+        document.getElementById('cboTipo').innerHTML = '';
+        $('#cboTipo').trigger("chosen:updated");
+
+
+        document.getElementById('cboEspecie').innerHTML = '';
+        $('#cboEspecie').trigger("chosen:updated");
+
+        incluirCondicao();
+
+        return;
+    }
+
+    MostraAjax();
+
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/PopularComboTipoPorCategoria",
+        data: '{"codigoCategoria": "' + codigoCategoria + '"}',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            document.getElementById('cboTipo').innerHTML = response.d;
+            $('#cboTipo').trigger("chosen:updated");
+
+
+
+            $.ajax({
+                type: "POST",
+                url: "frmConsultaExternaCVM.aspx/PopularComboEspeciePorCategoriaTipo",
+                data: '{"codigoCategoria": "' + codigoCategoria + '", "codigoTipo": "-1"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: "true",
+                cache: "false",
+                success: function (response) {
+                    document.getElementById('cboEspecie').innerHTML = response.d;
+                    $('#cboEspecie').trigger("chosen:updated");
+                    $("#divSplash").hide();
+                    incluirCondicao();
+                },
+                error: function (response) {
+                    MensagemModal("Gerenciador de Documentos", response.responseText, "E");
+                    $("#divSplash").hide();
+                }
+            });
+
+        },
+        error: function (response) {
+            MensagemModal("Gerenciador de Documentos", response.responseText, "E");
+            $("#divSplash").hide();
+        }
+    });
+
+}
+
+function exibirProtocoloPDF(numeroSequencialDocumento, tipoDocumento) {
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/RetornarProtocoloPDF",
+        data: "{numeroSequencialDocumento: " + numeroSequencialDocumento + ", tipoDocumento: '" + tipoDocumento + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (data) {
+
+            if (data.d.indexOf("ERRO - ") > -1) {
+                MensagemModal("Consulta Externa CVM", "Erro na Obtenção do Protocolo", "E");
+                return;
+            }
+
+            var binarioProtocolo = base64ToUint8ArrayProtocolo(data.d);
+
+            function base64ToUint8ArrayProtocolo(base64) {
+                var raw = atob(base64);
+                var uint8Array = new Uint8Array(raw.length);
+                for (var i = 0; i < raw.length; i++) {
+                    uint8Array[i] = raw.charCodeAt(i);
+                }
+                return uint8Array;
+            }
+
+            $("#modalProtocoloPDF").dialog({
+                modal: true,
+                width: 850,
+                height: 750,
+                buttons: {
+                    'Fechar': function () {
+                        pdfApp = document.getElementById('pdfProtocolo').contentWindow.PDFViewerApplication;
+                        pdfApp.close();
+                        $(this).dialog('close');
+                    }
+                },
+                open: function () {
+                    renderPDFProtocolo(binarioProtocolo);
+                    $(".ui-dialog-titlebar").hide();
+                }
+            });
+
+
+
+        },
+        error: function (data) {
+            MensagemModal("Consulta Externa CVM", "Erro na Obtenção do Protocolo", "E");
+        }
+    });
+}
+
+function renderPDFProtocolo(binarioProtocolo) {
+
+    setTimeout(function () {
+
+        pdfApp = document.getElementById('pdfProtocolo').contentWindow.PDFViewerApplication;
+        if (pdfApp === null || pdfApp === undefined) {
+            renderPDFProtocolo(binarioProtocolo);
+        }
+        else {
+            pdfApp.open(binarioProtocolo);
+            $("#divSplash").hide();
+        }
+    }, 1000);
+}
+
+$(document).ready(function () {
+    initChosen();
+    $('#grdDocumentos').DataTable({
+        "order": [[6, "dsc"]],
+        "ordering": true,
+        "aoColumnDefs": [
+
+            { "sClass": "textoPequeno", "aTargets": [0] },
+            { "sClass": "textoGrande", "aTargets": [1] },
+            { "sClass": "textoMedio", "aTargets": [2] },
+            { "sClass": "textoMedio", "aTargets": [3] },
+            { "sClass": "textoMedio", "aTargets": [4] },
+            { "sClass": "textoPequeno", "aTargets": [5] },
+            { "sClass": "textoMedio", "aTargets": [6] },
+            { "sClass": "textoPequeno", "aTargets": [7] },
+            { "aTargets": [8] },
+            { "sClass": "textoPequeno", "aTargets": [9] },
+            { "sClass": "textoPequeno", "aTargets": [10], orderable: false }
+        ],
+
+        "aLengthMenu": [["10", "25", "50", "100"], ["10", "25", "50", "100"]],
+        "iDisplayLength": "100",
+        "pageLength": 100,
+        "fnDrawCallback": function (oSettings) {
+            montaTabelaGridDocumentos();
+        },
+        "language": {
+            "sProcessing": "Processando...",
+            "sLengthMenu": "Mostrar _MENU_ registros",
+            "sZeroRecords": "Não foram encontrados resultados",
+            "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando de 0 até 0 de 0 registros",
+            "sInfoFiltered": "(filtrado de _MAX_ registros no total)",
+            "sEmptyTable": "Não há dados disponíveis",
+            "sInfoPostFix": "",
+            "sSearch": "Buscar:",
+            "sUrl": "",
+            "oAria": {
+                "sSortAscending": ": clique para usar ordem crescente",
+                "sSortDescending": ": clique para usar ordem decrescente"
+            },
+            "oPaginate": {
+                "sFirst": "Primeiro",
+                "sPrevious": "Anterior",
+                "sNext": "Seguinte",
+                "sLast": "Último"
+            }
+        }
+    });
+
+    $('.comboSetorAtividade').select2();
+    $('.comboTipoParticipante').select2();
+    $('.comboSituacaoEmissor').select2();
+    $('.comboCategoriaEmissor').select2();
+    $('.comboDocumentos').select2();
+    $('.comboStatusDocumento').select2();
+    $('.comboSituacaoRegistro').select2();
+    $('.comboApresentacao').select2();
+    $('#grdDocumentos_filter').html('<label id="lblBuscarTabela">Buscar na Lista de Documentos:<Table border="0" style="padding: 0px; margin:0px;"><tr style="padding: 0px; margin:0px;"><td style="padding: 0px; margin:0px;"><i id="lnkComAssunto" class="fi-results assuntoMarcado" title="Exibir assuntos na lista de documentos"></i>&nbsp;<i id="lnkSemAssunto" title="Ocultar assuntos da lista de documentos" class="fi-list-thumbnails assuntoDesmarcado"></i>&nbsp;&nbsp;</td><td style="padding: 0px; margin:0px;"><input id="buscaTabela" type="search" class placeholder aria-controls="grdDocumentos"></td></tr></table></label>');
+
+    $('#buscaTabela').keyup(function (e) {
+
+        var table = $('#grdDocumentos').DataTable();
+        table.search($('#buscaTabela').val()).draw();
+    });
+
+    $('#lnkComAssunto').click(function (e) {
+        e.preventDefault();
+
+        var table = $('#grdDocumentos').DataTable();
+
+        $('#buscaTabela').val('');
+
+        $('#hdnExibeAssunto').val('1');
+
+        table.search('').draw();
+
+        $('#lnkComAssunto').removeClass('assuntoDesmarcado');
+        $('#lnkComAssunto').addClass('assuntoMarcado');
+
+        $('#lnkSemAssunto').removeClass('assuntoMarcado');
+        $('#lnkSemAssunto').addClass('assuntoDesmarcado');
+    });
+
+    $('#lnkSemAssunto').click(function (e) {
+        e.preventDefault();
+
+        $('#buscaTabela').val('');
+
+        var table = $('#grdDocumentos').DataTable();
+
+        $('#hdnExibeAssunto').val('0');
+        $('#buscaTabela').val('');
+
+        table.search('').draw();
+
+        $('#lnkComAssunto').addClass('assuntoDesmarcado');
+        $('#lnkComAssunto').removeClass('assuntoMarcado');
+
+        $('#lnkSemAssunto').addClass('assuntoMarcado');
+        $('#lnkSemAssunto').removeClass('assuntoDesmarcado');
+    });
+
+
+    $('#cboCategoria_chosen').addClass('large-12');
+    $('#cboCategoria_chosen').addClass('columns');
+    $('#cboCategoria_chosen').css("width", "");
+    $('#cboCategoria_chosen').addClass('combo');
+
+
+    $('#cboTipo_chosen').addClass('large-12');
+    $('#cboTipo_chosen').addClass('columns');
+    $('#cboTipo_chosen').css("width", "");
+    $('#cboTipo_chosen').addClass('combo');
+
+    var htmlCaptchaV2 = '<div class="g-recaptcha" id="ConsExternaV2" data-sitekey="' + document.getElementById('hdnChaveSiteV2').value + '"></div>';
+
+    $('#divCaptchaV2').html(htmlCaptchaV2);
+
+
+    $('#cboEspecie_chosen').addClass('large-12');
+    $('#cboEspecie_chosen').addClass('columns');
+    $('#cboEspecie_chosen').css("width", "");
+    $('#cboEspecie_chosen').addClass('combo');
+
+    colocarMascaraData();
+
+    PopulaComboEmpresasCargaInicial();
+
+    MontarComboCategoriaTipoEspecieCargaInicial();
+
+    if (document.getElementById('rdBolsa').checked) {
+        AtualizarCombosEscolhaTela('', '', '', '6,7', true, '');
+    }
+    else if (document.getElementById('rdCVM').checked) {
+        AtualizarCombosEscolhaTela('', '', '', '1,2,8', true, $("#parametroCia").val());
+    }
+    else {
+
+        if ($("#parametroCia").val() == "-1") {
+            ListarDocumentos();
+        }
+    }
+
+    $("#divPesquisa").accordion({
+        collapsible: true,
+        icons: { "header": "ui-icon-plus", "activeHeader": "ui-icon-minus" },
+        heightStyle: "content"
+    });
+
+    $('#cboPalavraChave').focusin(function (event) {
+        TrataEventoFocusInPalavraChave(event);
+    });
+
+    $('#cboSetorAtividade').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        AtualizarCombosEscolhaTela('', '', '', '', false, '');
+    });
+
+    $('#cboCategoriaEmissor').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        AtualizarCombosEscolhaTela('', '', '', '', false, '');
+    });
+
+    $('#cboSituacaoEmissor').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        AtualizarCombosEscolhaTela('', '', '', '', false, '');
+    });
+
+    $('#cboTipoParticipante').click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        AtualizarCombosEscolhaTela('', '', '', '', false, '');
+    });
+
+    $('#cboDocumentos').click(function (e) {
+        e.preventDefault();
+        processaCboDocumentos('');
+    });
+
+    $('#cboCategorias').change(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        carregarComboTipo(document.getElementById("cboCategorias").value);
+
+
+    });
+
+    $('#cboTipo').change(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        carregarComboEspecie(document.getElementById("cboCategorias").value, document.getElementById("cboTipo").value);
+
+    });
+
+    $('#cboEspecie').change(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        setTimeout(incluirCondicao(), 0);
+    });
+
+});
+
+function MontarComboCategoriaTipoEspecieCargaInicial() {
+
+    $('#cboDocumentos').html(document.getElementById('hdnComboCategoriaTipoEspecie').value);
+    $('#cboDocumentos').trigger('change');
+
+    podeCarregarDocumentos = true;
+
+    document.getElementById('cboTipo').innerHTML = document.getElementById('hdnComboTipoPorCategoria').value;
+    $('#cboTipo').trigger("chosen:updated");
+
+    document.getElementById('cboEspecie').innerHTML = document.getElementById('hdnComboEspeciePorCategoriaTipo').value;
+    $('#cboEspecie').trigger("chosen:updated");
+}
+
+
+
+function MontarCombosCategoriaTipoEspecie(valorOpcao) {
+
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/MontarCombosCategoriaTipoEspecie",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        cache: "false",
+        success: function (response) {
+
+            $('#cboDocumentos').html(response.d);
+            if (valorOpcao != '') {
+                $('#cboDocumentos').val(valorOpcao.split(','));
+            }
+
+            $('#cboDocumentos').trigger('change');
+
+            podeCarregarDocumentos = true;
+
+        }
+    });
+
+
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/PopularComboTipoPorCategoria",
+        data: '{"codigoCategoria": "-1"}',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            document.getElementById('cboTipo').innerHTML = response.d;
+            $('#cboTipo').trigger("chosen:updated");
+
+
+
+            $.ajax({
+                type: "POST",
+                url: "frmConsultaExternaCVM.aspx/PopularComboEspeciePorCategoriaTipo",
+                data: '{"codigoCategoria": "-1", "codigoTipo": "-1"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: "true",
+                cache: "false",
+                success: function (response) {
+                    document.getElementById('cboEspecie').innerHTML = response.d;
+                    $('#cboEspecie').trigger("chosen:updated");
+
+                },
+                error: function (response) {
+                    MensagemModal("Gerenciador de Documentos", response.responseText, "E");
+
+                }
+            });
+
+        },
+        error: function (response) {
+            MensagemModal("Gerenciador de Documentos", response.responseText, "E");
+            $("#divSplash").hide();
+        }
+    });
+
+
+
+}
+
+function RetornarCondicaoSetorAtividade() {
+    var lstSetorAtividade = $('#cboSetorAtividade').select2('data');
+
+    if (lstSetorAtividade.length > 0) {
+        if (lstSetorAtividade[lstSetorAtividade.length - 1].id == '-1') {
+            return '-1';
+        }
+    }
+
+    var setorAtividade = '';
+
+    for (c = 0; c < lstSetorAtividade.length; c++) {
+        if (lstSetorAtividade[c].id != '-1') {
+
+            if (setorAtividade === '') {
+                setorAtividade = lstSetorAtividade[c].id;
+            }
+            else {
+                setorAtividade = setorAtividade + ',' + lstSetorAtividade[c].id;
+            }
+        }
+    }
+
+    if (setorAtividade == '') {
+        setorAtividade = '-1';
+    }
+
+    return setorAtividade;
+
+}
+
+function RetornarCondicaoCategoriaEmissor() {
+    var lstCategoriaEmissor = $('#cboCategoriaEmissor').select2('data');
+
+    if (lstCategoriaEmissor.length > 0) {
+        if (lstCategoriaEmissor[lstCategoriaEmissor.length - 1].id == '-1') {
+            return '-1';
+        }
+    }
+
+    var categoriaEmissor = '';
+
+    for (c = 0; c < lstCategoriaEmissor.length; c++) {
+
+        if (lstCategoriaEmissor[c].id != '-1') {
+
+            if (categoriaEmissor === '') {
+                categoriaEmissor = lstCategoriaEmissor[c].id;
+            }
+            else {
+                categoriaEmissor = categoriaEmissor + ',' + lstCategoriaEmissor[c].id;
+            }
+        }
+    }
+
+    if (categoriaEmissor == '') {
+        categoriaEmissor = '-1';
+    }
+
+    return categoriaEmissor;
+
+}
+
+function RetornarCondicaoTipoParticipante() {
+
+    var lstTipoParticipante = $('#cboTipoParticipante').select2('data');
+
+    if (lstTipoParticipante.length > 0) {
+        if (lstTipoParticipante[lstTipoParticipante.length - 1].id == '-1') {
+            return '-1';
+        }
+    }
+
+    var tipoParticipante = '';
+
+    for (c = 0; c < lstTipoParticipante.length; c++) {
+
+        if (lstTipoParticipante[c].id != '-1') {
+
+            if (tipoParticipante === '') {
+                tipoParticipante = lstTipoParticipante[c].id;
+            }
+            else {
+                tipoParticipante = tipoParticipante + ',' + lstTipoParticipante[c].id;
+            }
+        }
+    }
+
+    if (tipoParticipante == '') {
+        tipoParticipante = '-1';
+    }
+
+    return tipoParticipante;
+}
+
+function processaCboDocumentos(valorSelecionado) {
+
+    var identificador;
+
+    var lstVal = $('#cboDocumentos').select2('data');
+
+    if (lstVal.length == 0) {
+
+        $('#cboDocumentos').val(['EST_-1', 'IPE_-1_-1_-1']);
+        $('#cboDocumentos').trigger('change');
+        return;
+    }
+
+
+    if (valorSelecionado == '') {
+
+        identificador = lstVal[lstVal.length - 1];
+    }
+    else {
+        for (xp = 0; xp < lstVal.length; xp++) {
+            if (lstVal[xp].id == valorSelecionado) {
+                identificador = lstVal[xp];
+                xp = lstVal.length;
+            }
+        }
+    }
+
+    var busca = [];
+
+    if (identificador.id.split('_').length > 2) {// IPE
+
+        if ((identificador.id.split('_')[1] == -1 && identificador.id.split('_')[2] == -1 && identificador.id.split('_')[3] != -1)
+            || (identificador.id.split('_')[1] == -1 && identificador.id.split('_')[2] != -1 && identificador.id.split('_')[3] == -1)) {
+
+
+            for (var v = 0; v < lstVal.length; v++) {
+
+                if (lstVal[v].id != identificador.id) {
+                    if ('IPE_-1_-1_-1' == lstVal[v].id || 'EST_-1' == lstVal[v].id) {
+                        lstVal.splice(v, 1);
+                        v--;
+                    }
+                }
+            }
+
+            var lstIdFim = [];
+
+            for (var vl = 0; vl < lstVal.length; vl++) {
+                lstIdFim.push(lstVal[vl].id);
+            }
+
+            if (lstVal.length == 0) {
+                lstIdFim = ['EST_-1', 'IPE_-1_-1_-1'];
+            }
+
+            $('#cboDocumentos').val(lstIdFim);
+            $('#cboDocumentos').trigger('change');
+
+            return;
+
+        }
+
+        if (identificador.id.split('_')[3] != -1) {
+
+            busca.push('IPE_-1_-1_-1');
+            busca.push('EST_-1');
+            busca.push('IPE_' + identificador.id.split('_')[1] + '_-1_-1');
+            busca.push('IPE_' + identificador.id.split('_')[1] + '_' + identificador.id.split('_')[2] + '_-1');
+        }
+        else if (identificador.id.split('_')[2] != -1) {
+            busca.push('IPE_-1_-1_-1');
+            busca.push('EST_-1');
+            busca.push('IPE_' + identificador.id.split('_')[1] + '_-1_-1');
+        }
+        else {
+            busca.push('EST_-1');
+            busca.push('IPE_-1_-1_-1');
+        }
+
+        for (var b = 0; b < busca.length; b++) {
+
+            for (var v = 0; v < lstVal.length - 1; v++) {
+                if (busca[b] == lstVal[v].id) {
+                    lstVal.splice(v, 1);
+                    v--;
+
+                }
+            }
+
+        }
+
+        if (identificador.id.split('_')[3] == -1) {
+
+            for (var v = 0; v < lstVal.length; v++) {
+
+                if (lstVal[v].id != identificador.id) {
+
+                    if ((identificador.id.split('_')[1] + '_' + identificador.id.split('_')[2]) == (lstVal[v].id.split('_')[1] + '_' + lstVal[v].id.split('_')[2]) && lstVal[v].id.split('_')[0] == 'IPE') {
+                        lstVal.splice(v, 1);
+                        v--;
+                    }
+                }
+            }
+        }
+
+        if (identificador.id.split('_')[1] == -1) {
+
+            for (var v = 0; v < lstVal.length; v++) {
+
+                if (lstVal[v].id != identificador.id) {
+
+                    if ((lstVal[v].id.split('_')[0]) == 'IPE') {
+                        lstVal.splice(v, 1);
+                        v--;
+                    }
+
+                }
+            }
+        }
+
+    }
+    else if (identificador.id != 'PRO_-2') {
+
+        if (identificador.id == 'EST_-1') {
+            for (var v = 0; v < lstVal.length; v++) {
+
+                if (lstVal[v].id != identificador.id) {
+
+                    if (lstVal[v].id != 'EST_-1' && lstVal[v].id.split('_')[0] == 'EST') {
+                        lstVal.splice(v, 1);
+                        v--;
+                    }
+
+                }
+            }
+        }
+        else {
+            for (var v = 0; v < lstVal.length; v++) {
+                if (lstVal[v].id != identificador.id) {
+                    if (lstVal[v].id == 'EST_-1' || lstVal[v].id == 'IPE_-1_-1_-1') {
+                        lstVal.splice(v, 1);
+                        v--;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    var lstIdFim = [];
+
+
+
+    for (var vl = 0; vl < lstVal.length; vl++) {
+        lstIdFim.push(lstVal[vl].id);
+    }
+
+    if (lstVal.length == 0) {
+        lstIdFim = ['EST_-1', 'IPE_-1_-1_-1'];
+    }
+
+
+    $('#cboDocumentos').val(lstIdFim);
+    $('#cboDocumentos').trigger('change');
+
+}
+
+
+function incluirCondicao() {
+
+    var valorSelecionado;
+
+    var vl = document.getElementById("cboCategorias").value;
+
+
+
+    if (vl == 'IPE_-1_-1_-1' || vl == 'EST_-1') {
+        valorSelecionado = vl;
+    }
+    else {
+
+        if (vl >= 900000) {
+            vl = (vl - 900000) * (-1);
+            valorSelecionado = "EST_" + vl * (-1);
+        }
+        else {
+            valorSelecionado = 'IPE_' + document.getElementById("cboCategorias").value + '_' + document.getElementById("cboTipo").value + '_' + document.getElementById("cboEspecie").value;
+        }
+    }
+
+    var idSelecionado = '';
+
+    var lstVal = $('#cboDocumentos').select2('data');
+
+    for (v = 0; v < lstVal.length; v++) {
+        if (idSelecionado == '') {
+            idSelecionado = lstVal[v].id;
+        }
+        else {
+            idSelecionado = idSelecionado + ',' + lstVal[v].id;
+        }
+    }
+
+    if (idSelecionado == '') {
+        idSelecionado = valorSelecionado;
+    }
+    else {
+        idSelecionado = idSelecionado + ',' + valorSelecionado;
+    }
+
+
+    if ($("#cboDocumentos").find("option[value=" + valorSelecionado + "]").length == 0) {
+
+
+        var texto = '';
+
+        var novaOpcao;
+
+        if (document.getElementById("cboCategorias").value != '-1') {
+            texto = 'Categoria: ' + $("#cboCategorias option:selected").text().trim();
+        }
+
+        if (document.getElementById("cboTipo").value != '-1') {
+
+            if (texto == '') {
+                texto = 'Tipo: ' + $("#cboTipo option:selected").text().trim();
+            }
+            else {
+                texto = texto + ', Tipo: ' + $("#cboTipo option:selected").text().trim();
+            }
+        }
+
+        if (document.getElementById("cboEspecie").value != '-1') {
+
+            if (texto == '') {
+                texto = 'Espécie: ' + $("#cboEspecie option:selected").text().trim();
+            }
+            else {
+                texto = texto + ', Espécie: ' + $("#cboEspecie option:selected").text().trim();
+            }
+        }
+
+
+        novaOpcao = new Option(texto, valorSelecionado, false, false);
+        $('#cboDocumentos').append(novaOpcao);
+        $('#cboDocumentos').trigger('change');
+
+    }
+
+    $('#cboDocumentos').val(idSelecionado.split(','));
+    $('#cboDocumentos').trigger('change');
+    processaCboDocumentos(valorSelecionado);
+}
+
+function RetornarCondicaoSituacaoEmissor() {
+
+    var lstSituacaoEmissor = $('#cboSituacaoEmissor').select2('data');
+
+    if (lstSituacaoEmissor.length > 0) {
+        if (lstSituacaoEmissor[lstSituacaoEmissor.length - 1].id == '-1') {
+            return '-1';
+        }
+    }
+
+    var situacaoEmissor = '';
+
+    for (c = 0; c < lstSituacaoEmissor.length; c++) {
+
+        if (lstSituacaoEmissor[c].id != '-1') {
+
+            if (situacaoEmissor === '') {
+                situacaoEmissor = lstSituacaoEmissor[c].id;
+            }
+            else {
+                situacaoEmissor = situacaoEmissor + ',' + lstSituacaoEmissor[c].id;
+            }
+        }
+    }
+
+    if (situacaoEmissor == '') {
+        situacaoEmissor = '-1';
+    }
+
+    return situacaoEmissor;
+}
+
+
+function AtualizarCombosEscolhaTela(sA, cE, sE, tP, buscaDocumentos, codigoCVM) {
+
+    var setorAtividade;
+    var categoriaEmissor;
+    var situacaoEmissor;
+    var tipoParticipante;
+
+    document.getElementById('lblMensagemEmpresaNaoLocalizada').value = '';
+
+    if (sA == '') {
+        setorAtividade = RetornarCondicaoSetorAtividade();
+    }
+    else {
+        setorAtividade = sA;
+    }
+
+    if (cE == '') {
+        categoriaEmissor = RetornarCondicaoCategoriaEmissor();
+    }
+    else {
+        categoriaEmissor = cE;
+    }
+
+    if (sE == '') {
+        situacaoEmissor = RetornarCondicaoSituacaoEmissor();
+    }
+    else {
+        situacaoEmissor = sE;
+    }
+
+    if (tP == '') {
+        tipoParticipante = RetornarCondicaoTipoParticipante();
+    }
+    else {
+        tipoParticipante = tP;
+    }
+
+    if (setorAtividade == '-1' && categoriaEmissor == '-1' && situacaoEmissor == '-1' && tipoParticipante == '-1') {
+        preencheComboEmpresas($('#hdnEmpresas').val());
+
+        posicionaCategoriaCVM();
+
+
+        $('#cboSetorAtividade').empty();
+        $('#cboCategoriaEmissor').empty();
+        $('#cboSituacaoEmissor').empty();
+        $('#cboTipoParticipante').empty();
+        $('#cboSituacaoEmissor').trigger('change');
+        $('#cboCategoriaEmissor').trigger('change');
+        $('#cboSetorAtividade').trigger('change');
+        $('#cboTipoParticipante').trigger('change');
+
+        atualizarComboSetorAtividade($('#hdnSetorAtividade').val());
+        atualizarComboCategoriaEmissor($('#hdnCategoriaEmissor').val());
+        atualizarComboSituacaoEmissor($('#hdnSituacaoEmissor').val());
+        atualizarComboTipoParticipante($('#hdnTipoParticipante').val());
+
+
+
+        novaOpcao = new Option('TODAS', '-1', false, false);
+        $('#cboSituacaoEmissor').append(novaOpcao);
+        $('#cboSituacaoEmissor').trigger('change');
+
+        novaOpcao = new Option('TODAS', '-1', false, false);
+        $('#cboCategoriaEmissor').append(novaOpcao);
+        $('#cboCategoriaEmissor').trigger('change');
+
+        novaOpcao = new Option('TODOS', '-1', false, false);
+        $('#cboSetorAtividade').append(novaOpcao);
+        $('#cboSetorAtividade').trigger('change');
+
+        novaOpcao = new Option('TODOS', '-1', false, false);
+        $('#cboTipoParticipante').append(novaOpcao);
+        $('#cboTipoParticipante').trigger('change');
+
+        $('#cboSituacaoEmissor').val(situacaoEmissor.split(','));
+        $('#cboSituacaoEmissor').trigger('change');
+
+        $('#cboCategoriaEmissor').val(categoriaEmissor.split(','));
+        $('#cboCategoriaEmissor').trigger('change');
+
+        $('#cboSetorAtividade').val(setorAtividade.split(','));
+        $('#cboSetorAtividade').trigger('change');
+
+        $('#cboTipoParticipante').val(setorAtividade.split(','));
+        $('#cboTipoParticipante').trigger('change');
+
+        return;
+    }
+
+
+    var buscaPadrao = false;
+
+    if ((setorAtividade == '-1' && categoriaEmissor == '-1' && situacaoEmissor == '-1') ||
+        (categoriaEmissor == '-1' && situacaoEmissor == '-1' && tipoParticipante == '-1') ||
+        (situacaoEmissor == '-1' && tipoParticipante == '-1' && setorAtividade == '-1') ||
+        (tipoParticipante == '-1' && setorAtividade == '-1' && categoriaEmissor == '-1')) {
+        buscaPadrao = true;
+    }
+
+
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/ListarEmpresasConsultaExterna",
+        contentType: "application/json; charset=utf-8",
+        data: "{ codigoSetorAtividade:'" + setorAtividade + "', codigoSituacaoEmissor: '" + situacaoEmissor + "', codigoCategoriaEmissor: '" + categoriaEmissor + "', codigoTipoParticipante: '" + tipoParticipante + "'}",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            if (response.d != "") {
+                atualizarComboEmpresa(response.d.split('$#@#&*')[0]);
+
+                if (codigoCVM != '' && codigoCVM != null && codigoCVM != undefined) {
+                    posicionaParametroEmpresa();
+                }
+
+                if (buscaPadrao && setorAtividade != '-1') {
+                    atualizarComboSetorAtividade($('#hdnSetorAtividade').val());
+                }
+                else {
+                    atualizarComboSetorAtividade(response.d.split('$#@#&*')[2]);
+                }
+
+
+                if (buscaPadrao && categoriaEmissor != '-1') {
+                    atualizarComboCategoriaEmissor($('#hdnCategoriaEmissor').val());
+                }
+                else {
+                    atualizarComboCategoriaEmissor(response.d.split('$#@#&*')[1]);
+                }
+
+                if (buscaPadrao && situacaoEmissor != '-1') {
+                    atualizarComboSituacaoEmissor($('#hdnSituacaoEmissor').val());
+                }
+                else {
+                    atualizarComboSituacaoEmissor(response.d.split('$#@#&*')[3]);
+                }
+
+                if (buscaPadrao && tipoParticipante != '-1') {
+                    atualizarComboTipoParticipante($('#hdnTipoParticipante').val());
+                }
+                else {
+                    atualizarComboTipoParticipante(response.d.split('$#@#&*')[4]);
+                }
+
+
+                $('#cboSituacaoEmissor').val(situacaoEmissor.split(','));
+                $('#cboSituacaoEmissor').trigger('change');
+
+                $('#cboCategoriaEmissor').val(categoriaEmissor.split(','));
+                $('#cboCategoriaEmissor').trigger('change');
+
+                $('#cboSetorAtividade').val(setorAtividade.split(','));
+                $('#cboSetorAtividade').trigger('change');
+
+                $('#cboTipoParticipante').val(tipoParticipante.split(','));
+                $('#cboTipoParticipante').trigger('change');
+
+                if (buscaDocumentos) {
+                    ListarDocumentos();
+                }
+            }
+        },
+        error: function (response) {
+            $("#divSplash").hide();
+            MensagemModal("Consulta Externa CVM", response.responseText, "E");
+        }
+    });
+
+}
+
+function atualizarComboCategoriaEmissor(retorno) {
+
+    $('#cboCategoriaEmissor').empty();
+    $('#cboCategoriaEmissor').trigger('change');
+
+    novaOpcao = new Option('TODAS', '-1', false, false);
+    $('#cboCategoriaEmissor').append(novaOpcao);
+    for (var i = 0; i < retorno.split('#$#$').length; i++) {
+        var textoOpcao = retorno.split('#$#$')[i];
+
+        if (textoOpcao.split('@#@#')[0] != "0") {
+
+            novaOpcao = new Option(textoOpcao.split('@#@#')[1], textoOpcao.split('@#@#')[0], false, false);
+            $('#cboCategoriaEmissor').append(novaOpcao);
+
+        }
+    }
+
+    $('#cboCategoriaEmissor').trigger('change');
+
+
+}
+
+function atualizarComboSetorAtividade(retorno) {
+    $('#cboSetorAtividade').empty();
+    $('#cboSetorAtividade').trigger('change');
+    novaOpcao = new Option('TODOS', '-1', false, false);
+    $('#cboSetorAtividade').append(novaOpcao);
+
+    for (var i = 0; i < retorno.split('#$#$').length; i++) {
+        var textoOpcao = retorno.split('#$#$')[i];
+
+        if (textoOpcao.split('@#@#')[0] != "0") {
+            novaOpcao = new Option(textoOpcao.split('@#@#')[1], textoOpcao.split('@#@#')[0], false, false);
+            $('#cboSetorAtividade').append(novaOpcao);
+        }
+    }
+
+    $('#cboSetorAtividade').trigger('change');
+
+}
+
+function atualizarComboTipoParticipante(retorno) {
+    $('#cboTipoParticipante').empty();
+    $('#cboTipoParticipante').trigger('change');
+    novaOpcao = new Option('TODOS', '-1', false, false);
+    $('#cboTipoParticipante').append(novaOpcao);
+
+    for (var i = 0; i < retorno.split('#$#$').length; i++) {
+        var textoOpcao = retorno.split('#$#$')[i];
+
+        if (textoOpcao.split('@#@#')[0] != "0") {
+
+            novaOpcao = new Option(textoOpcao.split('@#@#')[1], textoOpcao.split('@#@#')[0], false, false);
+            $('#cboTipoParticipante').append(novaOpcao);
+
+        }
+    }
+
+    $('#cboTipoParticipante').trigger('change');
+}
+
+function atualizarComboSituacaoEmissor(retorno) {
+
+    $('#cboSituacaoEmissor').empty();
+    $('#cboSituacaoEmissor').trigger('change');
+    novaOpcao = new Option('TODAS', '-1', false, false);
+    $('#cboSituacaoEmissor').append(novaOpcao);
+    for (var i = 0; i < retorno.split('#$#$').length; i++) {
+        var textoOpcao = retorno.split('#$#$')[i];
+
+        if (textoOpcao.split('@#@#')[0] != "0") {
+
+            novaOpcao = new Option(textoOpcao.split('@#@#')[1], textoOpcao.split('@#@#')[0], false, false);
+            $('#cboSituacaoEmissor').append(novaOpcao);
+
+        }
+    }
+    $('#cboSituacaoEmissor').trigger('change');
+
+}
+
+function selecionarPalavra(texto) {
+
+    $("#cboPalavraChave").autocomplete("search", texto);
+    var menu = $("#cboPalavraChave").autocomplete("widget");
+    $(menu[0].children[0]).click();
+
+}
+
+$('#cboPalavraChave').keyup(function (e) {
+    e.preventDefault();
+    var valor;
+    if (e.keyCode == 13 || e.keyCode == 9) {
+        valor = $('#cboPalavraChave').val();
+
+        if (retornoAutoComplete.indexOf('{ key: \'P_' + valor.trim() + '\', value: \'' + valor.trim() + '\'}') >= 0) {
+            return false;
+        }
+        retornoAutoComplete = '{ key: \'P_' + valor.trim() + '\', value: \'' + valor.trim() + '\'}, ' + retornoAutoComplete;
+        preencherAutoComplete('[' + retornoAutoComplete + ']');
+
+        setTimeout(selecionarPalavra, 0, valor.trim());
+    }
+});
+
+function preencherAutoComplete(texto) {
+
+    $('#cboPalavraChave').autocomplete({
+        source: eval(texto),
+        multiselect: true,
+        minLength: 3,
+        autoFocus: false,
+        change: function (event, ui) {
+
+            event.preventDefault();
+
+            if (event.target.value.trim() != '') {
+
+                retornoAutoComplete = '{ key: \'P_' + event.target.value.trim() + '\', value: \'' + event.target.value.trim() + '\'}, ' + retornoAutoComplete;
+                preencherAutoComplete('[' + retornoAutoComplete + ']');
+
+                setTimeout(selecionarPalavra, 0, event.target.value.trim());
+            }
+
+        },
+        response: function (event, ui) {
+            event.preventDefault();
+            if (event.target.value.endsWith(' ')) {
+                if (retornoAutoComplete.indexOf('{ key: \'P_' + event.target.value.trim() + '\', value: \'' + event.target.value.trim() + '\'}') >= 0) {
+                    return false;
+                }
+                retornoAutoComplete = '{ key: \'P_' + event.target.value.trim() + '\', value: \'' + event.target.value.trim() + '\'}, ' + retornoAutoComplete;
+                preencherAutoComplete('[' + retornoAutoComplete + ']');
+
+                setTimeout(selecionarPalavra, 0, event.target.value.trim());
+            }
+
+        }
+
+
+    });
+}
+
+function posicionaParametroEmpresa() {
+    var empresa = $("#parametroCia").val();
+    $("#cboEmpresa").autocomplete("search", empresa);
+
+    var menu = $("#cboEmpresa").autocomplete("widget");
+    $(menu[0].children[0]).click();
+
+    $("#btnConsulta").focus();
+
+
+    var varTemp = document.getElementById("retornoAutoComplete").value.split(",");
+
+    var codCvm = '';
+
+    for (i = 0; i < varTemp.length; i++) {
+
+        if (varTemp[i].startsWith('C_')) {
+            codCvm = codCvm + ',' + varTemp[i].split("_")[1];
+        }
+    }
+
+    if (codCvm == '') {
+        document.getElementById('lblMensagemEmpresaNaoLocalizada').innerHTML = 'Empresa não localizada';
+
+        setTimeout(function () { document.getElementById('lblMensagemEmpresaNaoLocalizada').innerHTML = ''; }, 4000);
+
+    }
+
+}
+
+function VisualizaArquivo_ITR_DFP_IAN(sDescTPDoc, sDataEncerra, sFuncao, sRazao, sPregao, sCodCVM, sMoeda) {
+
+    if (sFuncao == "DOWNLOAD") {
+        window.location.href = $("#siteDXW").val() + '/dxw/download.asp?moeda=' + sMoeda + '&tipo=' + sDescTPDoc + '&data=' + sDataEncerra + '&razao=' + escape(sRazao) + '&site=C&ccvm=' + sCodCVM + ''
+    }
+    else {
+        window.open($("#siteDXW").val() + '/dxw/FrDXW.asp?moeda=' + sMoeda + '&tipo=' + sDescTPDoc + '&data=' + sDataEncerra + '&razao=' + escape(sRazao) + '&site=C&pregao=' + escape(sPregao) + '&ccvm=' + sCodCVM, 'Divulgacao', 'toolbar=no,status=no,width=700,height=500,scrollbars=yes,resizable=yes,location=no')
+    }
+}
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+function split(val) {
+    return val.split(/,\s*/);
+}
+function extractLast(term) {
+    return split(term).pop();
+}
+
+function AlteraTipoEmpresa() {
+    //runEffect("hide", "#divDataEntrega", "Scale");
+
+    PopulaComboEmpresas();
+
+}
+
+
+function VerificaParametrosURL() {
+
+    var tipodoc = getParameterByName("tipodoc");
+    var periodo = getParameterByName("periodo");
+    var dataini = getParameterByName("dataini");
+    var datafim = getParameterByName("datafim");
+
+    if (periodo == "dia")
+        document.getElementsByName('rdPeriodoDoc')[0].checked = true;
+
+    if (periodo == "semana")
+        document.getElementsByName('rdPeriodoDoc')[1].checked = true;
+
+    if (periodo == "30d") {
+        var dataAtual = new Date();
+
+        if (dataAtual != "") {
+            dataAtual = dataAtual.getDate() + "/" + dataAtual.getMonth() + "/" + dataAtual.getFullYear();;
+            document.getElementById('txtDataIni').value = dataAtual;
+        }
+        document.getElementsByName('rdPeriodoDoc')[2].checked = true;
+        $("#divDataEntrega *").removeAttr('disabled');
+    }
+
+    if (periodo == "data" && (dataini != null || datafim != null)) {
+        document.getElementsByName('rdPeriodoDoc')[2].checked = true;
+
+        if (dataini != null)
+            document.getElementById('txtDataIni').value = dataini;
+
+        if (datafim != null)
+            document.getElementById('txtDataFim').value = datafim;
+
+        $("#divDataEntrega *").removeAttr('disabled');
+    }
+}
+
+function ConsultarCompanhiaAbertaCodigoCVM(codigoCVM) {
+    MostraAjax();
+
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/ConsultarCompanhiaAbertaCodigoCVM",
+        contentType: "application/json; charset=utf-8",
+        data: "{ codCVM:'" + codigoCVM + "' }",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            if (response.d != "") {
+                if (response.d.toUpperCase().indexOf("$&&$") > -1) {
+                    MensagemModal('Consulta Externa CVM', response.d.replace("$&&$", ""), "E");
+                    $("#divSplash").hide();
+                    return;
+                }
+                $("#cboEmpresa").autocomplete("search", response.d);
+
+                var menu = $("#cboEmpresa").autocomplete("widget");
+                $(menu[0].children[0]).click();
+                posicionaCategoriaCVM();
+            }
+            ListarDocumentos();
+        },
+        error: function (response) {
+            $("#divSplash").hide();
+            MensagemModal("Consulta Externa CVM", response.responseText, "E");
+        }
+    });
+}
+
+function ExibirMensagemVisualizarArquivo() {
+    MensagemModal('Consulta Externa CVM', 'A extensão do arquivo é diferente de PDF, portanto, para visualização do documento por favor realize o download do arquivo.', 'A');
+}
+
+function ConsultarCompanhiaAbertaCNPJ(cnpj) {
+    MostraAjax();
+
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/ConsultarCompanhiaAbertaCNPJ",
+        contentType: "application/json; charset=utf-8",
+        data: "{ cnpj:'" + cnpj + "' }",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            if (response.d != "") {
+                if (response.d.toUpperCase().indexOf("$&&$") > -1) {
+                    MensagemModal('Consulta Externa CVM', response.d.replace("$&&$", ""), "E");
+                    $("#divSplash").hide();
+                    return;
+                }
+                $("#cboEmpresa").autocomplete("search", response.d);
+
+                var menu = $("#cboEmpresa").autocomplete("widget");
+                $(menu[0].children[0]).click();
+                posicionaCategoriaCVM();
+            }
+            ListarDocumentos();
+        },
+        error: function (response) {
+            $("#divSplash").hide();
+            MensagemModal("Consulta Externa CVM", response.responseText, "E");
+        }
+    });
+}
+
+
+function atualizarComboEmpresa(retorno) {
+
+
+    $('#cboEmpresa').autocomplete({
+        source: eval(retorno),
+        multiselect: true
+    });
+
+    $("#cboEmpresa").off("autocompleteselect");
+    $(document).off("click");
+
+
+    $("#cboEmpresa").on("autocompleteselect", function (event, ui) {
+        event.preventDefault();
+        event.stopPropagation();
+        posicionaCategoriaCVM(ui.item.key);
+    });
+
+    $(document).on("click", "span.ui-icon.ui-icon-close", function () {
+        var target = $(this).closest('div');
+        if (target[0].id.startsWith('C_')) {
+            posicionaCategoriaCVM();
+        }
+    });
+
+    document.getElementById("retornoAutoComplete").value = "";
+
+    $(".ui-autocomplete-multiselect").css('width', '100%');
+
+    $.each($(".ui-autocomplete-multiselect-item"), function () {
+        $('#' + this.id).remove();
+    });
+
+    posicionaCategoriaCVM();
+
+    $("#divSplash").hide();
+}
+
+function preencheComboEmpresas(retorno) {
+
+    var qtde = $(".ui-autocomplete-multiselect-item").length;
+
+    if (qtde > 0) {
+        for (i = qtde - 1; i >= 0; i--) {
+            $(".ui-autocomplete-multiselect-item")[i].outerHTML = "";
+        }
+    }
+
+    if (retorno != "") {
+        if (retorno.toUpperCase().indexOf("$&&$") > -1) {
+            MensagemModal('Consulta Externa CVM', retorno.replace("$&&$", ""), "E");
+            retorno = "";
+        }
+    }
+
+    $('#cboEmpresa').autocomplete({
+        source: eval(retorno),
+        multiselect: true,
+    });
+
+    $("#cboEmpresa").off("autocompleteselect");
+    $(document).off("click");
+
+
+    $("#cboEmpresa").on("autocompleteselect", function (event, ui) {
+        event.preventDefault();
+        event.stopPropagation();
+        posicionaCategoriaCVM(ui.item.key);
+    });
+
+    $(document).on("click", "span.ui-icon.ui-icon-close", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        var target = $(this).closest('div');
+        if (target[0].id.startsWith('C_')) {
+            posicionaCategoriaCVM();
+        }
+    });
+
+    document.getElementById("retornoAutoComplete").value = "";
+
+    $(".ui-autocomplete-multiselect").css('width', '100%');
+
+
+}
+
+function PopulaComboEmpresasCargaInicial() {
+
+    preencheComboEmpresas(document.getElementById('hdnEmpresas').value);
+    if ($("#parametroCia").val() != "-1") {
+        posicionaParametroEmpresa();
+        ListarDocumentos();
+    }
+}
+
+
+
+function PopulaComboEmpresas() {
+    MostraAjax();
+    var tipoEmpresa = "0";
+
+    if (document.getElementsByName('rdTipoEmpresa')[2].checked == true)
+        tipoEmpresa = "1";
+
+    if (document.getElementsByName('rdTipoEmpresa')[1].checked == true)
+        tipoEmpresa = "2";
+
+
+
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/PopulaComboEmpresas",
+        contentType: "application/json; charset=utf-8",
+        data: "{ tipoEmpresa: '" + tipoEmpresa + "' }",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            $('#hdnEmpresas').val(response.d);
+            preencheComboEmpresas(response.d);
+            if ($("#parametroCia").val() != "-1") {
+                posicionaParametroEmpresa();
+                ListarDocumentos();
+            }
+        },
+        error: function (response) {
+            $("#divSplash").hide();
+            MensagemModal("Consulta Externa CVM", response.responseText, "E");
+        }
+    });
+}
+
+$(function () {
+    $("#txtDataReferencia").datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+
+    $("#txtDataIni").datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+
+    $("#txtDataFim").datepicker({
+        changeMonth: true,
+        changeYear: true
+    });
+
+
+    $("#txtHoraIni").mask("99:99");
+    $("#txtHoraFim").mask("99:99");
+
+    $("#filtrosPesquisa").click(function () {
+
+        //if ($("#divPesquisa")[0].style.display == "block") {
+        //    runEffect("hide", "#divPesquisa", "Blind");
+        //}
+        //else {
+        //    runEffect("show", "#divPesquisa", "Blind");
+        //}
+
+        if ($("#textoDivPesquisa").text().indexOf("Exibir") > -1) {
+            $('#textoDivPesquisa').text('Ocultar Filtros de Pesquisa');
+        } else {
+            $("#textoDivPesquisa").text('Exibir Filtros de Pesquisa');
+        }
+
+    });
+
+    $("#chkDocumentoITR").click(function () {
+        if (!$("#chkDocumentoITR").is(":checked")) {
+            $("#chkDocumentoTodos").prop("checked", false);
+        }
+    });
+
+    $("#chkDocumentoDFP").click(function () {
+        if (!$("#chkDocumentoDFP").is(":checked")) {
+            $("#chkDocumentoTodos").prop("checked", false);
+        }
+    });
+
+    $("#chkDocumentoSEC").click(function () {
+        if (!$("#chkDocumentoSEC").is(":checked")) {
+            $("#chkDocumentoTodos").prop("checked", false);
+        }
+    });
+
+    $("#chkDocumentoFRE").click(function () {
+        if (!$("#chkDocumentoFRE").is(":checked")) {
+            $("#chkDocumentoTodos").prop("checked", false);
+        }
+    });
+
+    $("#chkCodigoGovernanca").click(function () {
+        if (!$("#chkCodigoGovernanca").is(":checked")) {
+            $("#chkDocumentoTodos").prop("checked", false);
+        }
+    });
+
+    $("#chkDocumentoTodos").click(function () {
+
+        document.getElementById("chkDocumentoIPE").checked = document.getElementById("chkDocumentoTodos").checked;
+        if (document.getElementById("chkDocumentoIPE").checked) {
+            runEffect("show", "#divParametrosIPE", "Scale");
+        }
+        else {
+            runEffect("hide", "#divParametrosIPE", "Scale");
+        }
+        document.getElementById("chkDocumentoITR").checked = document.getElementById("chkDocumentoTodos").checked;
+        document.getElementById("chkDocumentoDFP").checked = document.getElementById("chkDocumentoTodos").checked;
+        document.getElementById("chkDocumentoSEC").checked = document.getElementById("chkDocumentoTodos").checked;
+        document.getElementById("chkDocumentoFRE").checked = document.getElementById("chkDocumentoTodos").checked;
+        document.getElementById("chkDocumentoFCA").checked = document.getElementById("chkDocumentoTodos").checked;
+        document.getElementById("chkCodigoGovernanca").checked = document.getElementById("chkDocumentoTodos").checked;
+    });
+
+    $("#chkDocumentoFCA").click(function () {
+        if (!$("#chkDocumentoFCA").is(":checked")) {
+            $("#chkDocumentoTodos").prop("checked", false);
+        }
+    });
+
+    //$("#cboEmpresa").focusout(function () {
+
+    //    desabilitaTipo();
+    //    desabilitaEspecie();
+    //    posicionaCategoriaCVM();
+    //})
+
+
+
+    $("#rdPeriodo").click(function () {
+        $("#divDataEntrega *").removeAttr('disabled');
+    });
+    $("#rdSemana").click(function () {
+        $("#divDataEntrega *").attr("disabled", "disabled").off('click');
+    });
+    $("#rdDia").click(function () {
+        $("#divDataEntrega *").attr("disabled", "disabled").off('click');
+    });
+    $("#rdGeral").click(function () {
+        $("#divDataEntrega *").attr("disabled", "disabled").off('click');
+    });
+    $("#cboCategoria").sort();
+});
+
+function posicionaCategoriaCVM(codigoCvm = "") {
+    MostraAjax();
+
+    document.getElementById('lblMensagemEmpresaNaoLocalizada').innerHTML = '';
+
+    if (codigoCvm.split("_").length > 1) {
+        codigoCvm = codigoCvm.split("_")[1];
+    }
+
+    var rptCategoria = $("#cboCategoria");
+    rptCategoria.empty();
+    rptCategoria.append($("<option></option>").text("TODAS").val("-1"));
+
+    var codCVM = '';
+    var varTemp = document.getElementById("retornoAutoComplete").value.split(",");
+
+    for (i = 0; i < varTemp.length; i++) {
+
+        if (varTemp[i].startsWith('C_')) {
+            codCVM = codCVM + ',' + varTemp[i].split("_")[1];
+        }
+
+    }
+
+
+    if (codCVM.substring(0, 1) == ',')
+        codCVM = codCVM.substring(1);
+
+    if (codCVM == "" && codigoCvm != "") {
+        codCVM = codigoCvm;
+    } else if ((codigoCvm + codCVM).length > 6) {
+        codCVM = "";
+    }
+
+    var dataValue = "{ empresa: '" + codCVM + "'}";
+
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/PopularComboCategoria",
+        data: dataValue,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            if (response.d != null) {
+                $.each(response.d, function (idx, opt) {
+
+                    rptCategoria.append($("<option></option>").text(opt.DescricaoCategoria).val(opt.CodigoCategoria));
+                    _hasReg = true;
+                });
+                rptCategoria.sort();
+                $('#cboCategoria').trigger("chosen:updated");
+
+            } else {
+                MensagemModal("Consulta Externa CVM", erroPadrao, "E");
+            }
+            $("#divSplash").hide();
+        },
+        error: function (response) {
+            $("#divSplash").hide();
+            MensagemModal("Consulta Externa CVM", response.responseText, "E");
+        }
+    });
+}
+
+function desabilitaTipo() {
+    var rptTipo = $("#cboTipo");
+    rptTipo.empty();
+    rptTipo.append($("<option></option>").text("TODOS").val("-1"));
+    $("#cboTipo").prop('disabled', true);
+    $('#cboTipo').trigger("chosen:updated");
+}
+
+function desabilitaEspecie() {
+    var rptEspecie = $("#cboEspecie");
+    rptEspecie.empty();
+    rptEspecie.append($("<option></option>").text("TODOS").val("-1"));
+    $("#cboEspecie").prop('disabled', true);
+    $('#cboEspecie').trigger("chosen:updated");
+}
+
+function posicionaTipo() {
+    MostraAjax();
+
+    var codCategoria = document.getElementById("cboCategoria").value;
+
+    var rptTipo = $("#cboTipo");
+    rptTipo.empty();
+    rptTipo.append($("<option></option>").text("TODOS").val("-1"));
+
+    var dataValue = "{ categoria: '" + codCategoria + "'}";
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/PopularComboTipo",
+        data: dataValue,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            var _hasReg = false;
+
+            if (response.d != null) {
+                $.each(response.d, function (idx, opt) {
+
+                    rptTipo.append($("<option></option>").text(opt.DescricaoOpcaoDominio).val(opt.Dominio.CodigoOpcao));
+                    _hasReg = true;
+                });
+
+                if (_hasReg) {
+                    $("#cboTipo").prop('disabled', false);
+                    $('#cboTipo').trigger("chosen:updated");
+                } else {
+                    desabilitaTipo();
+                    $('#cboTipo').trigger("chosen:updated");
+                }
+
+                rptTipo.sort();
+            } else {
+                MensagemModal("Consulta Externa CVM", erroPadrao, "E");
+            }
+            $("#divSplash").hide();
+        },
+        error: function (response) {
+            $("#divSplash").hide();
+            MensagemModal("Consulta Externa CVM", response.responseText, "E");
+        }
+    });
+
+
+}
+
+function posicionaEspecie() {
+    MostraAjax();
+
+    var rptEspecie = $("#cboEspecie");
+    rptEspecie.empty();
+    rptEspecie.append($("<option></option>").text("TODOS").val("-1"));
+
+    var codEmpresa = document.getElementById("cboEmpresa").value;
+
+    var codCategoria = document.getElementById("cboCategoria").value;
+    var codTipo = document.getElementById("cboTipo").value;
+
+    var dataValue = "{ empresa: '" + codEmpresa + "', categoria: '" + codCategoria + "', tipo: '" + codTipo + "'}";
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/PopularComboEspecie",
+        data: dataValue,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            var _hasReg = false;
+            if (response.d != null) {
+                $.each(response.d, function (idx, opt) {
+                    rptEspecie.append($("<option></option>").text(opt.DescricaoOpcaoDominio).val(opt.Dominio.CodigoOpcao));
+                    _hasReg = true;
+                });
+
+                if (_hasReg) {
+                    $("#cboEspecie").prop('disabled', false);
+                    $('#cboEspecie').trigger("chosen:updated");
+
+                } else {
+                    desabilitaEspecie();
+                    $('#cboEspecie').trigger("chosen:updated");
+                }
+
+                rptEspecie.sort();
+            } else {
+                MensagemModal("Consulta Externa CVM", erroPadrao, "E");
+            }
+
+            $("#divSplash").hide();
+        },
+        error: function (response) {
+            $("#divSplash").hide();
+            MensagemModal("Consulta Externa CVM", response.responseText, "E");
+        }
+    });
+
+}
+function runEffect(effect, control, type) {
+    if (effect == "show") {
+        $(control).show(type);
+    }
+    else {
+        $(control).hide(type);
+    }
+}
+
+function formatTime(controle) {
+
+    time = document.getElementById(controle).value;
+    if (time != "__:__" & time != "") {
+        var result = false, m;
+        var re = /^\s*([01]?\d|2[0-3]):?([0-5]\d)\s*$/;
+        if ((m = time.match(re))) {
+            result = (m[1].length === 2 ? "" : "0") + m[1] + ":" + m[2];
+        }
+        if (result == false) {
+            MensagemModal("Consulta Externa CVM", "A hora informada é inválida, favor seguir o padrão de (00:00 até 23:59)", "A");
+            document.getElementById(controle).value = "";
+        }
+    }
+}
+
+function MostraAjax() {
+    var tamanhomodal = window.innerHeight + $(document).scrollTop();
+    $("#divSplash").show();
+    $("#divSplash").css({
+        position: "absolute",
+        width: "100%",
+        height: tamanhomodal,
+        left: 0,
+        top: 0,
+        zIndex: 1000000,
+        background: "#666666 url(jquery/ui/images/ui-bg_diagonals-thick_20_666666_40x40.png) repeat ",
+        opacity: .5
+    }).appendTo($(".container").css("position", "relative"));
+}
+
+function RetornaCondicaoCaptchaV2() {
+
+    var encontrado = false;
+    for (var i = 0; i < document.getElementsByName('rdPeriodoDoc').length; i++) {
+        if (document.getElementsByName('rdPeriodoDoc')[i].checked) {
+            codPeriodo = document.getElementsByName('rdPeriodoDoc')[i].value;
+            encontrado = true;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        document.getElementsByName('rdPeriodoDoc')[0].checked = true;
+        codPeriodo = "0";
+    }
+
+    var dataIni = document.getElementById("txtDataIni").value;
+    var dataFim = document.getElementById("txtDataFim").value;
+    var horaIni = document.getElementById("txtHoraIni").value;
+    var horaFim = document.getElementById("txtHoraFim").value;
+
+    var varTemp = document.getElementById("retornoAutoComplete").value.split(",");
+
+    var codCvm = '';
+    var palavraChave = '';
+
+    for (i = 0; i < varTemp.length; i++) {
+
+        if (varTemp[i].startsWith('C_')) {
+            codCvm = codCvm + ',' + varTemp[i].split("_")[1];
+        }
+
+        if (varTemp[i].startsWith('P_')) {
+            palavraChave = palavraChave + ',' + varTemp[i].split("_")[1];
+        }
+    }
+
+
+    var dataRef = document.getElementById("txtDataReferencia").value;
+
+
+    var lstDocumentos = $('#cboDocumentos').select2('data');
+
+    var documento = '';
+
+    incluiCategoria = false;
+
+    for (c = 0; c < lstDocumentos.length; c++) {
+
+        if (documento === '') {
+            documento = lstDocumentos[c].id;
+        }
+        else {
+
+            documento = documento + ',' + lstDocumentos[c].id;
+
+        }
+
+        if (lstDocumentos[c].id == 'EST_2') {
+
+            documento = documento + ',EST_8,EST_9';
+
+        }
+
+    }
+
+
+    var codPeriodo;
+
+    var setorAtividade = RetornarCondicaoSetorAtividade();
+    var categoriaEmissor = RetornarCondicaoCategoriaEmissor();
+    var situacaoEmissor = RetornarCondicaoSituacaoEmissor();
+    var tipoParticipante = RetornarCondicaoTipoParticipante();
+
+
+    var ultimaDtRef = document.getElementById("chkUltimaData").checked;
+
+    if (ultimaDtRef == true && (codCvm == "" || !validaPeriodoEmAnos(2))) {
+        $("#divSplash").hide();
+        MensagemModal("Consulta Externa CVM", "Por favor, ao marcar última data de referência selecionar uma empresa e um período com um intervalo de 2 anos.", "A");
+        return;
+    }
+
+    if (codPeriodo == 2) {
+        if ((dataIni == "" && dataFim == "") &&
+            (ultimaDtRef == false && dataRef == "") &&
+            codCvm == "") {
+            $("#divSplash").hide();
+            MensagemModal("Consulta Externa CVM", "Por favor, informe o período de consulta.", "A");
+            return;
+        }
+    }
+
+    var tipoEmpresa = "0";
+    if (document.getElementsByName('rdTipoEmpresa')[2].checked == true)
+        tipoEmpresa = "1";
+    if (document.getElementsByName('rdTipoEmpresa')[1].checked == true)
+        tipoEmpresa = "2";
+
+    var dataValue = '';
+
+    dataValue = "{ dataDe: '" + dataIni + "', dataAte: '" + dataFim + "' , empresa: '" + codCvm + "', setorAtividade: '" + setorAtividade + "', categoriaEmissor: '" + categoriaEmissor + "', situacaoEmissor: '" + situacaoEmissor + "', tipoParticipante: '" + tipoParticipante + "', dataReferencia: '" +
+        dataRef + "', categoria: '" + documento + "', periodo: '" + codPeriodo + "', horaIni: '" + horaIni + "', horaFim: '" + horaFim + "', palavraChave:'" + palavraChave + "',ultimaDtRef:'" + ultimaDtRef + "', tipoEmpresa:'" + tipoEmpresa + "'";
+
+    return dataValue;
+
+}
+
+function ListarDocumentos(event) {
+    MostraAjax();
+
+    if (event != undefined) {
+        document.getElementById('lblMensagemEmpresaNaoLocalizada').innerHTML = '';
+    }
+
+    var encontrado = false;
+    for (var i = 0; i < document.getElementsByName('rdPeriodoDoc').length; i++) {
+        if (document.getElementsByName('rdPeriodoDoc')[i].checked) {
+            codPeriodo = document.getElementsByName('rdPeriodoDoc')[i].value;
+            encontrado = true;
+            break;
+        }
+    }
+
+    if (!encontrado) {
+        document.getElementsByName('rdPeriodoDoc')[0].checked = true;
+        codPeriodo = "0";
+    }
+
+    var dataIni = document.getElementById("txtDataIni").value;
+    var dataFim = document.getElementById("txtDataFim").value;
+    var horaIni = document.getElementById("txtHoraIni").value;
+    var horaFim = document.getElementById("txtHoraFim").value;
+
+    var varTemp = document.getElementById("retornoAutoComplete").value.split(",");
+
+    var codCvm = '';
+    var palavraChave = '';
+
+    for (i = 0; i < varTemp.length; i++) {
+
+        if (varTemp[i].startsWith('C_')) {
+            codCvm = codCvm + ',' + varTemp[i].split("_")[1];
+        }
+
+        if (varTemp[i].startsWith('P_')) {
+            palavraChave = palavraChave + ',' + varTemp[i].split("_")[1];
+        }
+    }
+
+
+    var dataRef = document.getElementById("txtDataReferencia").value;
+
+
+    var lstDocumentos = $('#cboDocumentos').select2('data');
+
+    var documento = '';
+
+    incluiCategoria = false;
+
+    for (c = 0; c < lstDocumentos.length; c++) {
+
+        if (documento === '') {
+            documento = lstDocumentos[c].id;
+        }
+        else {
+
+            documento = documento + ',' + lstDocumentos[c].id;
+
+        }
+
+        if (lstDocumentos[c].id == 'EST_2') {
+
+            documento = documento + ',EST_8,EST_9';
+
+        }
+
+    }
+
+
+    var codPeriodo;
+
+    var setorAtividade = RetornarCondicaoSetorAtividade();
+    var categoriaEmissor = RetornarCondicaoCategoriaEmissor();
+    var situacaoEmissor = RetornarCondicaoSituacaoEmissor();
+    var tipoParticipante = RetornarCondicaoTipoParticipante();
+
+
+    var ultimaDtRef = document.getElementById("chkUltimaData").checked;
+
+    if (ultimaDtRef == true && (codCvm == "" || !validaPeriodoEmAnos(2))) {
+        $("#divSplash").hide();
+        MensagemModal("Consulta Externa CVM", "Por favor, ao marcar última data de referência selecionar uma empresa e um período com um intervalo de 2 anos.", "A");
+        return;
+    }
+
+    if (codPeriodo == 2) {
+        if ((dataIni == "" && dataFim == "") &&
+            (ultimaDtRef == false && dataRef == "") &&
+            codCvm == "") {
+            $("#divSplash").hide();
+            MensagemModal("Consulta Externa CVM", "Por favor, informe o período de consulta.", "A");
+            return;
+        }
+    }
+
+    var tipoEmpresa = "0";
+    if (document.getElementsByName('rdTipoEmpresa')[2].checked == true)
+        tipoEmpresa = "1";
+    if (document.getElementsByName('rdTipoEmpresa')[1].checked == true)
+        tipoEmpresa = "2";
+
+    var dataValue = '';
+
+    if (document.getElementById('hdnHabilitaCaptcha').value == 'S') {
+
+        try {
+
+            grecaptcha.ready(function () {
+
+                try {
+
+                    grecaptcha.execute(document.getElementById('hdnChaveSiteV3').value, { action: 'submit' }).then(function (token) {
+                        dataValue = "{ dataDe: '" + dataIni + "', dataAte: '" + dataFim + "' , empresa: '" + codCvm + "', setorAtividade: '" + setorAtividade + "', categoriaEmissor: '" + categoriaEmissor + "', situacaoEmissor: '" + situacaoEmissor + "', tipoParticipante: '" + tipoParticipante + "', dataReferencia: '" +
+                            dataRef + "', categoria: '" + documento + "', periodo: '" + codPeriodo + "', horaIni: '" + horaIni + "', horaFim: '" + horaFim + "', palavraChave:'" + palavraChave + "',ultimaDtRef:'" + ultimaDtRef + "', tipoEmpresa:'" + tipoEmpresa + "', token: '" + token + "', versaoCaptcha: 'V3'}";
+                        $.ajax({
+                            type: "POST",
+                            url: "frmConsultaExternaCVM.aspx/ListarDocumentos",
+                            data: dataValue,
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            async: "true",
+                            cache: "false",
+                            success: function (response) {
+
+                                if (response.d.SolicitarCaptcha == 'S') {
+
+                                    $("#divSplash").hide();
+
+                                    dataValue = "{ dataDe: '" + dataIni + "', dataAte: '" + dataFim + "' , empresa: '" + codCvm + "', setorAtividade: '" + setorAtividade + "', categoriaEmissor: '" + categoriaEmissor + "', situacaoEmissor: '" + situacaoEmissor + "', tipoParticipante: '" + tipoParticipante + "', dataReferencia: '" +
+                                        dataRef + "', categoria: '" + documento + "', periodo: '" + codPeriodo + "', horaIni: '" + horaIni + "', horaFim: '" + horaFim + "', palavraChave:'" + palavraChave + "',ultimaDtRef:'" + ultimaDtRef + "', tipoEmpresa:'" + tipoEmpresa + "'";
+
+                                    document.getElementById('hdnDataValue').value = dataValue;
+                                    try {
+
+                                        var validaCaptchaV2 = function (response) {
+                                            MostraAjax();
+                                            try {
+                                                grecaptcha.reset();
+                                            }
+                                            catch (rs) { }
+                                            ListarDocumentosCaptchaV2(response);
+                                        };
+
+                                        $('#btnConsulta').attr('disabled', 'disabled');
+                                        $('#divCaptchaV2').css('display', 'block');
+
+                                        try {
+                                            grecaptcha.render('ConsExternaV2', {
+                                                'sitekey': document.getElementById('hdnChaveSiteV2').value,
+                                                'callback': validaCaptchaV2,
+                                                'theme': 'dark'
+                                            });
+                                        }
+                                        catch (rs) { }
+                                    }
+                                    catch (xs) {
+                                        MensagemModal("Consulta Externa CVM", xs.message, "E");
+                                    }
+
+                                    return;
+                                }
+
+                                processarRetornoListagemDocumentos(response.d);
+                            },
+                            error: function (response) {
+                                $("#divSplash").hide();
+                                MensagemModal("Consulta Externa CVM", response.responseText, "E");
+                            }
+                        });
+
+                    });
+                }
+                catch (e1) {
+                    MensagemModal("Consulta Externa CVM", e1.message, "E");
+                }
+            });
+
+        }
+        catch (ec) {
+            MensagemModal("Consulta Externa CVM", ec.message, "E");
+            return;
+        }
+
+
+    }
+    else {
+
+        dataValue = "{ dataDe: '" + dataIni + "', dataAte: '" + dataFim + "' , empresa: '" + codCvm + "', setorAtividade: '" + setorAtividade + "', categoriaEmissor: '" + categoriaEmissor + "', situacaoEmissor: '" + situacaoEmissor + "', tipoParticipante: '" + tipoParticipante + "', dataReferencia: '" +
+            dataRef + "', categoria: '" + documento + "', periodo: '" + codPeriodo + "', horaIni: '" + horaIni + "', horaFim: '" + horaFim + "', palavraChave:'" + palavraChave + "',ultimaDtRef:'" + ultimaDtRef + "', tipoEmpresa:'" + tipoEmpresa + "', token: '', versaoCaptcha: ''}";
+
+        $.ajax({
+            type: "POST",
+            url: "frmConsultaExternaCVM.aspx/ListarDocumentos",
+            data: dataValue,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: "true",
+            cache: "false",
+            success: function (response) {
+                var retorno = response.d;
+
+                processarRetornoListagemDocumentos(retorno);
+
+            },
+            error: function (response) {
+                $("#divSplash").hide();
+                MensagemModal("Consulta Externa CVM", response.responseText, "E");
+            }
+        });
+    }
+}
+
+function ListarDocumentosCaptchaV2(response) {
+
+    $('#btnConsulta').removeAttr('disabled');
+    $('#divCaptchaV2').css('display', 'none');
+
+    var dataValue = document.getElementById('hdnDataValue').value + ", token: '" + response + "', versaoCaptcha: 'V2'}";
+
+    $.ajax({
+        type: "POST",
+        url: "frmConsultaExternaCVM.aspx/ListarDocumentos",
+        data: dataValue,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: "true",
+        cache: "false",
+        success: function (response) {
+            var retorno = response.d;
+            processarRetornoListagemDocumentos(retorno);
+        },
+        error: function (response) {
+            $("#divSplash").hide();
+            MensagemModal("Consulta Externa CVM", response.responseText, "E");
+        }
+    });
+
+}
+
+function processarRetornoListagemDocumentos(retorno) {
+    if (retorno.temErro) {
+        $("#divSplash").hide();
+        MensagemModal("Consulta Externa CVM", retorno.msgErro, "E");
+        return;
+    }
+    else {
+        PopulaGrid(retorno.dados);
+
+        $("#divSetaPesquisa").css("display", "block");
+        $("#divSplash").hide();
+    }
+
+    //runEffect("hide", "#divPesquisa", "Blind");
+    if ($("#divPesquisa").accordion("option", "active") === 0 && $("#primeiraConsulta").val() != "1") {
+        $("#filtrosPesquisa").click();
+    }
+    $("#primeiraConsulta").val("0");
+
+}
+
+function validaPeriodoEmAnos(anos) {
+    var dataIni = document.getElementById("txtDataIni").value;
+    var dataFim = document.getElementById("txtDataFim").value;
+    var horaIni = document.getElementById("txtHoraIni").value;
+    var horaFim = document.getElementById("txtHoraFim").value;
+    var anosMili = 31536000000 * anos;
+
+    if (dataIni == "" && dataFim == "") {
+        return false;
+    }
+
+    if (dataFim == "") {
+        var dataAtual = new Date();
+
+        if (dataAtual != "") {
+            dataAtual = dataAtual.getDate() + "/" + (dataAtual.getMonth() + 1) + "/" + dataAtual.getFullYear();
+            dataFim = dataAtual;
+        }
+    }
+
+    if (comparaDatas(dataIni, horaIni, dataFim, horaFim)) {
+
+        var d1 = converteStringToDate(dataIni, horaIni);
+        var d2 = converteStringToDate(dataFim, horaFim);
+        var timeDiff = Math.abs(d2.getTime() - d1.getTime());
+        //var diffYears = timeDiff / 31536000000;// 31536000000 = 1 ano em milisegundos
+
+        if (timeDiff <= anosMili) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function PopulaGrid(dados) {
+    var t = $('#grdDocumentos').DataTable();
+
+    t.clear().draw();
+    var linhas = dados.split('&*');
+
+    for (i = 0; i <= linhas.length; i++) {
+
+        if (linhas[i] != "") {
+            var linha = linhas[i].split('$&');
+
+            t.row.add(linha);
+        }
+        else {
+            break;
+        }
+    }
+
+    t.draw();
+}
+
+function AbrirModalProtocolo(codigoTipoDocumento, numeroSequencialDocto) {
+    $(function () {
+        $("#divProtocolo").dialog({
+            autoOpen: false,
+            modal: true,
+            height: 605,
+            width: 655,
+            appendTo: "form",
+            title: "Protocolo",
+            open: function () {
+                CarregaDadosIniciaisProtocolos(codigoTipoDocumento, numeroSequencialDocto, "1", "1");
+            },
+            show: {
+                effect: "blind"
+            },
+            hide: {
+                effect: "explode"
+            }
+        });
+    });
+
+    $("#divProtocolo").dialog("open");
+}
+
+function mostraLocaisPublicacao(objetoAlvo, textoPublicacao) {
+
+    var htmlPub;
+    htmlPub = '<table><thead>';
+    htmlPub = htmlPub + '<th class="tituloLocalPublicacao"><strong>Publicação</strong></th><th class="tituloLocalPublicacao"><strong>Data</strong></th><th class="tituloLocalPublicacao"><strong>UF</strong></th>';
+    htmlPub = htmlPub + '</thead><tbody>';
+
+    var publicacoes = textoPublicacao.split('#$#');
+
+    for (var c = 0; c < publicacoes.length; c++) {
+
+        conteudoLinha = publicacoes[c].split('@!@');
+
+        htmlPub = htmlPub + '<tr class="linhaLocalPublicacao"><td>' + conteudoLinha[2] + '</td><td>' + conteudoLinha[1] + '</td><td>' + conteudoLinha[3] + '</td></tr>';
+    }
+
+    htmlPub = htmlPub + '</tbody></table>';
+
+    document.getElementById('modalLocalPublicacao').innerHTML = htmlPub;
+
+
+
+    var posicao = $('#' + objetoAlvo).offset();
+
+    var top = posicao.top + 20;
+    var left = posicao.left - 360;
+
+    var fimJanela = $(document).height();
+
+    $("body").append("<div id='dialog-message' style='width: 400px; text-align: center; top: " + top + "px; left: " + left + "px; background-color: #ffffff; border-width: thin; border-radius: 10px; border-style: solid; position: absolute; padding-bottom: 10px; overflow: auto'> " + htmlPub + "</div>");
+
+
+    posicao = $('#dialog-message').offset();
+    var fimDiv = posicao.top + $('#dialog-message').height() + 20;
+
+    if (fimDiv > fimJanela) {
+
+        $('#dialog-message').css('top', posicao.top - 35 - $('#dialog-message').height() + 'px');
+
+    }
+
+}
+
+function ocultaLocaisPublicacao(objetoAlvo) {
+    $("#dialog-message").remove();
+}
+
+function OpenPopUpVer(url, nome, parametros) {
+    var wOpen = window.open('', '_blank', 'width=1024 ,height=700, top=0, left=0, location=no, status=no, resizable=yes, scrollbars=no ');
+    wOpen.location = url;
+    wOpen.focus();
+    wOpen.resizeTo(screen.availWidth, screen.availHeight);
+}
+
+function OpenDownloadDocumentos(numSequencia, numVersao, numProtocolo, descTipo) {
+    var url = "frmDownloadDocumento.aspx?Tela=ext&numSequencia=" + numSequencia + "&numVersao=" + numVersao + "&numProtocolo=" + numProtocolo + "&descTipo=" + descTipo + "&CodigoInstituicao=1";
+    window.open(url, "_self");
+}
+
+
+function DesabilitarUltimaReferencia(campo) {
+    document.getElementById("chkUltimaData").checked = false;
+
+    if (campo.value != "")
+        document.getElementById("chkUltimaData").disabled = true;
+    else
+        document.getElementById("chkUltimaData").disabled = false;
+}
+
+function DesabilitarDataReferencia(campo) {
+
+    document.getElementById("txtDataReferencia").value = "";
+    var $radioPeriodo = $('input:radio[name=rdPeriodoDoc]').filter('[value=2]');
+    if ($radioPeriodo.is(':checked') === false) {
+        $radioPeriodo.prop('checked', true);
+        $("#divDataEntrega *").removeAttr('disabled');
+    }
+
+    if (campo.checked) {
+        document.getElementById("txtDataReferencia").disabled = true;
+        $('input:radio[name=rdPeriodoDoc]').prop('disabled', true);
+    }
+    else {
+        document.getElementById("txtDataReferencia").disabled = false;
+        $('input:radio[name=rdPeriodoDoc]').prop('disabled', false);
+    }
+}
+
+function ExportarGovernanca(NumeroSequencialDocumento) {
+    var dataValue = "{ NumeroSequencialDocumento : '" + NumeroSequencialDocumento + "'}";
+
+    $.ajax({
+        type: "POST",
+        url: "frmGerenciadorDocumento.aspx/ExportarGovernanca",
+        data: dataValue,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (response) {
+            var nomeArquivo = "InformeCodigoGovernanca" + NumeroSequencialDocumento + ".csv";
+
+            if (response.d != "") {
+                if (response.d.toUpperCase().indexOf("$&&$") > -1) {
+                    MensagemModal('Consulta Externa CVM', response.d.replace("$&&$", ""), "E");
+                    return;
+                }
+            }
+            var conteudo = response.d;
+            var ua = window.navigator.userAgent;
+            var msie = ua.indexOf("MSIE ");
+
+            if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+                var blob = new Blob([conteudo], { type: "text/csv;charset=UTF-8;" });
+                navigator.msSaveBlob(blob, nomeArquivo)
+            }
+            else {
+                var blob = new Blob([conteudo], { type: "text/csv;charset=UTF-8;" });
+                saveAs(blob, nomeArquivo);
+            }
+        },
+        error: function (response) {
+            MensagemModal("Informe do Código de Governança", response.responseText, "E");
+        }
+    });
+}

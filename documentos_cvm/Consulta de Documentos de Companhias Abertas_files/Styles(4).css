@@ -1,0 +1,241 @@
+/* r.a.d.tabstrip Bovespa skin */
+
+.RadTabStrip_CVM
+{
+	font: normal normal normal 10px Verdana;
+	text-align: center;
+	background:#fff url('img/LapAreaFundo.gif') no-repeat top center;
+}
+
+.RadTabStrip_CVM ul
+{
+	padding:0;
+}
+.RadTabStrip_CVM li
+{
+	position:relative;
+	margin-right:7px;
+}
+
+.RadTabStrip_CVM li a
+{
+	padding-left:6px;
+	color:#000000;
+	line-height: 19px;
+	text-decoration: none;
+	background:transparent url('img/LapSisLatEsq.gif') no-repeat 0 0;
+}
+
+.RadTabStrip_CVM li a .wrap
+{
+	padding-right: 8px;
+	line-height: 19px;
+	background:transparent url('img/LapSisLatDir.gif') no-repeat right 0;
+}
+
+.RadTabStrip_CVM li a .innerWrap
+{
+	line-height: 19px;
+	background:transparent url('img/LapSisFundo.gif') repeat-x 0 0;
+	text-align: center;
+	padding:0px 5px 0 5px;
+}
+
+.RadTabStrip_CVM li a.selected
+{
+	padding-left:6px;
+	color:#cc0000;
+	line-height: 19px;
+	text-decoration: none;
+	background:transparent url('img/LapSisLatEsqSel.gif') no-repeat 0 0;
+}
+
+.RadTabStrip_CVM li a.selected .wrap
+{
+	background:transparent url('img/LapSisLatDirSel.gif') no-repeat right 0;
+}
+
+
+.RadTabStrip_CVM li a.selected .innerWrap
+{
+	background:transparent url('img/LapSisFundoSel.gif') repeat-x 0 0;
+}
+
+/* arrows */
+.RadTabStrip_CVM .rightArrow, 
+.RadTabStrip_CVM .leftArrow,
+.RadTabStrip_CVM .rightArrowDisabled, 
+.RadTabStrip_CVM .leftArrowDisabled
+{
+	width:17px;
+	height: 22px;
+	text-indent: -10000px;
+	background-position: left 3px;
+	background-repeat: no-repeat;
+	background-color: White;
+}
+
+.RadTabStrip_CVM .leftArrow
+{
+	background-image: url(img/ScrollLeft.png);
+}
+
+.RadTabStrip_CVM .rightArrow
+{
+	background-image: url(img/ScrollRight.png);
+}
+
+/* Disabled Arrows */
+
+.RadTabStrip_CVM .rightArrowDisabled, 
+.RadTabStrip_CVM .leftArrowDisabled
+{
+	cursor: default;
+}
+
+.RadTabStrip_CVM .leftArrowDisabled
+{
+	background-image: url(img/ScrollLeftDisabled.png);
+}
+
+.RadTabStrip_CVM .rightArrowDisabled
+{
+	background-image: url(img/ScrollRightDisabled.png);
+}
+
+/* Disabled tab */
+
+.RadTabStrip_CVM li a.disabled,
+.RadTabStrip_CVM li a.disabled:hover
+{
+	color: gray;
+}
+
+
+
+/* SiteBmfBovespa */
+
+
+
+.RadTabStrip_SiteBmfBovespa {
+/*	_width:96%;*/
+	font:normal normal bold 12px "Trebuchet MS", Sans-serif;
+	color:#fefefe;
+	text-align: center;
+	background:#ffffff;
+	background:#cccfd1 url("imgSiteBmfBovespa/tabFundo.gif") repeat-x center top;
+/*	clear:right;
+	position: relative;
+	z-index:0;*/
+
+}
+.RadTabStrip_SiteBmfBovespa .level1 ul {
+	padding:4px 0px 0;
+
+}
+.RadTabStrip_SiteBmfBovespa .level1 ul li {
+
+
+}
+
+.RadTabStrip_SiteBmfBovespa .level1 ul li a {
+	font:normal normal bold 12px "Trebuchet MS", Sans-serif;
+	color:#fff;
+	
+}
+.RadTabStrip_SiteBmfBovespa .level1 ul li a:hover {
+	text-decoration:underline;
+}
+
+.RadTabStrip_SiteBmfBovespa .level1 ul li a .wrap {
+	padding:0 0 0 12px;
+}
+
+.RadTabStrip_SiteBmfBovespa .level1 ul li a .wrap .innerWrap {
+	padding:0 12px 3px 0;
+	line-height:28px;
+	position: relative;
+	z-index: 2;
+
+}
+.RadTabStrip_SiteBmfBovespa .level1 ul li a .wrap .innerWrap span {
+	line-height:14px !important;
+	display: block;
+}
+
+.RadTabStrip_SiteBmfBovespa .level1 ul li a .wrap .innerWrap span span {
+	font-size: 9px;
+	font-weight:normal;
+	display: block;
+	line-height:14px !important;	
+}
+.RadTabStrip_SiteBmfBovespa .level1 ul li a .wrap .innerWrap span span img {
+	margin-top: 3px;
+}
+
+
+.RadTabStrip_SiteBmfBovespa span:hover { text-decoration:underline !important}
+
+
+/* SELECIONADO */
+.RadTabStrip_SiteBmfBovespa .level1 ul li a.selected {
+	color:#585a5b;
+	background:#fff;
+}
+
+.RadTabStrip_SiteBmfBovespa .level1 ul li a.selected .wrap {
+	background:#fff url("imgSiteBmfBovespa/tabLeftOn.gif") no-repeat left bottom;
+}
+
+.RadTabStrip_SiteBmfBovespa .level1 ul li a.selected .wrap .innerWrap {
+	background:#fff url("imgSiteBmfBovespa/tabRightOn.gif") no-repeat right bottom;
+}
+
+/* 2o Nivel */
+.RadTabStrip_SiteBmfBovespa .level2 {
+	padding:10px 0px 10px 0px;
+	border-bottom:solid 1px #c7c8bd;
+	background-color:#fff;
+}
+
+.RadTabStrip_SiteBmfBovespa .level2 ul {
+}
+.RadTabStrip_SiteBmfBovespa .level2 ul li {
+	border-right:solid 1px #585a5b;
+	margin: 5px 0px 10px 0px;
+}
+.RadTabStrip_SiteBmfBovespa .level2 ul li.last {
+	border-right:none;
+}
+
+.RadTabStrip_SiteBmfBovespa .level2 ul li a {
+	font:normal normal normal 11px/11px "Trebuchet MS", Sans-serif;
+	color:#4e79a0;
+	*line-height:13px;
+}
+
+.RadTabStrip_SiteBmfBovespa .level2 ul li a:hover,
+.RadTabStrip_SiteBmfBovespa .level2 ul li a:hover span.wrap span.innerwrap:hover {
+	text-decoration:underline;	
+}
+
+.RadTabStrip_SiteBmfBovespa .level2 ul li a .wrap {
+	padding:0 0 0 20px;
+}
+
+.RadTabStrip_SiteBmfBovespa .level2 ul li a .wrap .innerWrap {
+	padding:0 12px 0 0;
+}
+/* SELECIONADO */
+.RadTabStrip_SiteBmfBovespa .level2 ul li a.selected {
+	font-weight:bold;
+	color:#4e79a0;
+}
+
+.RadTabStrip_SiteBmfBovespa .level2 ul li a.selected .wrap {
+	
+}
+
+.RadTabStrip_SiteBmfBovespa .level2 ul li a.selected .wrap .innerWrap {
+	
+}

@@ -1,0 +1,83 @@
+div.divMsgErro
+{
+	width:370px;
+	height:auto;
+	min-height:130px;
+	/*margin:150px auto 0px;*/
+	clear:both;
+	vertical-align:middle;
+	
+	background-color:Orange;
+	background:#ffffff url(Imagem/MsgErroFundo.gif) repeat-x center bottom;
+	border:solid 1px #cccc99;
+}
+
+div.divMsgErro h2
+{
+	width:60px;
+	height:25px;
+	float:left;
+	margin:10px 0px 10px 15px;
+	padding:9px 0px 0px 13px;
+	
+	clear:both;
+
+	font-family:Trebuchet MS;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	color:#0C7766;
+	
+	background:url(Imagem/IconeExclamacao.gif) no-repeat left center;
+}
+
+div.divMsgErro p
+{
+	margin:10px 20px 20px 20px;
+	clear:both;
+	font-family:Verdana;
+	font-size:10px;
+	text-align:center;
+}
+
+img.imgMsgErroFechar
+{
+	float:right;
+	margin:6px 6px 0px 0px;
+	cursor:pointer;
+}
+
+.divMsgErroFechar
+{
+	width:12px;
+	height:13px;
+	
+	float:right;
+	margin:6px 6px 0px 0px;
+	cursor:pointer;
+	background:url(Imagem/MsgErroFechar.gif);
+	background-repeat:no-repeat;
+	border:0px;
+	background-color:Transparent;
+}
+
+span.spnSignificadoAsterisco
+{
+	widows:auto;
+	height:25px;
+	/*display:inline;*/
+	display:block;
+	font:italic normal normal 10px Verdana;
+	color:#000000;
+}
+
+span.spnAsterisco
+{
+	widows:auto;
+	height:auto;
+	float:left;
+	display:inline;
+	clear:none;
+	font:normal normal normal 12px Verdana;
+	color:#000000;
+}

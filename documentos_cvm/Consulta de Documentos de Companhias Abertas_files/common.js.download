@@ -1,0 +1,220 @@
+﻿// Recebe 2 argumentos de data string no formato dd-mm-yyyy e 2 argumentos de hora string no formato HH:MM
+// retorna true caso a primeira data(dataInicio + horaInicio) seja menor que a segunda data(dataFim + horaFim)
+function comparaDatas(dataInicio, horaInicio, dataFim, horaFim) {
+
+    if (horaInicio == "") {
+        horaInicio = "00:00";
+    } 
+
+    if (horaFim == "") {
+        horaFim = "23:59";
+    } 
+
+    var particoes = dataInicio.split('/');
+    var particoesHoras = horaInicio.split(':')
+
+    //new Date(year, month, day, hours, minutes, seconds, milliseconds)
+    var dataInicio = new Date(particoes[2], particoes[1], particoes[0], particoesHoras[0], particoesHoras[1]);
+
+    particoes = dataFim.split('/');
+    particoesHoras = horaFim.split(':')
+
+    var dataFim = new Date(particoes[2], particoes[1], particoes[0], particoesHoras[0], particoesHoras[1]);
+
+    return dataInicio <= dataFim;
+}
+
+function converteStringToDate(data, hora) {
+    if (hora == "") {
+        hora = "00:00";
+    }
+
+    var particoes = data.split('/');
+    var particoesHoras = hora.split(':')
+
+    //new Date(year, month, day, hours, minutes, seconds, milliseconds)
+    return new Date(particoes[2], particoes[1], particoes[0], particoesHoras[0], particoesHoras[1]);
+}
+
+var common = {
+    getMessageBody: function (message, type) {
+        var classIcone = '',
+            colorIcone = '',
+            texto = '';
+
+        switch(type) {
+            case 'I': //Mensagem de informação
+                classIcone = 'fi-info';
+                colorIcone = '#0C7766';
+                texto = 'Informação';
+                break;
+            case 'C': //Mensagem de confirmação
+                classIcone = 'fi-alert';
+                colorIcone = '#FFD700';
+                texto = 'Confirmação';
+                break;
+            case 'A': //Mensagem de Advertência
+                classIcone = 'fi-alert';
+                colorIcone = '#FFD700';
+                texto = 'Atenção';
+                break;
+            case 'E': //Mensagem de erro
+                classIcone = 'fi-x-circle';
+                colorIcone = '#FF0000';
+                texto = 'Erro';
+                break;
+            default:  //Mensagem de informação
+                classIcone = 'fi-info';
+                colorIcone = '#0C7766';
+                texto = 'Informação';
+                break;
+        }
+
+        var temListaMsg = message.indexOf('-') > -1;
+        message = this.udpNewLineChar(message, '\n');
+        var alinhamento = (message.length > 300 || temListaMsg) ? 'justify' : 'center';
+
+        return "<div id='dialog-message' style='text-align: center; padding-bottom: 3px;'> " +
+            "<i class='" + classIcone + "' style='font-size: 40px;cursor:pointer;color:" + colorIcone + ";'></i></br>" +
+            "<label style='text-align: " + alinhamento + ";font-weight: normal; font-size: 12px;'>" + message + "</label>" +
+            "</div>";
+    },
+    getWindowModalSize: function (percent) {
+        size = {};
+        size["width"] = $(window).width() * percent / 100;
+        size["height"] = $(window).height() * percent / 100;
+
+        return size;
+    },
+    gridLanguage: {
+        "sProcessing": "Processando...",
+        "sLengthMenu": "Mostrar _MENU_ registros",
+        "sZeroRecords": "Não foram encontrados resultados",
+        "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+        "sInfoEmpty": "Mostrando de 0 até 0 de 0 registros",
+        "sInfoFiltered": "(filtrado de _MAX_ registros no total)",
+        "sEmptyTable": "Não há dados disponíveis",
+        "sInfoPostFix": "",
+        "sSearch": "Buscar:",
+        "sUrl": "",
+        "oAria": {
+            "sSortAscending": ": clique para usar ordem crescente",
+            "sSortDescending": ": clique para usar ordem decrescente"
+        },
+        "oPaginate": {
+            "sFirst": "Primeiro",
+            "sPrevious": "Anterior",
+            "sNext": "Seguinte",
+            "sLast": "Último"
+        }
+    },
+    enableControl: function (control, enable) {
+        if (enable === true) {
+            $('#' + control).removeAttr('disabled');
+        } else {
+            $('#' + control).attr('disabled', 'disabled');
+        }
+    },
+    showHideControl: function (control, visible) {
+        if (visible === true) {
+            $('#' + control).show();
+        } else {
+            $('#' + control).hide();
+        }
+    },
+    showDocumentoProtocolo: function (numeroSequencialDocumento, openCallback, closeCallback) {
+        var divProtocolo = '<div id="modalProtocoloDocumento" style="display: none;"><div id="modalProtocolo"></div></div>',
+            url = "html/protocoloModal.html?NumeroSequencialDocumento=" + numeroSequencialDocumento,
+            size = this.getWindowModalSize(50);
+
+        if ($("#modalProtocoloDocumento").length === 0) {
+            $(divProtocolo).appendTo('body');
+        }
+
+        $('#modalProtocolo').attr('value', numeroSequencialDocumento);
+        $('#modalProtocolo').load(url, function () {
+            $("#modalProtocoloDocumento").dialog({
+                modal: true,
+                width: 'auto',
+                height: 'auto',
+                title: 'Protocolo de Entrega',
+                open: function (event, ui) {
+                    if(openCallback !== null) {
+                        openCallback();
+                    }
+                },
+                close: function (event, ui) {
+                    if (closeCallback !== null) {
+                        closeCallback();
+                    } else {
+                        $("#modalProtocoloDocumento").dialog('close');
+                    }
+                }
+            });
+        });
+    },
+    showModalMessage: function (message, type) {
+        var msg = common.getMessageBody(message, type),
+            divModalProtocolo = '<div id="modalMessage" style="display: none;"></div>',
+            size = common.getWindowModalSize(40);
+
+        if ($("#modalMessage").length === 0) {
+            $(divModalProtocolo).appendTo('body');
+        }
+
+        $('#modalMessage').html(msg);
+        $('#modalMessage').dialog({
+            modal: true,
+            title: type === 'E' ? 'ERRO!' : 'ATENÇÃO!!!',
+            width: size.width,
+            height: size.height,
+            buttons: {
+                'Ok': function () {
+                    $(this).dialog('close');
+                }
+            }
+        });
+    },
+    udpNewLineChar: function (valor, caracter) {
+        var i = 0;
+        while (i < valor.length) {
+            valor = valor.replace(caracter, '<br/>');
+            i = i + 1;
+        }
+        return valor;
+    },
+    validateEmail: function (sEmail) {
+        var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return filter.test(sEmail);
+    },
+}
+
+function ExibirAvisoEntregaParticipante(codCvm)
+{
+    var datavalue = " { codCvm: '" + codCvm + "' }";
+    $.ajax({
+        type: "POST",
+        url: "frmGerenciadorLogin.aspx/IdentificaAvisoEntregaTipoEmpresa",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: datavalue,
+        success: function (response) {
+
+            var retorno = response.d.split('-');
+            if (retorno[0] == "6") {
+                $("#avisoEntregaDispensada").show();
+                $("#avisoEntregaFaseRegistro").hide();
+                return;
+            } else if (retorno[0] == "98") {
+                $("#avisoEntregaFaseRegistro").show();
+                $("#avisoEntregaDispensada").hide();
+                return;
+            } else {
+                $("#avisoEntregaFaseRegistro").hide();
+                $("#avisoEntregaDispensada").hide();
+                return;
+            }
+
+        }
+    });
+}

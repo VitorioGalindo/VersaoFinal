@@ -1,0 +1,42 @@
+## Dependências principais do backend do Finance Dashboard
+
+# Flask e extensões
+Flask>=3.0
+Flask-SQLAlchemy>=3.0
+Flask-Cors>=4.0
+Flask-Limiter>=3.5
+Flask-SocketIO>=5.3
+Flask-JWT-Extended>=4.5
+Flask-Migrate>=4.0
+python-socketio>=5.8
+
+# Banco de Dados e ORM
+SQLAlchemy>=2.0
+psycopg2-binary>=2.9
+alembic>=1.13
+
+# Coleta e Processamento de Dados
+requests>=2.31
+pandas>=2.2
+numpy>=1.26
+beautifulsoup4>=4.12
+trafilatura>=1.9
+tqdm>=4.66
+yfinance>=0.2
+playwright>=1.42
+
+# Análise de Sentimento e NLP
+textblob>=0.18
+
+# IA e Serviços Externos
+google-generativeai>=0.4
+
+# Servidor e Utilitários
+gunicorn>=22
+python-dotenv>=1.0
+redis>=5.0
+schedule>=1.2
+email-validator>=2.1
+Werkzeug>=3.0
+PyJWT>=2.8  # Dependência do Flask-JWT-Extended
+

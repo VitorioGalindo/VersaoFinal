@@ -1,0 +1,241 @@
+div.divPesquisaPopUp
+{
+	width:550px;
+	height:28px;
+	margin:0 auto 0;
+	padding:0 0 0 0;
+	clear:both;
+	
+	font:normal normal bold 14px Trebuchet MS;
+	color:#00168a;
+
+	background:url(Imagem/NovaPesquisaFundo.gif) repeat-x center bottom;
+}
+
+div.divPesquisaPopUp span
+{
+	float:left;
+	margin:5px 0 0 3px;
+}
+
+div.divPesquisaPopUp div.divPesquisaPopUpIconeLupa
+{
+	width:34px;
+	height:28px;
+	float:left;
+	
+	background:url(Imagem/NovaPesquisaIconeLupa.gif) no-repeat left bottom;
+}
+
+div.divPesquisaPopUp div.divPesquisaPopUpLatDir
+{
+	width:12px;
+	height:28px;
+	float:right;
+		
+	background:url(Imagem/NovaPesquisaLatDir.gif) no-repeat right bottom;
+}
+
+div.divPesquisaPopUp div.divPesquisaPopUpSetaAberto
+{
+	width:15px;
+	height:17px;
+	float:right;
+	position:relative;
+	top:7px;
+	left:8px;
+	cursor:pointer;
+	background:url(Imagem/MarcadorSeta06.gif) no-repeat center center;
+}
+
+div.divPesquisaPopUp div.divPesquisaPopUpSetaFechado
+{
+	width:15px;
+	height:17px;
+	float:right;
+	position:relative;
+	top:7px;
+	left:8px;
+	cursor:pointer;
+	
+	background:url(Imagem/MarcadorSeta05.gif) no-repeat center center;
+}
+
+/*==============================================================================*/
+/*	CaixaPopUp
+/*==============================================================================*/
+div.divCaixaPopUpTopoBorda
+{
+	width:798px;
+	height:20px;
+	margin:0 auto;
+	border:solid 1px #cccccc;
+	border-bottom:none;
+}
+
+div.divCaixaPopUpTopo
+{
+	width:796px;
+	height:18px;
+	margin:1px 1px 1px 1px;
+	padding:3px 0 0 0;
+	clear:both;
+	text-align:center;
+	font:normal normal bold 10px Verdana;
+	color:#ffffff;
+	background:url(Imagem/Caixa00TopoFundo.gif) repeat-x center top;
+}
+
+div.divCaixaPopUp div.divTituloSubSecao
+{
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+div.divCaixaPopUpSubSecao
+{
+	width:760px;
+	height:28px;
+	margin:0 auto 0;
+	padding:0 0 0 0;
+	clear:both;
+	text-align:center;
+	background:url(Imagem/NovaPesquisaFundo.gif) repeat-x center bottom;
+}
+
+div.divCaixaPopUpSubSecao span
+{
+	width:90%;
+	height:auto;
+	float:left;
+	margin:5px 0 0 0;
+	text-align:center;
+	font:normal normal bold 10px Verdana;
+	color:#000000;
+	padding:5px 0 0 0;
+}
+div.divCaixaPopUpSubSecao div.divCaixaPopUpSubSecaoLatEsq
+{
+	width:5%;
+	height:28px;
+	float:left;
+	background:url(Imagem/NovaPesquisaLatEsq.gif) no-repeat left bottom;
+}
+div.divCaixaPopUpSubSecao div.divCaixaPopUpSubSecaoLatDir
+{
+	width:5%;
+	height:28px;
+	float:right;
+	background:url(Imagem/NovaPesquisaLatDir.gif) no-repeat right bottom;
+}
+
+div.divCaixaPopUp
+{
+	width:550px;
+	height:auto;
+	margin:0 auto 0px;
+	clear:both;
+	font:normal normal normal 10px Verdana;
+	color:#000;
+	background-color:#f7f7f7;
+}
+
+div.divCaixaPopUp div.divCaixaPopUpBorSup,
+div.divCaixaPopUp div.divCaixaPopUpBorInf,
+div.divCaixaPopUp div.divCaixaPopUpBorEsq,
+div.divCaixaPopUp div.divCaixaPopUpBorDir
+{
+	width:100%;
+	height:10px;
+	float:left;
+	clear:both;
+}
+div.divCaixaPopUp div.divCaixaPopUpBorSup
+{
+	background:url(Imagem/Caixa00BorSup.gif) repeat-x center top;
+	background-color:#f7f7f7;
+}
+div.divCaixaPopUp div.divCaixaPopUpBorInf
+{
+	background:url(Imagem/Caixa00BorInf.gif) repeat-x center bottom;
+	background-color:#f7f7f7;
+}
+
+div.divCaixaPopUp div.divCaixaPopUpBorEsq
+{
+	background:url(Imagem/Caixa00BorEsq.gif) repeat-y left center;
+	height:100%;
+	background-color:#f7f7f7;
+}
+div.divCaixaPopUp div.divCaixaPopUpBorDir
+{
+	background:url(Imagem/Caixa00BorDir.gif) repeat-y right center;
+	height:auto;
+}
+
+div.divCaixaPopUp div.divCaixaPopUpCanSupEsq, div.divCaixa00 div.divCaixaPopUpCanSupDir, div.divCaixaPopUp div.divCaixaPopUpCanInfEsq, div.divCaixaPopUp div.divCaixaPopUpCanInfDir
+{
+	width:20px;
+	height:10px;
+}
+/*Cantos*/
+div.divCaixaPopUp div.divCaixaPopUpCanSupEsq
+{
+	background:url(Imagem/Caixa00CanSupEsq.gif) no-repeat left top;
+	float:left;
+	width:20px;
+	height:10px;
+}
+div.divCaixaPopUp div.divCaixaPopUpCanSupDir
+{
+	background:url(Imagem/Caixa00CanSupDir.gif) no-repeat right top;
+	float:right;
+	width:20px;
+	height:10px;
+}
+div.divCaixaPopUp div.divCaixaPopUpCanInfEsq
+{
+	background:url(Imagem/Caixa00CanInfEsq.gif) no-repeat left bottom;
+	float:left;
+	width:20px;
+	height:10px;
+}
+div.divCaixaPopUp div.divCaixaPopUpCanInfDir
+{
+	background:url(Imagem/Caixa00CanInfDir.gif) no-repeat right bottom;
+	float:right;
+	width:20px;
+	height:10px;
+}
+
+div.divCaixaPopUp div.divCaixaPopUpConteudo
+{
+	width:auto;
+	height:auto;
+	float:left;
+	padding:0 0 0 20px;
+	line-height:24px;
+}
+/*==============================================================================*/
+
+div.divPontilhadoPopUp
+{
+	width:550px;
+	height:20px;
+	margin:0 auto 0;
+	padding:0 0 0 0;
+	clear:both;
+	font:normal normal bold 14px Trebuchet MS;	
+	background:url(Imagem/pontilhado.gif) repeat-x center bottom;
+}
+
+.divGridPopUp
+{
+	width:550px;
+	margin:0px auto 0px;
+	padding:0px 0px 15px 0px;
+	clear:both;
+	overflow-x:auto;
+	overflow-y:hidden !important;
+}

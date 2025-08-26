@@ -1,0 +1,1061 @@
+2025-08-26 09:48:23,604 - __main__ - INFO - MetaTrader5 disponível
+2025-08-26 09:48:24,837 - __main__ - INFO - Iniciando scraper de previous_close_correct
+2025-08-26 09:48:24,855 - __main__ - INFO - Conexão com banco de dados estabelecida
+2025-08-26 09:48:24,877 - __main__ - INFO - MetaTrader5 inicializado com sucesso
+2025-08-26 09:48:24,995 - __main__ - INFO - Encontrados 351 símbolos para atualizar
+2025-08-26 09:48:24,995 - __main__ - INFO - Atualizando previous_close_correct para AALR3
+2025-08-26 09:48:25,204 - __main__ - INFO - Preço de fechamento anterior para AALR3: 6.1
+2025-08-26 09:48:25,324 - __main__ - INFO - Atualizado previous_close_correct para AALR3: 6.1
+2025-08-26 09:48:25,324 - __main__ - INFO - Atualizando previous_close_correct para ABCB4
+2025-08-26 09:48:25,622 - __main__ - INFO - Preço de fechamento anterior para ABCB4: 21.65
+2025-08-26 09:48:25,624 - __main__ - INFO - Atualizado previous_close_correct para ABCB4: 21.65
+2025-08-26 09:48:25,624 - __main__ - INFO - Atualizando previous_close_correct para ABEV3
+2025-08-26 09:48:25,625 - __main__ - INFO - Preço de fechamento anterior para ABEV3: 12.22
+2025-08-26 09:48:25,626 - __main__ - INFO - Atualizado previous_close_correct para ABEV3: 12.22
+2025-08-26 09:48:25,626 - __main__ - INFO - Atualizando previous_close_correct para AERI3
+2025-08-26 09:48:25,776 - __main__ - INFO - Preço de fechamento anterior para AERI3: 4.16
+2025-08-26 09:48:25,781 - __main__ - INFO - Atualizado previous_close_correct para AERI3: 4.16
+2025-08-26 09:48:25,781 - __main__ - INFO - Atualizando previous_close_correct para AFLT3
+2025-08-26 09:48:26,150 - __main__ - INFO - Preço de fechamento anterior para AFLT3: 7.73
+2025-08-26 09:48:26,217 - __main__ - INFO - Atualizado previous_close_correct para AFLT3: 7.73
+2025-08-26 09:48:26,217 - __main__ - INFO - Atualizando previous_close_correct para AGRO3
+2025-08-26 09:48:26,350 - __main__ - INFO - Preço de fechamento anterior para AGRO3: 20.65
+2025-08-26 09:48:26,352 - __main__ - INFO - Atualizado previous_close_correct para AGRO3: 20.65
+2025-08-26 09:48:26,353 - __main__ - INFO - Atualizando previous_close_correct para AGXY3
+2025-08-26 09:48:26,570 - __main__ - INFO - Preço de fechamento anterior para AGXY3: 5.83
+2025-08-26 09:48:26,571 - __main__ - INFO - Atualizado previous_close_correct para AGXY3: 5.83
+2025-08-26 09:48:26,571 - __main__ - INFO - Atualizando previous_close_correct para AHEB3
+2025-08-26 09:48:26,942 - __main__ - INFO - Preço de fechamento anterior para AHEB3: 31.95
+2025-08-26 09:48:26,944 - __main__ - INFO - Atualizado previous_close_correct para AHEB3: 31.95
+2025-08-26 09:48:26,944 - __main__ - INFO - Atualizando previous_close_correct para ALLD3
+2025-08-26 09:48:27,190 - __main__ - INFO - Preço de fechamento anterior para ALLD3: 7.8100000000000005
+2025-08-26 09:48:27,192 - __main__ - INFO - Atualizado previous_close_correct para ALLD3: 7.8100000000000005
+2025-08-26 09:48:27,192 - __main__ - INFO - Atualizando previous_close_correct para ALOS3
+2025-08-26 09:48:27,704 - __main__ - INFO - Preço de fechamento anterior para ALOS3: 22.95
+2025-08-26 09:48:27,916 - __main__ - INFO - Atualizado previous_close_correct para ALOS3: 22.95
+2025-08-26 09:48:27,916 - __main__ - INFO - Atualizando previous_close_correct para ALPA3
+2025-08-26 09:48:28,074 - __main__ - INFO - Preço de fechamento anterior para ALPA3: 8.8
+2025-08-26 09:48:28,140 - __main__ - INFO - Atualizado previous_close_correct para ALPA3: 8.8
+2025-08-26 09:48:28,140 - __main__ - INFO - Atualizando previous_close_correct para ALPA4
+2025-08-26 09:48:28,241 - __main__ - INFO - Preço de fechamento anterior para ALPA4: 9.45
+2025-08-26 09:48:28,248 - __main__ - INFO - Atualizado previous_close_correct para ALPA4: 9.45
+2025-08-26 09:48:28,248 - __main__ - INFO - Atualizando previous_close_correct para ALPK3
+2025-08-26 09:48:28,429 - __main__ - INFO - Preço de fechamento anterior para ALPK3: 2.99
+2025-08-26 09:48:28,435 - __main__ - INFO - Atualizado previous_close_correct para ALPK3: 2.99
+2025-08-26 09:48:28,435 - __main__ - INFO - Atualizando previous_close_correct para ALUP11
+2025-08-26 09:48:28,678 - __main__ - INFO - Preço de fechamento anterior para ALUP11: 29.52
+2025-08-26 09:48:28,686 - __main__ - INFO - Atualizado previous_close_correct para ALUP11: 29.52
+2025-08-26 09:48:28,686 - __main__ - INFO - Atualizando previous_close_correct para AMBP3
+2025-08-26 09:48:28,894 - __main__ - INFO - Preço de fechamento anterior para AMBP3: 13.26
+2025-08-26 09:48:28,900 - __main__ - INFO - Atualizado previous_close_correct para AMBP3: 13.26
+2025-08-26 09:48:28,900 - __main__ - INFO - Atualizando previous_close_correct para AMER3
+2025-08-26 09:48:29,176 - __main__ - INFO - Preço de fechamento anterior para AMER3: 5.1
+2025-08-26 09:48:29,178 - __main__ - INFO - Atualizado previous_close_correct para AMER3: 5.1
+2025-08-26 09:48:29,178 - __main__ - INFO - Atualizando previous_close_correct para AMOB3
+2025-08-26 09:48:29,330 - __main__ - INFO - Preço de fechamento anterior para AMOB3: 11.14
+2025-08-26 09:48:29,332 - __main__ - INFO - Atualizado previous_close_correct para AMOB3: 11.14
+2025-08-26 09:48:29,332 - __main__ - INFO - Atualizando previous_close_correct para ANIM3
+2025-08-26 09:48:29,639 - __main__ - INFO - Preço de fechamento anterior para ANIM3: 4.43
+2025-08-26 09:48:29,642 - __main__ - INFO - Atualizado previous_close_correct para ANIM3: 4.43
+2025-08-26 09:48:29,643 - __main__ - INFO - Atualizando previous_close_correct para ARML3
+2025-08-26 09:48:29,822 - __main__ - INFO - Preço de fechamento anterior para ARML3: 3.98
+2025-08-26 09:48:29,823 - __main__ - INFO - Atualizado previous_close_correct para ARML3: 3.98
+2025-08-26 09:48:29,824 - __main__ - INFO - Atualizando previous_close_correct para ASAI3
+2025-08-26 09:48:29,992 - __main__ - INFO - Preço de fechamento anterior para ASAI3: 10.1
+2025-08-26 09:48:29,994 - __main__ - INFO - Atualizado previous_close_correct para ASAI3: 10.1
+2025-08-26 09:48:29,994 - __main__ - INFO - Atualizando previous_close_correct para ATED3
+2025-08-26 09:48:30,194 - __main__ - INFO - Preço de fechamento anterior para ATED3: 2.11
+2025-08-26 09:48:30,196 - __main__ - INFO - Atualizado previous_close_correct para ATED3: 2.11
+2025-08-26 09:48:30,196 - __main__ - INFO - Atualizando previous_close_correct para AURE3
+2025-08-26 09:48:30,332 - __main__ - INFO - Preço de fechamento anterior para AURE3: 10.54
+2025-08-26 09:48:30,334 - __main__ - INFO - Atualizado previous_close_correct para AURE3: 10.54
+2025-08-26 09:48:30,334 - __main__ - INFO - Atualizando previous_close_correct para AVLL3
+2025-08-26 09:48:30,563 - __main__ - INFO - Preço de fechamento anterior para AVLL3: 1.65
+2025-08-26 09:48:30,565 - __main__ - INFO - Atualizado previous_close_correct para AVLL3: 1.65
+2025-08-26 09:48:30,565 - __main__ - INFO - Atualizando previous_close_correct para AZEV11
+2025-08-26 09:48:30,759 - __main__ - INFO - Preço de fechamento anterior para AZEV11: 0.1
+2025-08-26 09:48:30,760 - __main__ - INFO - Atualizado previous_close_correct para AZEV11: 0.1
+2025-08-26 09:48:30,760 - __main__ - INFO - Atualizando previous_close_correct para AZEV3
+2025-08-26 09:48:30,945 - __main__ - INFO - Preço de fechamento anterior para AZEV3: 0.49
+2025-08-26 09:48:30,949 - __main__ - INFO - Atualizado previous_close_correct para AZEV3: 0.49
+2025-08-26 09:48:30,949 - __main__ - INFO - Atualizando previous_close_correct para AZEV4
+2025-08-26 09:48:31,102 - __main__ - INFO - Preço de fechamento anterior para AZEV4: 0.54
+2025-08-26 09:48:31,105 - __main__ - INFO - Atualizado previous_close_correct para AZEV4: 0.54
+2025-08-26 09:48:31,106 - __main__ - INFO - Atualizando previous_close_correct para AZTE3
+2025-08-26 09:48:31,336 - __main__ - INFO - Preço de fechamento anterior para AZTE3: 0.53
+2025-08-26 09:48:31,341 - __main__ - INFO - Atualizado previous_close_correct para AZTE3: 0.53
+2025-08-26 09:48:31,342 - __main__ - INFO - Atualizando previous_close_correct para AZUL4
+2025-08-26 09:48:31,472 - __main__ - INFO - Preço de fechamento anterior para AZUL4: 0.58
+2025-08-26 09:48:31,474 - __main__ - INFO - Atualizado previous_close_correct para AZUL4: 0.58
+2025-08-26 09:48:31,474 - __main__ - INFO - Atualizando previous_close_correct para AZZA3
+2025-08-26 09:48:31,583 - __main__ - INFO - Preço de fechamento anterior para AZZA3: 33.15
+2025-08-26 09:48:31,585 - __main__ - INFO - Atualizado previous_close_correct para AZZA3: 33.15
+2025-08-26 09:48:31,585 - __main__ - INFO - Atualizando previous_close_correct para B3SA3
+2025-08-26 09:48:31,690 - __main__ - INFO - Preço de fechamento anterior para B3SA3: 12.56
+2025-08-26 09:48:31,693 - __main__ - INFO - Atualizado previous_close_correct para B3SA3: 12.56
+2025-08-26 09:48:31,693 - __main__ - INFO - Atualizando previous_close_correct para BALM3
+2025-08-26 09:48:31,878 - __main__ - INFO - Preço de fechamento anterior para BALM3: 20.6
+2025-08-26 09:48:31,881 - __main__ - INFO - Atualizado previous_close_correct para BALM3: 20.6
+2025-08-26 09:48:31,881 - __main__ - INFO - Atualizando previous_close_correct para BALM4
+2025-08-26 09:48:32,095 - __main__ - INFO - Preço de fechamento anterior para BALM4: 16.36
+2025-08-26 09:48:32,096 - __main__ - INFO - Atualizado previous_close_correct para BALM4: 16.36
+2025-08-26 09:48:32,096 - __main__ - INFO - Atualizando previous_close_correct para BAUH4
+2025-08-26 09:48:32,295 - __main__ - INFO - Preço de fechamento anterior para BAUH4: 86.97
+2025-08-26 09:48:32,297 - __main__ - INFO - Atualizado previous_close_correct para BAUH4: 86.97
+2025-08-26 09:48:32,297 - __main__ - INFO - Atualizando previous_close_correct para BAZA3
+2025-08-26 09:48:32,482 - __main__ - INFO - Preço de fechamento anterior para BAZA3: 71.34
+2025-08-26 09:48:32,483 - __main__ - INFO - Atualizado previous_close_correct para BAZA3: 71.34
+2025-08-26 09:48:32,483 - __main__ - INFO - Atualizando previous_close_correct para BBAS3
+2025-08-26 09:48:32,576 - __main__ - INFO - Preço de fechamento anterior para BBAS3: 20.54
+2025-08-26 09:48:32,577 - __main__ - INFO - Atualizado previous_close_correct para BBAS3: 20.54
+2025-08-26 09:48:32,577 - __main__ - INFO - Atualizando previous_close_correct para BBDC3
+2025-08-26 09:48:32,684 - __main__ - INFO - Preço de fechamento anterior para BBDC3: 13.98
+2025-08-26 09:48:32,685 - __main__ - INFO - Atualizado previous_close_correct para BBDC3: 13.98
+2025-08-26 09:48:32,685 - __main__ - INFO - Atualizando previous_close_correct para BBDC4
+2025-08-26 09:48:32,686 - __main__ - INFO - Preço de fechamento anterior para BBDC4: 16.31
+2025-08-26 09:48:32,687 - __main__ - INFO - Atualizado previous_close_correct para BBDC4: 16.31
+2025-08-26 09:48:32,687 - __main__ - INFO - Atualizando previous_close_correct para BBSE3
+2025-08-26 09:48:32,794 - __main__ - INFO - Preço de fechamento anterior para BBSE3: 31.88
+2025-08-26 09:48:32,796 - __main__ - INFO - Atualizado previous_close_correct para BBSE3: 31.88
+2025-08-26 09:48:32,797 - __main__ - INFO - Atualizando previous_close_correct para BDLL3
+2025-08-26 09:48:32,964 - __main__ - INFO - Preço de fechamento anterior para BDLL3: 7.5
+2025-08-26 09:48:32,967 - __main__ - INFO - Atualizado previous_close_correct para BDLL3: 7.5
+2025-08-26 09:48:32,967 - __main__ - INFO - Atualizando previous_close_correct para BDLL4
+2025-08-26 09:48:33,150 - __main__ - INFO - Preço de fechamento anterior para BDLL4: 8.0
+2025-08-26 09:48:33,152 - __main__ - INFO - Atualizado previous_close_correct para BDLL4: 8.0
+2025-08-26 09:48:33,152 - __main__ - INFO - Atualizando previous_close_correct para BEEF3
+2025-08-26 09:48:33,242 - __main__ - INFO - Preço de fechamento anterior para BEEF3: 5.72
+2025-08-26 09:48:33,243 - __main__ - INFO - Atualizado previous_close_correct para BEEF3: 5.72
+2025-08-26 09:48:33,243 - __main__ - INFO - Atualizando previous_close_correct para BEES3
+2025-08-26 09:48:33,445 - __main__ - INFO - Preço de fechamento anterior para BEES3: 8.78
+2025-08-26 09:48:33,446 - __main__ - INFO - Atualizado previous_close_correct para BEES3: 8.78
+2025-08-26 09:48:33,447 - __main__ - INFO - Atualizando previous_close_correct para BEES4
+2025-08-26 09:48:33,645 - __main__ - INFO - Preço de fechamento anterior para BEES4: 8.85
+2025-08-26 09:48:33,647 - __main__ - INFO - Atualizado previous_close_correct para BEES4: 8.85
+2025-08-26 09:48:33,647 - __main__ - INFO - Atualizando previous_close_correct para BGIP3
+2025-08-26 09:48:33,832 - __main__ - INFO - Preço de fechamento anterior para BGIP3: 34.99
+2025-08-26 09:48:33,834 - __main__ - INFO - Atualizado previous_close_correct para BGIP3: 34.99
+2025-08-26 09:48:33,834 - __main__ - INFO - Atualizando previous_close_correct para BGIP4
+2025-08-26 09:48:34,049 - __main__ - INFO - Preço de fechamento anterior para BGIP4: 27.88
+2025-08-26 09:48:34,051 - __main__ - INFO - Atualizado previous_close_correct para BGIP4: 27.88
+2025-08-26 09:48:34,051 - __main__ - INFO - Atualizando previous_close_correct para BHIA3
+2025-08-26 09:48:34,204 - __main__ - INFO - Preço de fechamento anterior para BHIA3: 3.02
+2025-08-26 09:48:34,206 - __main__ - INFO - Atualizado previous_close_correct para BHIA3: 3.02
+2025-08-26 09:48:34,206 - __main__ - INFO - Atualizando previous_close_correct para BIED3
+2025-08-26 09:48:34,374 - __main__ - INFO - Preço de fechamento anterior para BIED3: 3.2
+2025-08-26 09:48:34,376 - __main__ - INFO - Atualizado previous_close_correct para BIED3: 3.2
+2025-08-26 09:48:34,376 - __main__ - INFO - Atualizando previous_close_correct para BIOM3
+2025-08-26 09:48:34,559 - __main__ - INFO - Preço de fechamento anterior para BIOM3: 6.96
+2025-08-26 09:48:34,561 - __main__ - INFO - Atualizado previous_close_correct para BIOM3: 6.96
+2025-08-26 09:48:34,561 - __main__ - INFO - Atualizando previous_close_correct para BLAU3
+2025-08-26 09:48:34,747 - __main__ - INFO - Preço de fechamento anterior para BLAU3: 12.61
+2025-08-26 09:48:34,748 - __main__ - INFO - Atualizado previous_close_correct para BLAU3: 12.61
+2025-08-26 09:48:34,748 - __main__ - INFO - Atualizando previous_close_correct para BMEB3
+2025-08-26 09:48:34,980 - __main__ - INFO - Preço de fechamento anterior para BMEB3: 39.0
+2025-08-26 09:48:34,981 - __main__ - INFO - Atualizado previous_close_correct para BMEB3: 39.0
+2025-08-26 09:48:34,981 - __main__ - INFO - Atualizando previous_close_correct para BMEB4
+2025-08-26 09:48:35,154 - __main__ - INFO - Preço de fechamento anterior para BMEB4: 42.19
+2025-08-26 09:48:35,155 - __main__ - INFO - Atualizado previous_close_correct para BMEB4: 42.19
+2025-08-26 09:48:35,155 - __main__ - INFO - Atualizando previous_close_correct para BMIN4
+2025-08-26 09:48:35,370 - __main__ - INFO - Preço de fechamento anterior para BMIN4: 16.8
+2025-08-26 09:48:35,371 - __main__ - INFO - Atualizado previous_close_correct para BMIN4: 16.8
+2025-08-26 09:48:35,372 - __main__ - INFO - Atualizando previous_close_correct para BMKS3
+2025-08-26 09:48:35,572 - __main__ - INFO - Preço de fechamento anterior para BMKS3: 434.99
+2025-08-26 09:48:35,591 - __main__ - INFO - Atualizado previous_close_correct para BMKS3: 434.99
+2025-08-26 09:48:35,592 - __main__ - INFO - Atualizando previous_close_correct para BMOB3
+2025-08-26 09:48:35,758 - __main__ - INFO - Preço de fechamento anterior para BMOB3: 19.43
+2025-08-26 09:48:35,760 - __main__ - INFO - Atualizado previous_close_correct para BMOB3: 19.43
+2025-08-26 09:48:35,760 - __main__ - INFO - Atualizando previous_close_correct para BNBR3
+2025-08-26 09:48:35,961 - __main__ - INFO - Preço de fechamento anterior para BNBR3: 96.0
+2025-08-26 09:48:35,962 - __main__ - INFO - Atualizado previous_close_correct para BNBR3: 96.0
+2025-08-26 09:48:35,962 - __main__ - INFO - Atualizando previous_close_correct para BOBR4
+2025-08-26 09:48:36,132 - __main__ - INFO - Preço de fechamento anterior para BOBR4: 1.24
+2025-08-26 09:48:36,133 - __main__ - INFO - Atualizado previous_close_correct para BOBR4: 1.24
+2025-08-26 09:48:36,134 - __main__ - INFO - Atualizando previous_close_correct para BOVA11
+2025-08-26 09:48:36,134 - __main__ - INFO - Preço de fechamento anterior para BOVA11: 135.9
+2025-08-26 09:48:36,135 - __main__ - INFO - Atualizado previous_close_correct para BOVA11: 135.9
+2025-08-26 09:48:36,136 - __main__ - INFO - Atualizando previous_close_correct para BPAN4
+2025-08-26 09:48:36,226 - __main__ - INFO - Preço de fechamento anterior para BPAN4: 7.87
+2025-08-26 09:48:36,227 - __main__ - INFO - Atualizado previous_close_correct para BPAN4: 7.87
+2025-08-26 09:48:36,227 - __main__ - INFO - Atualizando previous_close_correct para BRAP3
+2025-08-26 09:48:36,383 - __main__ - INFO - Preço de fechamento anterior para BRAP3: 14.84
+2025-08-26 09:48:36,384 - __main__ - INFO - Atualizado previous_close_correct para BRAP3: 14.84
+2025-08-26 09:48:36,384 - __main__ - INFO - Atualizando previous_close_correct para BRAP4
+2025-08-26 09:48:36,677 - __main__ - INFO - Preço de fechamento anterior para BRAP4: 16.13
+2025-08-26 09:48:36,679 - __main__ - INFO - Atualizado previous_close_correct para BRAP4: 16.13
+2025-08-26 09:48:36,679 - __main__ - INFO - Atualizando previous_close_correct para BRAV3
+2025-08-26 09:48:36,680 - __main__ - INFO - Preço de fechamento anterior para BRAV3: 19.2
+2025-08-26 09:48:36,682 - __main__ - INFO - Atualizado previous_close_correct para BRAV3: 19.2
+2025-08-26 09:48:36,683 - __main__ - INFO - Atualizando previous_close_correct para BRBI11
+2025-08-26 09:48:36,816 - __main__ - INFO - Preço de fechamento anterior para BRBI11: 15.64
+2025-08-26 09:48:36,818 - __main__ - INFO - Atualizado previous_close_correct para BRBI11: 15.64
+2025-08-26 09:48:36,818 - __main__ - INFO - Atualizando previous_close_correct para BRFS3
+2025-08-26 09:48:36,912 - __main__ - INFO - Preço de fechamento anterior para BRFS3: 19.8
+2025-08-26 09:48:36,914 - __main__ - INFO - Atualizado previous_close_correct para BRFS3: 19.8
+2025-08-26 09:48:36,914 - __main__ - INFO - Atualizando previous_close_correct para BRKM3
+2025-08-26 09:48:37,082 - __main__ - INFO - Preço de fechamento anterior para BRKM3: 9.2
+2025-08-26 09:48:37,083 - __main__ - INFO - Atualizado previous_close_correct para BRKM3: 9.2
+2025-08-26 09:48:37,083 - __main__ - INFO - Atualizando previous_close_correct para BRKM5
+2025-08-26 09:48:37,190 - __main__ - INFO - Preço de fechamento anterior para BRKM5: 8.57
+2025-08-26 09:48:37,191 - __main__ - INFO - Atualizado previous_close_correct para BRKM5: 8.57
+2025-08-26 09:48:37,191 - __main__ - INFO - Atualizando previous_close_correct para BRKM6
+2025-08-26 09:48:37,374 - __main__ - INFO - Preço de fechamento anterior para BRKM6: 7.5
+2025-08-26 09:48:37,376 - __main__ - INFO - Atualizado previous_close_correct para BRKM6: 7.5
+2025-08-26 09:48:37,376 - __main__ - INFO - Atualizando previous_close_correct para BRSR3
+2025-08-26 09:48:37,514 - __main__ - INFO - Preço de fechamento anterior para BRSR3: 11.9
+2025-08-26 09:48:37,516 - __main__ - INFO - Atualizado previous_close_correct para BRSR3: 11.9
+2025-08-26 09:48:37,516 - __main__ - INFO - Atualizando previous_close_correct para BRSR5
+2025-08-26 09:48:37,703 - __main__ - INFO - Preço de fechamento anterior para BRSR5: 15.6
+2025-08-26 09:48:37,704 - __main__ - INFO - Atualizado previous_close_correct para BRSR5: 15.6
+2025-08-26 09:48:37,704 - __main__ - INFO - Atualizando previous_close_correct para BRSR6
+2025-08-26 09:48:37,704 - __main__ - INFO - Preço de fechamento anterior para BRSR6: 11.38
+2025-08-26 09:48:37,705 - __main__ - INFO - Atualizado previous_close_correct para BRSR6: 11.38
+2025-08-26 09:48:37,706 - __main__ - INFO - Atualizando previous_close_correct para BRST3
+2025-08-26 09:48:37,874 - __main__ - INFO - Preço de fechamento anterior para BRST3: 2.81
+2025-08-26 09:48:37,876 - __main__ - INFO - Atualizado previous_close_correct para BRST3: 2.81
+2025-08-26 09:48:37,876 - __main__ - INFO - Atualizando previous_close_correct para BSLI3
+2025-08-26 09:48:38,046 - __main__ - INFO - Preço de fechamento anterior para BSLI3: 8.87
+2025-08-26 09:48:38,047 - __main__ - INFO - Atualizado previous_close_correct para BSLI3: 8.87
+2025-08-26 09:48:38,047 - __main__ - INFO - Atualizando previous_close_correct para BSLI4
+2025-08-26 09:48:38,265 - __main__ - INFO - Preço de fechamento anterior para BSLI4: 11.03
+2025-08-26 09:48:38,266 - __main__ - INFO - Atualizado previous_close_correct para BSLI4: 11.03
+2025-08-26 09:48:38,266 - __main__ - INFO - Atualizando previous_close_correct para CAMB3
+2025-08-26 09:48:38,448 - __main__ - INFO - Preço de fechamento anterior para CAMB3: 9.41
+2025-08-26 09:48:38,449 - __main__ - INFO - Atualizado previous_close_correct para CAMB3: 9.41
+2025-08-26 09:48:38,450 - __main__ - INFO - Atualizando previous_close_correct para CAML3
+2025-08-26 09:48:38,587 - __main__ - INFO - Preço de fechamento anterior para CAML3: 4.43
+2025-08-26 09:48:38,588 - __main__ - INFO - Atualizado previous_close_correct para CAML3: 4.43
+2025-08-26 09:48:38,589 - __main__ - INFO - Atualizando previous_close_correct para CASH3
+2025-08-26 09:48:38,697 - __main__ - INFO - Preço de fechamento anterior para CASH3: 5.09
+2025-08-26 09:48:38,698 - __main__ - INFO - Atualizado previous_close_correct para CASH3: 5.09
+2025-08-26 09:48:38,698 - __main__ - INFO - Atualizando previous_close_correct para CBAV3
+2025-08-26 09:48:38,805 - __main__ - INFO - Preço de fechamento anterior para CBAV3: 3.1
+2025-08-26 09:48:38,807 - __main__ - INFO - Atualizado previous_close_correct para CBAV3: 3.1
+2025-08-26 09:48:38,807 - __main__ - INFO - Atualizando previous_close_correct para CBEE3
+2025-08-26 09:48:38,976 - __main__ - INFO - Preço de fechamento anterior para CBEE3: 13.5
+2025-08-26 09:48:38,978 - __main__ - INFO - Atualizado previous_close_correct para CBEE3: 13.5
+2025-08-26 09:48:38,978 - __main__ - INFO - Atualizando previous_close_correct para CCTY3
+2025-08-26 09:48:39,223 - __main__ - INFO - Preço de fechamento anterior para CCTY3: 44.86
+2025-08-26 09:48:39,224 - __main__ - INFO - Atualizado previous_close_correct para CCTY3: 44.86
+2025-08-26 09:48:39,224 - __main__ - INFO - Atualizando previous_close_correct para CEAB3
+2025-08-26 09:48:39,334 - __main__ - INFO - Preço de fechamento anterior para CEAB3: 16.39
+2025-08-26 09:48:39,336 - __main__ - INFO - Atualizado previous_close_correct para CEAB3: 16.39
+2025-08-26 09:48:39,336 - __main__ - INFO - Atualizando previous_close_correct para CEDO3
+2025-08-26 09:48:39,535 - __main__ - INFO - Preço de fechamento anterior para CEDO3: 21.0
+2025-08-26 09:48:39,537 - __main__ - INFO - Atualizado previous_close_correct para CEDO3: 21.0
+2025-08-26 09:48:39,537 - __main__ - INFO - Atualizando previous_close_correct para CEDO4
+2025-08-26 09:48:39,735 - __main__ - INFO - Preço de fechamento anterior para CEDO4: 11.5
+2025-08-26 09:48:39,737 - __main__ - INFO - Atualizado previous_close_correct para CEDO4: 11.5
+2025-08-26 09:48:39,737 - __main__ - INFO - Atualizando previous_close_correct para CEEB3
+2025-08-26 09:48:39,934 - __main__ - INFO - Preço de fechamento anterior para CEEB3: 36.91
+2025-08-26 09:48:39,935 - __main__ - INFO - Atualizado previous_close_correct para CEEB3: 36.91
+2025-08-26 09:48:39,935 - __main__ - INFO - Atualizando previous_close_correct para CEEB5
+2025-08-26 09:48:40,106 - __main__ - INFO - Preço de fechamento anterior para CEEB5: 37.43
+2025-08-26 09:48:40,108 - __main__ - INFO - Atualizado previous_close_correct para CEEB5: 37.43
+2025-08-26 09:48:40,108 - __main__ - INFO - Atualizando previous_close_correct para CEED3
+2025-08-26 09:48:40,294 - __main__ - INFO - Preço de fechamento anterior para CEED3: 7.99
+2025-08-26 09:48:40,295 - __main__ - INFO - Atualizado previous_close_correct para CEED3: 7.99
+2025-08-26 09:48:40,295 - __main__ - INFO - Atualizando previous_close_correct para CGAS3
+2025-08-26 09:48:40,513 - __main__ - INFO - Preço de fechamento anterior para CGAS3: 121.01
+2025-08-26 09:48:40,514 - __main__ - INFO - Atualizado previous_close_correct para CGAS3: 121.01
+2025-08-26 09:48:40,514 - __main__ - INFO - Atualizando previous_close_correct para CGAS5
+2025-08-26 09:48:40,697 - __main__ - INFO - Preço de fechamento anterior para CGAS5: 126.76
+2025-08-26 09:48:40,698 - __main__ - INFO - Atualizado previous_close_correct para CGAS5: 126.76
+2025-08-26 09:48:40,699 - __main__ - INFO - Atualizando previous_close_correct para CGRA3
+2025-08-26 09:48:40,918 - __main__ - INFO - Preço de fechamento anterior para CGRA3: 26.24
+2025-08-26 09:48:40,919 - __main__ - INFO - Atualizado previous_close_correct para CGRA3: 26.24
+2025-08-26 09:48:40,920 - __main__ - INFO - Atualizando previous_close_correct para CGRA4
+2025-08-26 09:48:41,104 - __main__ - INFO - Preço de fechamento anterior para CGRA4: 26.1
+2025-08-26 09:48:41,105 - __main__ - INFO - Atualizado previous_close_correct para CGRA4: 26.1
+2025-08-26 09:48:41,105 - __main__ - INFO - Atualizando previous_close_correct para CLSC4
+2025-08-26 09:48:41,384 - __main__ - INFO - Preço de fechamento anterior para CLSC4: 103.49
+2025-08-26 09:48:41,386 - __main__ - INFO - Atualizado previous_close_correct para CLSC4: 103.49
+2025-08-26 09:48:41,386 - __main__ - INFO - Atualizando previous_close_correct para CMIG3
+2025-08-26 09:48:41,508 - __main__ - INFO - Preço de fechamento anterior para CMIG3: 14.94
+2025-08-26 09:48:41,509 - __main__ - INFO - Atualizado previous_close_correct para CMIG3: 14.94
+2025-08-26 09:48:41,509 - __main__ - INFO - Atualizando previous_close_correct para CMIG4
+2025-08-26 09:48:41,603 - __main__ - INFO - Preço de fechamento anterior para CMIG4: 10.84
+2025-08-26 09:48:41,604 - __main__ - INFO - Atualizado previous_close_correct para CMIG4: 10.84
+2025-08-26 09:48:41,605 - __main__ - INFO - Atualizando previous_close_correct para COCE5
+2025-08-26 09:48:41,804 - __main__ - INFO - Preço de fechamento anterior para COCE5: 29.5
+2025-08-26 09:48:41,806 - __main__ - INFO - Atualizado previous_close_correct para COCE5: 29.5
+2025-08-26 09:48:41,806 - __main__ - INFO - Atualizando previous_close_correct para COGN3
+2025-08-26 09:48:41,912 - __main__ - INFO - Preço de fechamento anterior para COGN3: 2.94
+2025-08-26 09:48:41,927 - __main__ - INFO - Atualizado previous_close_correct para COGN3: 2.94
+2025-08-26 09:48:41,927 - __main__ - INFO - Atualizando previous_close_correct para CPFE3
+2025-08-26 09:48:42,053 - __main__ - INFO - Preço de fechamento anterior para CPFE3: 39.87
+2025-08-26 09:48:42,056 - __main__ - INFO - Atualizado previous_close_correct para CPFE3: 39.87
+2025-08-26 09:48:42,056 - __main__ - INFO - Atualizando previous_close_correct para CPLE3
+2025-08-26 09:48:42,194 - __main__ - INFO - Preço de fechamento anterior para CPLE3: 11.28
+2025-08-26 09:48:42,196 - __main__ - INFO - Atualizado previous_close_correct para CPLE3: 11.28
+2025-08-26 09:48:42,196 - __main__ - INFO - Atualizando previous_close_correct para CPLE5
+2025-08-26 09:48:42,381 - __main__ - INFO - Preço de fechamento anterior para CPLE5: 12.57
+2025-08-26 09:48:42,382 - __main__ - INFO - Atualizado previous_close_correct para CPLE5: 12.57
+2025-08-26 09:48:42,382 - __main__ - INFO - Atualizando previous_close_correct para CPLE6
+2025-08-26 09:48:42,488 - __main__ - INFO - Preço de fechamento anterior para CPLE6: 12.13
+2025-08-26 09:48:42,490 - __main__ - INFO - Atualizado previous_close_correct para CPLE6: 12.13
+2025-08-26 09:48:42,490 - __main__ - INFO - Atualizando previous_close_correct para CRPG3
+2025-08-26 09:48:42,687 - __main__ - INFO - Preço de fechamento anterior para CRPG3: 17.99
+2025-08-26 09:48:42,690 - __main__ - INFO - Atualizado previous_close_correct para CRPG3: 17.99
+2025-08-26 09:48:42,690 - __main__ - INFO - Atualizando previous_close_correct para CRPG5
+2025-08-26 09:48:42,904 - __main__ - INFO - Preço de fechamento anterior para CRPG5: 15.5
+2025-08-26 09:48:42,905 - __main__ - INFO - Atualizado previous_close_correct para CRPG5: 15.5
+2025-08-26 09:48:42,905 - __main__ - INFO - Atualizando previous_close_correct para CRPG6
+2025-08-26 09:48:43,108 - __main__ - INFO - Preço de fechamento anterior para CRPG6: 15.49
+2025-08-26 09:48:43,110 - __main__ - INFO - Atualizado previous_close_correct para CRPG6: 15.49
+2025-08-26 09:48:43,110 - __main__ - INFO - Atualizando previous_close_correct para CSAN3
+2025-08-26 09:48:43,111 - __main__ - INFO - Preço de fechamento anterior para CSAN3: 5.47
+2025-08-26 09:48:43,113 - __main__ - INFO - Atualizado previous_close_correct para CSAN3: 5.47
+2025-08-26 09:48:43,113 - __main__ - INFO - Atualizando previous_close_correct para CSED3
+2025-08-26 09:48:43,281 - __main__ - INFO - Preço de fechamento anterior para CSED3: 4.6899999999999995
+2025-08-26 09:48:43,282 - __main__ - INFO - Atualizado previous_close_correct para CSED3: 4.6899999999999995
+2025-08-26 09:48:43,283 - __main__ - INFO - Atualizando previous_close_correct para CSMG3
+2025-08-26 09:48:43,358 - __main__ - INFO - Preço de fechamento anterior para CSMG3: 27.93
+2025-08-26 09:48:43,360 - __main__ - INFO - Atualizado previous_close_correct para CSMG3: 27.93
+2025-08-26 09:48:43,360 - __main__ - INFO - Atualizando previous_close_correct para CSUD3
+2025-08-26 09:48:43,512 - __main__ - INFO - Preço de fechamento anterior para CSUD3: 17.76
+2025-08-26 09:48:43,513 - __main__ - INFO - Atualizado previous_close_correct para CSUD3: 17.76
+2025-08-26 09:48:43,514 - __main__ - INFO - Atualizando previous_close_correct para CTKA4
+2025-08-26 09:48:43,713 - __main__ - INFO - Preço de fechamento anterior para CTKA4: 35.01
+2025-08-26 09:48:43,715 - __main__ - INFO - Atualizado previous_close_correct para CTKA4: 35.01
+2025-08-26 09:48:43,715 - __main__ - INFO - Atualizando previous_close_correct para CTSA3
+2025-08-26 09:48:43,914 - __main__ - INFO - Preço de fechamento anterior para CTSA3: 2.99
+2025-08-26 09:48:43,916 - __main__ - INFO - Atualizado previous_close_correct para CTSA3: 2.99
+2025-08-26 09:48:43,916 - __main__ - INFO - Atualizando previous_close_correct para CTSA4
+2025-08-26 09:48:44,118 - __main__ - INFO - Preço de fechamento anterior para CTSA4: 2.4699999999999998
+2025-08-26 09:48:44,119 - __main__ - INFO - Atualizado previous_close_correct para CTSA4: 2.4699999999999998
+2025-08-26 09:48:44,119 - __main__ - INFO - Atualizando previous_close_correct para CURY3
+2025-08-26 09:48:44,289 - __main__ - INFO - Preço de fechamento anterior para CURY3: 33.13
+2025-08-26 09:48:44,290 - __main__ - INFO - Atualizado previous_close_correct para CURY3: 33.13
+2025-08-26 09:48:44,290 - __main__ - INFO - Atualizando previous_close_correct para CVCB3
+2025-08-26 09:48:44,414 - __main__ - INFO - Preço de fechamento anterior para CVCB3: 2.05
+2025-08-26 09:48:44,415 - __main__ - INFO - Atualizado previous_close_correct para CVCB3: 2.05
+2025-08-26 09:48:44,416 - __main__ - INFO - Atualizando previous_close_correct para CXSE3
+2025-08-26 09:48:44,523 - __main__ - INFO - Preço de fechamento anterior para CXSE3: 13.72
+2025-08-26 09:48:44,525 - __main__ - INFO - Atualizado previous_close_correct para CXSE3: 13.72
+2025-08-26 09:48:44,525 - __main__ - INFO - Atualizando previous_close_correct para CYRE3
+2025-08-26 09:48:44,633 - __main__ - INFO - Preço de fechamento anterior para CYRE3: 26.15
+2025-08-26 09:48:44,646 - __main__ - INFO - Atualizado previous_close_correct para CYRE3: 26.15
+2025-08-26 09:48:44,646 - __main__ - INFO - Atualizando previous_close_correct para DASA3
+2025-08-26 09:48:44,959 - __main__ - INFO - Preço de fechamento anterior para DASA3: 1.26
+2025-08-26 09:48:44,993 - __main__ - INFO - Atualizado previous_close_correct para DASA3: 1.26
+2025-08-26 09:48:44,994 - __main__ - INFO - Atualizando previous_close_correct para DESK3
+2025-08-26 09:48:45,159 - __main__ - INFO - Preço de fechamento anterior para DESK3: 8.24
+2025-08-26 09:48:45,197 - __main__ - INFO - Atualizado previous_close_correct para DESK3: 8.24
+2025-08-26 09:48:45,198 - __main__ - INFO - Atualizando previous_close_correct para DEXP3
+2025-08-26 09:48:45,198 - __main__ - INFO - Preço de fechamento anterior para DEXP3: 8.58
+2025-08-26 09:48:45,263 - __main__ - INFO - Atualizado previous_close_correct para DEXP3: 8.58
+2025-08-26 09:48:45,263 - __main__ - INFO - Atualizando previous_close_correct para DEXP4
+2025-08-26 09:48:45,657 - __main__ - INFO - Preço de fechamento anterior para DEXP4: 8.55
+2025-08-26 09:48:45,705 - __main__ - INFO - Atualizado previous_close_correct para DEXP4: 8.55
+2025-08-26 09:48:45,706 - __main__ - INFO - Atualizando previous_close_correct para DIRR3
+2025-08-26 09:48:45,938 - __main__ - INFO - Preço de fechamento anterior para DIRR3: 14.5
+2025-08-26 09:48:45,989 - __main__ - INFO - Atualizado previous_close_correct para DIRR3: 14.5
+2025-08-26 09:48:45,989 - __main__ - INFO - Atualizando previous_close_correct para DMVF3
+2025-08-26 09:48:46,127 - __main__ - INFO - Preço de fechamento anterior para DMVF3: 4.52
+2025-08-26 09:48:46,129 - __main__ - INFO - Atualizado previous_close_correct para DMVF3: 4.52
+2025-08-26 09:48:46,129 - __main__ - INFO - Atualizando previous_close_correct para DOHL4
+2025-08-26 09:48:46,455 - __main__ - INFO - Preço de fechamento anterior para DOHL4: 3.71
+2025-08-26 09:48:46,489 - __main__ - INFO - Atualizado previous_close_correct para DOHL4: 3.71
+2025-08-26 09:48:46,489 - __main__ - INFO - Atualizando previous_close_correct para DOTZ3
+2025-08-26 09:48:46,655 - __main__ - INFO - Preço de fechamento anterior para DOTZ3: 7.35
+2025-08-26 09:48:46,705 - __main__ - INFO - Atualizado previous_close_correct para DOTZ3: 7.35
+2025-08-26 09:48:46,705 - __main__ - INFO - Atualizando previous_close_correct para DTCY3
+2025-08-26 09:48:46,995 - __main__ - INFO - Preço de fechamento anterior para DTCY3: 2.9
+2025-08-26 09:48:47,101 - __main__ - INFO - Atualizado previous_close_correct para DTCY3: 2.9
+2025-08-26 09:48:47,102 - __main__ - INFO - Atualizando previous_close_correct para DXCO3
+2025-08-26 09:48:47,323 - __main__ - INFO - Preço de fechamento anterior para DXCO3: 5.71
+2025-08-26 09:48:47,389 - __main__ - INFO - Atualizado previous_close_correct para DXCO3: 5.71
+2025-08-26 09:48:47,389 - __main__ - INFO - Atualizando previous_close_correct para EALT3
+2025-08-26 09:48:47,802 - __main__ - INFO - Preço de fechamento anterior para EALT3: 14.4
+2025-08-26 09:48:47,833 - __main__ - INFO - Atualizado previous_close_correct para EALT3: 14.4
+2025-08-26 09:48:47,833 - __main__ - INFO - Atualizando previous_close_correct para EALT4
+2025-08-26 09:48:48,035 - __main__ - INFO - Preço de fechamento anterior para EALT4: 10.77
+2025-08-26 09:48:48,116 - __main__ - INFO - Atualizado previous_close_correct para EALT4: 10.77
+2025-08-26 09:48:48,116 - __main__ - INFO - Atualizando previous_close_correct para ECOR3
+2025-08-26 09:48:48,221 - __main__ - INFO - Preço de fechamento anterior para ECOR3: 7.25
+2025-08-26 09:48:48,223 - __main__ - INFO - Atualizado previous_close_correct para ECOR3: 7.25
+2025-08-26 09:48:48,224 - __main__ - INFO - Atualizando previous_close_correct para EGIE3
+2025-08-26 09:48:48,329 - __main__ - INFO - Preço de fechamento anterior para EGIE3: 39.54
+2025-08-26 09:48:48,331 - __main__ - INFO - Atualizado previous_close_correct para EGIE3: 39.54
+2025-08-26 09:48:48,331 - __main__ - INFO - Atualizando previous_close_correct para EKTR3
+2025-08-26 09:48:48,559 - __main__ - INFO - Preço de fechamento anterior para EKTR3: 45.0
+2025-08-26 09:48:48,561 - __main__ - INFO - Atualizado previous_close_correct para EKTR3: 45.0
+2025-08-26 09:48:48,561 - __main__ - INFO - Atualizando previous_close_correct para EKTR4
+2025-08-26 09:48:48,806 - __main__ - INFO - Preço de fechamento anterior para EKTR4: 48.0
+2025-08-26 09:48:48,808 - __main__ - INFO - Atualizado previous_close_correct para EKTR4: 48.0
+2025-08-26 09:48:48,808 - __main__ - INFO - Atualizando previous_close_correct para ELET3
+2025-08-26 09:48:48,898 - __main__ - INFO - Preço de fechamento anterior para ELET3: 42.55
+2025-08-26 09:48:48,900 - __main__ - INFO - Atualizado previous_close_correct para ELET3: 42.55
+2025-08-26 09:48:48,900 - __main__ - INFO - Atualizando previous_close_correct para ELET6
+2025-08-26 09:48:48,976 - __main__ - INFO - Preço de fechamento anterior para ELET6: 45.93
+2025-08-26 09:48:48,978 - __main__ - INFO - Atualizado previous_close_correct para ELET6: 45.93
+2025-08-26 09:48:48,978 - __main__ - INFO - Atualizando previous_close_correct para EMAE4
+2025-08-26 09:48:49,178 - __main__ - INFO - Preço de fechamento anterior para EMAE4: 28.5
+2025-08-26 09:48:49,180 - __main__ - INFO - Atualizado previous_close_correct para EMAE4: 28.5
+2025-08-26 09:48:49,180 - __main__ - INFO - Atualizando previous_close_correct para EMBR3
+2025-08-26 09:48:49,269 - __main__ - INFO - Preço de fechamento anterior para EMBR3: 77.65
+2025-08-26 09:48:49,270 - __main__ - INFO - Atualizado previous_close_correct para EMBR3: 77.65
+2025-08-26 09:48:49,270 - __main__ - INFO - Atualizando previous_close_correct para ENEV3
+2025-08-26 09:48:49,361 - __main__ - INFO - Preço de fechamento anterior para ENEV3: 14.31
+2025-08-26 09:48:49,363 - __main__ - INFO - Atualizado previous_close_correct para ENEV3: 14.31
+2025-08-26 09:48:49,364 - __main__ - INFO - Atualizando previous_close_correct para ENGI11
+2025-08-26 09:48:49,469 - __main__ - INFO - Preço de fechamento anterior para ENGI11: 47.47
+2025-08-26 09:48:49,471 - __main__ - INFO - Atualizado previous_close_correct para ENGI11: 47.47
+2025-08-26 09:48:49,471 - __main__ - INFO - Atualizando previous_close_correct para ENGI3
+2025-08-26 09:48:49,691 - __main__ - INFO - Preço de fechamento anterior para ENGI3: 13.3
+2025-08-26 09:48:49,692 - __main__ - INFO - Atualizado previous_close_correct para ENGI3: 13.3
+2025-08-26 09:48:49,692 - __main__ - INFO - Atualizando previous_close_correct para ENGI4
+2025-08-26 09:48:49,906 - __main__ - INFO - Preço de fechamento anterior para ENGI4: 8.57
+2025-08-26 09:48:49,907 - __main__ - INFO - Atualizado previous_close_correct para ENGI4: 8.57
+2025-08-26 09:48:49,907 - __main__ - INFO - Atualizando previous_close_correct para ENJU3
+2025-08-26 09:48:50,109 - __main__ - INFO - Preço de fechamento anterior para ENJU3: 0.99
+2025-08-26 09:48:50,111 - __main__ - INFO - Atualizado previous_close_correct para ENJU3: 0.99
+2025-08-26 09:48:50,111 - __main__ - INFO - Atualizando previous_close_correct para ENMT4
+2025-08-26 09:48:50,282 - __main__ - INFO - Preço de fechamento anterior para ENMT4: 54.0
+2025-08-26 09:48:50,283 - __main__ - INFO - Atualizado previous_close_correct para ENMT4: 54.0
+2025-08-26 09:48:50,283 - __main__ - INFO - Atualizando previous_close_correct para EQMA3B
+2025-08-26 09:48:50,470 - __main__ - INFO - Preço de fechamento anterior para EQMA3B: 29.31
+2025-08-26 09:48:50,472 - __main__ - INFO - Atualizado previous_close_correct para EQMA3B: 29.31
+2025-08-26 09:48:50,472 - __main__ - INFO - Atualizando previous_close_correct para EQTL3
+2025-08-26 09:48:50,607 - __main__ - INFO - Preço de fechamento anterior para EQTL3: 35.6
+2025-08-26 09:48:50,609 - __main__ - INFO - Atualizado previous_close_correct para EQTL3: 35.6
+2025-08-26 09:48:50,610 - __main__ - INFO - Atualizando previous_close_correct para ESPA3
+2025-08-26 09:48:50,793 - __main__ - INFO - Preço de fechamento anterior para ESPA3: 1.11
+2025-08-26 09:48:50,794 - __main__ - INFO - Atualizado previous_close_correct para ESPA3: 1.11
+2025-08-26 09:48:50,794 - __main__ - INFO - Atualizando previous_close_correct para ESTR4
+2025-08-26 09:48:50,964 - __main__ - INFO - Preço de fechamento anterior para ESTR4: 6.49
+2025-08-26 09:48:50,966 - __main__ - INFO - Atualizado previous_close_correct para ESTR4: 6.49
+2025-08-26 09:48:50,966 - __main__ - INFO - Atualizando previous_close_correct para ETER3
+2025-08-26 09:48:51,347 - __main__ - INFO - Preço de fechamento anterior para ETER3: 4.16
+2025-08-26 09:48:51,349 - __main__ - INFO - Atualizado previous_close_correct para ETER3: 4.16
+2025-08-26 09:48:51,349 - __main__ - INFO - Atualizando previous_close_correct para EUCA3
+2025-08-26 09:48:51,503 - __main__ - INFO - Preço de fechamento anterior para EUCA3: 19.0
+2025-08-26 09:48:51,504 - __main__ - INFO - Atualizado previous_close_correct para EUCA3: 19.0
+2025-08-26 09:48:51,504 - __main__ - INFO - Atualizando previous_close_correct para EUCA4
+2025-08-26 09:48:51,706 - __main__ - INFO - Preço de fechamento anterior para EUCA4: 17.0
+2025-08-26 09:48:51,707 - __main__ - INFO - Atualizado previous_close_correct para EUCA4: 17.0
+2025-08-26 09:48:51,707 - __main__ - INFO - Atualizando previous_close_correct para EVEN3
+2025-08-26 09:48:51,815 - __main__ - INFO - Preço de fechamento anterior para EVEN3: 7.44
+2025-08-26 09:48:51,817 - __main__ - INFO - Atualizado previous_close_correct para EVEN3: 7.44
+2025-08-26 09:48:51,817 - __main__ - INFO - Atualizando previous_close_correct para EZTC3
+2025-08-26 09:48:51,924 - __main__ - INFO - Preço de fechamento anterior para EZTC3: 13.78
+2025-08-26 09:48:51,925 - __main__ - INFO - Atualizado previous_close_correct para EZTC3: 13.78
+2025-08-26 09:48:51,926 - __main__ - INFO - Atualizando previous_close_correct para FESA3
+2025-08-26 09:48:52,140 - __main__ - INFO - Preço de fechamento anterior para FESA3: 11.2
+2025-08-26 09:48:52,141 - __main__ - INFO - Atualizado previous_close_correct para FESA3: 11.2
+2025-08-26 09:48:52,141 - __main__ - INFO - Atualizando previous_close_correct para FESA4
+2025-08-26 09:48:52,247 - __main__ - INFO - Preço de fechamento anterior para FESA4: 6.26
+2025-08-26 09:48:52,254 - __main__ - INFO - Atualizado previous_close_correct para FESA4: 6.26
+2025-08-26 09:48:52,254 - __main__ - INFO - Atualizando previous_close_correct para FHER3
+2025-08-26 09:48:52,632 - __main__ - INFO - Preço de fechamento anterior para FHER3: 3.92
+2025-08-26 09:48:52,633 - __main__ - INFO - Atualizado previous_close_correct para FHER3: 3.92
+2025-08-26 09:48:52,633 - __main__ - INFO - Atualizando previous_close_correct para FICT3
+2025-08-26 09:48:52,803 - __main__ - INFO - Preço de fechamento anterior para FICT3: 3.48
+2025-08-26 09:48:52,804 - __main__ - INFO - Atualizado previous_close_correct para FICT3: 3.48
+2025-08-26 09:48:52,805 - __main__ - INFO - Atualizando previous_close_correct para FIEI3
+2025-08-26 09:48:52,975 - __main__ - INFO - Preço de fechamento anterior para FIEI3: 21.99
+2025-08-26 09:48:52,977 - __main__ - INFO - Atualizado previous_close_correct para FIEI3: 21.99
+2025-08-26 09:48:52,977 - __main__ - INFO - Atualizando previous_close_correct para FIQE3
+2025-08-26 09:48:53,190 - __main__ - INFO - Preço de fechamento anterior para FIQE3: 4.1
+2025-08-26 09:48:53,191 - __main__ - INFO - Atualizado previous_close_correct para FIQE3: 4.1
+2025-08-26 09:48:53,192 - __main__ - INFO - Atualizando previous_close_correct para FLRY3
+2025-08-26 09:48:53,301 - __main__ - INFO - Preço de fechamento anterior para FLRY3: 14.12
+2025-08-26 09:48:53,302 - __main__ - INFO - Atualizado previous_close_correct para FLRY3: 14.12
+2025-08-26 09:48:53,302 - __main__ - INFO - Atualizando previous_close_correct para FRAS3
+2025-08-26 09:48:53,487 - __main__ - INFO - Preço de fechamento anterior para FRAS3: 22.89
+2025-08-26 09:48:53,494 - __main__ - INFO - Atualizado previous_close_correct para FRAS3: 22.89
+2025-08-26 09:48:53,494 - __main__ - INFO - Atualizando previous_close_correct para FRIO3
+2025-08-26 09:48:53,704 - __main__ - INFO - Preço de fechamento anterior para FRIO3: 250.0
+2025-08-26 09:48:53,705 - __main__ - INFO - Atualizado previous_close_correct para FRIO3: 250.0
+2025-08-26 09:48:53,705 - __main__ - INFO - Atualizando previous_close_correct para GEPA4
+2025-08-26 09:48:53,940 - __main__ - INFO - Preço de fechamento anterior para GEPA4: 35.24
+2025-08-26 09:48:53,942 - __main__ - INFO - Atualizado previous_close_correct para GEPA4: 35.24
+2025-08-26 09:48:53,942 - __main__ - INFO - Atualizando previous_close_correct para GFSA3
+2025-08-26 09:48:54,268 - __main__ - INFO - Preço de fechamento anterior para GFSA3: 13.7
+2025-08-26 09:48:54,275 - __main__ - INFO - Atualizado previous_close_correct para GFSA3: 13.7
+2025-08-26 09:48:54,275 - __main__ - INFO - Atualizando previous_close_correct para GGBR3
+2025-08-26 09:48:54,376 - __main__ - INFO - Preço de fechamento anterior para GGBR3: 14.86
+2025-08-26 09:48:54,378 - __main__ - INFO - Atualizado previous_close_correct para GGBR3: 14.86
+2025-08-26 09:48:54,379 - __main__ - INFO - Atualizando previous_close_correct para GGBR4
+2025-08-26 09:48:54,469 - __main__ - INFO - Preço de fechamento anterior para GGBR4: 16.26
+2025-08-26 09:48:54,471 - __main__ - INFO - Atualizado previous_close_correct para GGBR4: 16.26
+2025-08-26 09:48:54,471 - __main__ - INFO - Atualizando previous_close_correct para GGPS3
+2025-08-26 09:48:54,623 - __main__ - INFO - Preço de fechamento anterior para GGPS3: 16.83
+2025-08-26 09:48:54,625 - __main__ - INFO - Atualizado previous_close_correct para GGPS3: 16.83
+2025-08-26 09:48:54,625 - __main__ - INFO - Atualizando previous_close_correct para GMAT3
+2025-08-26 09:48:54,763 - __main__ - INFO - Preço de fechamento anterior para GMAT3: 6.9399999999999995
+2025-08-26 09:48:54,765 - __main__ - INFO - Atualizado previous_close_correct para GMAT3: 6.9399999999999995
+2025-08-26 09:48:54,765 - __main__ - INFO - Atualizando previous_close_correct para GOAU3
+2025-08-26 09:48:54,918 - __main__ - INFO - Preço de fechamento anterior para GOAU3: 9.13
+2025-08-26 09:48:54,920 - __main__ - INFO - Atualizado previous_close_correct para GOAU3: 9.13
+2025-08-26 09:48:54,920 - __main__ - INFO - Atualizando previous_close_correct para GOAU4
+2025-08-26 09:48:55,013 - __main__ - INFO - Preço de fechamento anterior para GOAU4: 9.16
+2025-08-26 09:48:55,015 - __main__ - INFO - Atualizado previous_close_correct para GOAU4: 9.16
+2025-08-26 09:48:55,015 - __main__ - INFO - Atualizando previous_close_correct para GRND3
+2025-08-26 09:48:55,372 - __main__ - INFO - Preço de fechamento anterior para GRND3: 5.3
+2025-08-26 09:48:55,373 - __main__ - INFO - Atualizado previous_close_correct para GRND3: 5.3
+2025-08-26 09:48:55,373 - __main__ - INFO - Atualizando previous_close_correct para GSHP3
+2025-08-26 09:48:55,576 - __main__ - INFO - Preço de fechamento anterior para GSHP3: 2.99
+2025-08-26 09:48:55,577 - __main__ - INFO - Atualizado previous_close_correct para GSHP3: 2.99
+2025-08-26 09:48:55,577 - __main__ - INFO - Atualizando previous_close_correct para GUAR3
+2025-08-26 09:48:55,578 - __main__ - INFO - Preço de fechamento anterior para GUAR3: 8.53
+2025-08-26 09:48:55,579 - __main__ - INFO - Atualizado previous_close_correct para GUAR3: 8.53
+2025-08-26 09:48:55,579 - __main__ - INFO - Atualizando previous_close_correct para HAPV3
+2025-08-26 09:48:55,580 - __main__ - INFO - Preço de fechamento anterior para HAPV3: 38.12
+2025-08-26 09:48:55,581 - __main__ - INFO - Atualizado previous_close_correct para HAPV3: 38.12
+2025-08-26 09:48:55,581 - __main__ - INFO - Atualizando previous_close_correct para HBOR3
+2025-08-26 09:48:55,917 - __main__ - INFO - Preço de fechamento anterior para HBOR3: 3.06
+2025-08-26 09:48:55,918 - __main__ - INFO - Atualizado previous_close_correct para HBOR3: 3.06
+2025-08-26 09:48:55,919 - __main__ - INFO - Atualizando previous_close_correct para HBRE3
+2025-08-26 09:48:56,057 - __main__ - INFO - Preço de fechamento anterior para HBRE3: 4.19
+2025-08-26 09:48:56,058 - __main__ - INFO - Atualizado previous_close_correct para HBRE3: 4.19
+2025-08-26 09:48:56,058 - __main__ - INFO - Atualizando previous_close_correct para HBSA3
+2025-08-26 09:48:56,230 - __main__ - INFO - Preço de fechamento anterior para HBSA3: 3.69
+2025-08-26 09:48:56,232 - __main__ - INFO - Atualizado previous_close_correct para HBSA3: 3.69
+2025-08-26 09:48:56,232 - __main__ - INFO - Atualizando previous_close_correct para HBTS5
+2025-08-26 09:48:56,448 - __main__ - INFO - Preço de fechamento anterior para HBTS5: 29.05
+2025-08-26 09:48:56,450 - __main__ - INFO - Atualizado previous_close_correct para HBTS5: 29.05
+2025-08-26 09:48:56,450 - __main__ - INFO - Atualizando previous_close_correct para HOOT4
+2025-08-26 09:48:56,648 - __main__ - INFO - Preço de fechamento anterior para HOOT4: 3.8
+2025-08-26 09:48:56,650 - __main__ - INFO - Atualizado previous_close_correct para HOOT4: 3.8
+2025-08-26 09:48:56,650 - __main__ - INFO - Atualizando previous_close_correct para HYPE3
+2025-08-26 09:48:56,912 - __main__ - INFO - Preço de fechamento anterior para HYPE3: 23.71
+2025-08-26 09:48:56,913 - __main__ - INFO - Atualizado previous_close_correct para HYPE3: 23.71
+2025-08-26 09:48:56,913 - __main__ - INFO - Atualizando previous_close_correct para IFCM3
+2025-08-26 09:48:57,052 - __main__ - INFO - Preço de fechamento anterior para IFCM3: 0.44
+2025-08-26 09:48:57,053 - __main__ - INFO - Atualizado previous_close_correct para IFCM3: 0.44
+2025-08-26 09:48:57,053 - __main__ - INFO - Atualizando previous_close_correct para IGTI11
+2025-08-26 09:48:57,253 - __main__ - INFO - Preço de fechamento anterior para IGTI11: 22.69
+2025-08-26 09:48:57,254 - __main__ - INFO - Atualizado previous_close_correct para IGTI11: 22.69
+2025-08-26 09:48:57,254 - __main__ - INFO - Atualizando previous_close_correct para IGTI3
+2025-08-26 09:48:57,425 - __main__ - INFO - Preço de fechamento anterior para IGTI3: 2.62
+2025-08-26 09:48:57,427 - __main__ - INFO - Atualizado previous_close_correct para IGTI3: 2.62
+2025-08-26 09:48:57,427 - __main__ - INFO - Atualizando previous_close_correct para IGTI4
+2025-08-26 09:48:57,643 - __main__ - INFO - Preço de fechamento anterior para IGTI4: 10.42
+2025-08-26 09:48:57,644 - __main__ - INFO - Atualizado previous_close_correct para IGTI4: 10.42
+2025-08-26 09:48:57,645 - __main__ - INFO - Atualizando previous_close_correct para INEP3
+2025-08-26 09:48:57,830 - __main__ - INFO - Preço de fechamento anterior para INEP3: 1.7
+2025-08-26 09:48:57,831 - __main__ - INFO - Atualizado previous_close_correct para INEP3: 1.7
+2025-08-26 09:48:57,831 - __main__ - INFO - Atualizando previous_close_correct para INTB3
+2025-08-26 09:48:58,001 - __main__ - INFO - Preço de fechamento anterior para INTB3: 12.13
+2025-08-26 09:48:58,006 - __main__ - INFO - Atualizado previous_close_correct para INTB3: 12.13
+2025-08-26 09:48:58,006 - __main__ - INFO - Atualizando previous_close_correct para IRBR3
+2025-08-26 09:48:58,126 - __main__ - INFO - Preço de fechamento anterior para IRBR3: 47.15
+2025-08-26 09:48:58,127 - __main__ - INFO - Atualizado previous_close_correct para IRBR3: 47.15
+2025-08-26 09:48:58,127 - __main__ - INFO - Atualizando previous_close_correct para ISAE3
+2025-08-26 09:48:58,265 - __main__ - INFO - Preço de fechamento anterior para ISAE3: 30.11
+2025-08-26 09:48:58,266 - __main__ - INFO - Atualizado previous_close_correct para ISAE3: 30.11
+2025-08-26 09:48:58,266 - __main__ - INFO - Atualizando previous_close_correct para ISAE4
+2025-08-26 09:48:58,389 - __main__ - INFO - Preço de fechamento anterior para ISAE4: 22.33
+2025-08-26 09:48:58,395 - __main__ - INFO - Atualizado previous_close_correct para ISAE4: 22.33
+2025-08-26 09:48:58,396 - __main__ - INFO - Atualizando previous_close_correct para ITSA3
+2025-08-26 09:48:58,512 - __main__ - INFO - Preço de fechamento anterior para ITSA3: 10.98
+2025-08-26 09:48:58,513 - __main__ - INFO - Atualizado previous_close_correct para ITSA3: 10.98
+2025-08-26 09:48:58,514 - __main__ - INFO - Atualizando previous_close_correct para ITSA4
+2025-08-26 09:48:58,604 - __main__ - INFO - Preço de fechamento anterior para ITSA4: 11.0
+2025-08-26 09:48:58,605 - __main__ - INFO - Atualizado previous_close_correct para ITSA4: 11.0
+2025-08-26 09:48:58,605 - __main__ - INFO - Atualizando previous_close_correct para ITUB4
+2025-08-26 09:48:58,606 - __main__ - INFO - Preço de fechamento anterior para ITUB4: 37.41
+2025-08-26 09:48:58,607 - __main__ - INFO - Atualizado previous_close_correct para ITUB4: 37.41
+2025-08-26 09:48:58,607 - __main__ - INFO - Atualizando previous_close_correct para JALL3
+2025-08-26 09:48:58,711 - __main__ - INFO - Preço de fechamento anterior para JALL3: 2.81
+2025-08-26 09:48:58,718 - __main__ - INFO - Atualizado previous_close_correct para JALL3: 2.81
+2025-08-26 09:48:58,718 - __main__ - INFO - Atualizando previous_close_correct para JFEN3
+2025-08-26 09:48:58,950 - __main__ - INFO - Preço de fechamento anterior para JFEN3: 1.53
+2025-08-26 09:48:58,951 - __main__ - INFO - Atualizado previous_close_correct para JFEN3: 1.53
+2025-08-26 09:48:58,951 - __main__ - INFO - Atualizando previous_close_correct para JHSF3
+2025-08-26 09:48:59,091 - __main__ - INFO - Preço de fechamento anterior para JHSF3: 5.5
+2025-08-26 09:48:59,092 - __main__ - INFO - Atualizado previous_close_correct para JHSF3: 5.5
+2025-08-26 09:48:59,092 - __main__ - INFO - Atualizando previous_close_correct para JSLG3
+2025-08-26 09:48:59,245 - __main__ - INFO - Preço de fechamento anterior para JSLG3: 5.41
+2025-08-26 09:48:59,248 - __main__ - INFO - Atualizado previous_close_correct para JSLG3: 5.41
+2025-08-26 09:48:59,248 - __main__ - INFO - Atualizando previous_close_correct para KEPL3
+2025-08-26 09:48:59,462 - __main__ - INFO - Preço de fechamento anterior para KEPL3: 7.34
+2025-08-26 09:48:59,468 - __main__ - INFO - Atualizado previous_close_correct para KEPL3: 7.34
+2025-08-26 09:48:59,468 - __main__ - INFO - Atualizando previous_close_correct para KLBN11
+2025-08-26 09:48:59,600 - __main__ - INFO - Preço de fechamento anterior para KLBN11: 18.39
+2025-08-26 09:48:59,602 - __main__ - INFO - Atualizado previous_close_correct para KLBN11: 18.39
+2025-08-26 09:48:59,602 - __main__ - INFO - Atualizando previous_close_correct para LAND3
+2025-08-26 09:48:59,783 - __main__ - INFO - Preço de fechamento anterior para LAND3: 10.2
+2025-08-26 09:48:59,785 - __main__ - INFO - Atualizado previous_close_correct para LAND3: 10.2
+2025-08-26 09:48:59,785 - __main__ - INFO - Atualizando previous_close_correct para LAVV3
+2025-08-26 09:48:59,955 - __main__ - INFO - Preço de fechamento anterior para LAVV3: 12.48
+2025-08-26 09:48:59,956 - __main__ - INFO - Atualizado previous_close_correct para LAVV3: 12.48
+2025-08-26 09:48:59,956 - __main__ - INFO - Atualizando previous_close_correct para LEVE3
+2025-08-26 09:49:00,081 - __main__ - INFO - Preço de fechamento anterior para LEVE3: 27.16
+2025-08-26 09:49:00,083 - __main__ - INFO - Atualizado previous_close_correct para LEVE3: 27.16
+2025-08-26 09:49:00,083 - __main__ - INFO - Atualizando previous_close_correct para LIGT3
+2025-08-26 09:49:00,234 - __main__ - INFO - Preço de fechamento anterior para LIGT3: 6.05
+2025-08-26 09:49:00,294 - __main__ - INFO - Atualizado previous_close_correct para LIGT3: 6.05
+2025-08-26 09:49:00,294 - __main__ - INFO - Atualizando previous_close_correct para LJQQ3
+2025-08-26 09:49:00,420 - __main__ - INFO - Preço de fechamento anterior para LJQQ3: 2.6
+2025-08-26 09:49:00,421 - __main__ - INFO - Atualizado previous_close_correct para LJQQ3: 2.6
+2025-08-26 09:49:00,421 - __main__ - INFO - Atualizando previous_close_correct para LOGG3
+2025-08-26 09:49:00,422 - __main__ - INFO - Preço de fechamento anterior para LOGG3: 20.99
+2025-08-26 09:49:00,423 - __main__ - INFO - Atualizado previous_close_correct para LOGG3: 20.99
+2025-08-26 09:49:00,423 - __main__ - INFO - Atualizando previous_close_correct para LOGN3
+2025-08-26 09:49:00,699 - __main__ - INFO - Preço de fechamento anterior para LOGN3: 24.94
+2025-08-26 09:49:00,701 - __main__ - INFO - Atualizado previous_close_correct para LOGN3: 24.94
+2025-08-26 09:49:00,701 - __main__ - INFO - Atualizando previous_close_correct para LPSB3
+2025-08-26 09:49:00,702 - __main__ - INFO - Preço de fechamento anterior para LPSB3: 1.43
+2025-08-26 09:49:00,703 - __main__ - INFO - Atualizado previous_close_correct para LPSB3: 1.43
+2025-08-26 09:49:00,703 - __main__ - INFO - Atualizando previous_close_correct para LREN3
+2025-08-26 09:49:00,704 - __main__ - INFO - Preço de fechamento anterior para LREN3: 15.89
+2025-08-26 09:49:00,705 - __main__ - INFO - Atualizado previous_close_correct para LREN3: 15.89
+2025-08-26 09:49:00,706 - __main__ - INFO - Atualizando previous_close_correct para LUPA3
+2025-08-26 09:49:00,840 - __main__ - INFO - Preço de fechamento anterior para LUPA3: 1.1400000000000001
+2025-08-26 09:49:00,841 - __main__ - INFO - Atualizado previous_close_correct para LUPA3: 1.1400000000000001
+2025-08-26 09:49:00,841 - __main__ - INFO - Atualizando previous_close_correct para MATD3
+2025-08-26 09:49:00,994 - __main__ - INFO - Preço de fechamento anterior para MATD3: 4.68
+2025-08-26 09:49:00,996 - __main__ - INFO - Atualizado previous_close_correct para MATD3: 4.68
+2025-08-26 09:49:00,996 - __main__ - INFO - Atualizando previous_close_correct para MDIA3
+2025-08-26 09:49:01,135 - __main__ - INFO - Preço de fechamento anterior para MDIA3: 28.96
+2025-08-26 09:49:01,136 - __main__ - INFO - Atualizado previous_close_correct para MDIA3: 28.96
+2025-08-26 09:49:01,136 - __main__ - INFO - Atualizando previous_close_correct para MDNE3
+2025-08-26 09:49:01,137 - __main__ - INFO - Preço de fechamento anterior para MDNE3: 24.94
+2025-08-26 09:49:01,147 - __main__ - INFO - Atualizado previous_close_correct para MDNE3: 24.94
+2025-08-26 09:49:01,147 - __main__ - INFO - Atualizando previous_close_correct para MEAL3
+2025-08-26 09:49:01,368 - __main__ - INFO - Preço de fechamento anterior para MEAL3: 1.29
+2025-08-26 09:49:01,370 - __main__ - INFO - Atualizado previous_close_correct para MEAL3: 1.29
+2025-08-26 09:49:01,370 - __main__ - INFO - Atualizando previous_close_correct para MELK3
+2025-08-26 09:49:01,570 - __main__ - INFO - Preço de fechamento anterior para MELK3: 3.67
+2025-08-26 09:49:01,571 - __main__ - INFO - Atualizado previous_close_correct para MELK3: 3.67
+2025-08-26 09:49:01,571 - __main__ - INFO - Atualizando previous_close_correct para MGEL4
+2025-08-26 09:49:01,785 - __main__ - INFO - Preço de fechamento anterior para MGEL4: 4.86
+2025-08-26 09:49:01,786 - __main__ - INFO - Atualizado previous_close_correct para MGEL4: 4.86
+2025-08-26 09:49:01,787 - __main__ - INFO - Atualizando previous_close_correct para MGLU3
+2025-08-26 09:49:01,787 - __main__ - INFO - Preço de fechamento anterior para MGLU3: 6.9
+2025-08-26 09:49:01,788 - __main__ - INFO - Atualizado previous_close_correct para MGLU3: 6.9
+2025-08-26 09:49:01,788 - __main__ - INFO - Atualizando previous_close_correct para MILS3
+2025-08-26 09:49:01,909 - __main__ - INFO - Preço de fechamento anterior para MILS3: 11.88
+2025-08-26 09:49:01,911 - __main__ - INFO - Atualizado previous_close_correct para MILS3: 11.88
+2025-08-26 09:49:01,911 - __main__ - INFO - Atualizando previous_close_correct para MLAS3
+2025-08-26 09:49:02,096 - __main__ - INFO - Preço de fechamento anterior para MLAS3: 1.08
+2025-08-26 09:49:02,098 - __main__ - INFO - Atualizado previous_close_correct para MLAS3: 1.08
+2025-08-26 09:49:02,098 - __main__ - INFO - Atualizando previous_close_correct para MNDL3
+2025-08-26 09:49:02,379 - __main__ - INFO - Preço de fechamento anterior para MNDL3: 17.99
+2025-08-26 09:49:02,381 - __main__ - INFO - Atualizado previous_close_correct para MNDL3: 17.99
+2025-08-26 09:49:02,381 - __main__ - INFO - Atualizando previous_close_correct para MNPR3
+2025-08-26 09:49:02,661 - __main__ - INFO - Preço de fechamento anterior para MNPR3: 32.49
+2025-08-26 09:49:02,678 - __main__ - INFO - Atualizado previous_close_correct para MNPR3: 32.49
+2025-08-26 09:49:02,678 - __main__ - INFO - Atualizando previous_close_correct para MOAR3
+2025-08-26 09:49:02,941 - __main__ - INFO - Preço de fechamento anterior para MOAR3: 120.04
+2025-08-26 09:49:02,950 - __main__ - INFO - Atualizado previous_close_correct para MOAR3: 120.04
+2025-08-26 09:49:02,950 - __main__ - INFO - Atualizando previous_close_correct para MOTV3
+2025-08-26 09:49:03,064 - __main__ - INFO - Preço de fechamento anterior para MOTV3: 13.78
+2025-08-26 09:49:03,066 - __main__ - INFO - Atualizado previous_close_correct para MOTV3: 13.78
+2025-08-26 09:49:03,066 - __main__ - INFO - Atualizando previous_close_correct para MOVI3
+2025-08-26 09:49:03,173 - __main__ - INFO - Preço de fechamento anterior para MOVI3: 6.9399999999999995
+2025-08-26 09:49:03,174 - __main__ - INFO - Atualizado previous_close_correct para MOVI3: 6.9399999999999995
+2025-08-26 09:49:03,174 - __main__ - INFO - Atualizando previous_close_correct para MRVE3
+2025-08-26 09:49:03,266 - __main__ - INFO - Preço de fechamento anterior para MRVE3: 7.5
+2025-08-26 09:49:03,267 - __main__ - INFO - Atualizado previous_close_correct para MRVE3: 7.5
+2025-08-26 09:49:03,267 - __main__ - INFO - Atualizando previous_close_correct para MTRE3
+2025-08-26 09:49:03,390 - __main__ - INFO - Preço de fechamento anterior para MTRE3: 3.45
+2025-08-26 09:49:03,391 - __main__ - INFO - Atualizado previous_close_correct para MTRE3: 3.45
+2025-08-26 09:49:03,391 - __main__ - INFO - Atualizando previous_close_correct para MTSA4
+2025-08-26 09:49:03,590 - __main__ - INFO - Preço de fechamento anterior para MTSA4: 41.0
+2025-08-26 09:49:03,592 - __main__ - INFO - Atualizado previous_close_correct para MTSA4: 41.0
+2025-08-26 09:49:03,592 - __main__ - INFO - Atualizando previous_close_correct para MULT3
+2025-08-26 09:49:03,697 - __main__ - INFO - Preço de fechamento anterior para MULT3: 26.83
+2025-08-26 09:49:03,698 - __main__ - INFO - Atualizado previous_close_correct para MULT3: 26.83
+2025-08-26 09:49:03,699 - __main__ - INFO - Atualizando previous_close_correct para MWET4
+2025-08-26 09:49:03,915 - __main__ - INFO - Preço de fechamento anterior para MWET4: 10.6
+2025-08-26 09:49:03,916 - __main__ - INFO - Atualizado previous_close_correct para MWET4: 10.6
+2025-08-26 09:49:03,916 - __main__ - INFO - Atualizando previous_close_correct para MYPK3
+2025-08-26 09:49:03,916 - __main__ - INFO - Preço de fechamento anterior para MYPK3: 13.44
+2025-08-26 09:49:03,917 - __main__ - INFO - Atualizado previous_close_correct para MYPK3: 13.44
+2025-08-26 09:49:03,917 - __main__ - INFO - Atualizando previous_close_correct para NEOE3
+2025-08-26 09:49:04,056 - __main__ - INFO - Preço de fechamento anterior para NEOE3: 26.52
+2025-08-26 09:49:04,057 - __main__ - INFO - Atualizado previous_close_correct para NEOE3: 26.52
+2025-08-26 09:49:04,057 - __main__ - INFO - Atualizando previous_close_correct para NEXP3
+2025-08-26 09:49:04,276 - __main__ - INFO - Preço de fechamento anterior para NEXP3: 3.63
+2025-08-26 09:49:04,278 - __main__ - INFO - Atualizado previous_close_correct para NEXP3: 3.63
+2025-08-26 09:49:04,278 - __main__ - INFO - Atualizando previous_close_correct para NGRD3
+2025-08-26 09:49:04,446 - __main__ - INFO - Preço de fechamento anterior para NGRD3: 26.4
+2025-08-26 09:49:04,447 - __main__ - INFO - Atualizado previous_close_correct para NGRD3: 26.4
+2025-08-26 09:49:04,447 - __main__ - INFO - Atualizando previous_close_correct para NUTR3
+2025-08-26 09:49:04,634 - __main__ - INFO - Preço de fechamento anterior para NUTR3: 2.73
+2025-08-26 09:49:04,635 - __main__ - INFO - Atualizado previous_close_correct para NUTR3: 2.73
+2025-08-26 09:49:04,635 - __main__ - INFO - Atualizando previous_close_correct para ODPV3
+2025-08-26 09:49:04,790 - __main__ - INFO - Preço de fechamento anterior para ODPV3: 12.93
+2025-08-26 09:49:04,798 - __main__ - INFO - Atualizado previous_close_correct para ODPV3: 12.93
+2025-08-26 09:49:04,798 - __main__ - INFO - Atualizando previous_close_correct para OFSA3
+2025-08-26 09:49:05,010 - __main__ - INFO - Preço de fechamento anterior para OFSA3: 22.22
+2025-08-26 09:49:05,012 - __main__ - INFO - Atualizado previous_close_correct para OFSA3: 22.22
+2025-08-26 09:49:05,012 - __main__ - INFO - Atualizando previous_close_correct para OIBR3
+2025-08-26 09:49:05,180 - __main__ - INFO - Preço de fechamento anterior para OIBR3: 0.59
+2025-08-26 09:49:05,181 - __main__ - INFO - Atualizado previous_close_correct para OIBR3: 0.59
+2025-08-26 09:49:05,181 - __main__ - INFO - Atualizando previous_close_correct para OIBR4
+2025-08-26 09:49:05,540 - __main__ - INFO - Preço de fechamento anterior para OIBR4: 7.25
+2025-08-26 09:49:05,541 - __main__ - INFO - Atualizado previous_close_correct para OIBR4: 7.25
+2025-08-26 09:49:05,541 - __main__ - INFO - Atualizando previous_close_correct para ONCO3
+2025-08-26 09:49:05,742 - __main__ - INFO - Preço de fechamento anterior para ONCO3: 3.3
+2025-08-26 09:49:05,743 - __main__ - INFO - Atualizado previous_close_correct para ONCO3: 3.3
+2025-08-26 09:49:05,743 - __main__ - INFO - Atualizando previous_close_correct para OPCT3
+2025-08-26 09:49:05,944 - __main__ - INFO - Preço de fechamento anterior para OPCT3: 6.64
+2025-08-26 09:49:05,945 - __main__ - INFO - Atualizado previous_close_correct para OPCT3: 6.64
+2025-08-26 09:49:05,946 - __main__ - INFO - Atualizando previous_close_correct para ORVR3
+2025-08-26 09:49:06,100 - __main__ - INFO - Preço de fechamento anterior para ORVR3: 54.33
+2025-08-26 09:49:06,107 - __main__ - INFO - Atualizado previous_close_correct para ORVR3: 54.33
+2025-08-26 09:49:06,108 - __main__ - INFO - Atualizando previous_close_correct para OSXB3
+2025-08-26 09:49:06,378 - __main__ - INFO - Preço de fechamento anterior para OSXB3: 2.43
+2025-08-26 09:49:06,379 - __main__ - INFO - Atualizado previous_close_correct para OSXB3: 2.43
+2025-08-26 09:49:06,379 - __main__ - INFO - Atualizando previous_close_correct para PATI3
+2025-08-26 09:49:06,567 - __main__ - INFO - Preço de fechamento anterior para PATI3: 44.99
+2025-08-26 09:49:06,568 - __main__ - INFO - Atualizado previous_close_correct para PATI3: 44.99
+2025-08-26 09:49:06,568 - __main__ - INFO - Atualizando previous_close_correct para PATI4
+2025-08-26 09:49:06,753 - __main__ - INFO - Preço de fechamento anterior para PATI4: 37.43
+2025-08-26 09:49:06,755 - __main__ - INFO - Atualizado previous_close_correct para PATI4: 37.43
+2025-08-26 09:49:06,755 - __main__ - INFO - Atualizando previous_close_correct para PCAR3
+2025-08-26 09:49:06,876 - __main__ - INFO - Preço de fechamento anterior para PCAR3: 3.23
+2025-08-26 09:49:06,877 - __main__ - INFO - Atualizado previous_close_correct para PCAR3: 3.23
+2025-08-26 09:49:06,877 - __main__ - INFO - Atualizando previous_close_correct para PDGR3
+2025-08-26 09:49:07,079 - __main__ - INFO - Preço de fechamento anterior para PDGR3: 0.18
+2025-08-26 09:49:07,116 - __main__ - INFO - Atualizado previous_close_correct para PDGR3: 0.18
+2025-08-26 09:49:07,116 - __main__ - INFO - Atualizando previous_close_correct para PDTC3
+2025-08-26 09:49:07,344 - __main__ - INFO - Preço de fechamento anterior para PDTC3: 1.0
+2025-08-26 09:49:07,346 - __main__ - INFO - Atualizado previous_close_correct para PDTC3: 1.0
+2025-08-26 09:49:07,346 - __main__ - INFO - Atualizando previous_close_correct para PEAB3
+2025-08-26 09:49:07,546 - __main__ - INFO - Preço de fechamento anterior para PEAB3: 38.8
+2025-08-26 09:49:07,572 - __main__ - INFO - Atualizado previous_close_correct para PEAB3: 38.8
+2025-08-26 09:49:07,572 - __main__ - INFO - Atualizando previous_close_correct para PEAB4
+2025-08-26 09:49:07,748 - __main__ - INFO - Preço de fechamento anterior para PEAB4: 36.5
+2025-08-26 09:49:07,752 - __main__ - INFO - Atualizado previous_close_correct para PEAB4: 36.5
+2025-08-26 09:49:07,753 - __main__ - INFO - Atualizando previous_close_correct para PETR3
+2025-08-26 09:49:07,857 - __main__ - INFO - Preço de fechamento anterior para PETR3: 32.89
+2025-08-26 09:49:07,873 - __main__ - INFO - Atualizado previous_close_correct para PETR3: 32.89
+2025-08-26 09:49:07,873 - __main__ - INFO - Atualizando previous_close_correct para PETR4
+2025-08-26 09:49:07,874 - __main__ - INFO - Preço de fechamento anterior para PETR4: 30.48
+2025-08-26 09:49:07,876 - __main__ - INFO - Atualizado previous_close_correct para PETR4: 30.48
+2025-08-26 09:49:07,876 - __main__ - INFO - Atualizando previous_close_correct para PETZ3
+2025-08-26 09:49:08,062 - __main__ - INFO - Preço de fechamento anterior para PETZ3: 4.01
+2025-08-26 09:49:08,067 - __main__ - INFO - Atualizado previous_close_correct para PETZ3: 4.01
+2025-08-26 09:49:08,067 - __main__ - INFO - Atualizando previous_close_correct para PFRM3
+2025-08-26 09:49:08,251 - __main__ - INFO - Preço de fechamento anterior para PFRM3: 7.74
+2025-08-26 09:49:08,256 - __main__ - INFO - Atualizado previous_close_correct para PFRM3: 7.74
+2025-08-26 09:49:08,256 - __main__ - INFO - Atualizando previous_close_correct para PGMN3
+2025-08-26 09:49:08,467 - __main__ - INFO - Preço de fechamento anterior para PGMN3: 3.66
+2025-08-26 09:49:08,471 - __main__ - INFO - Atualizado previous_close_correct para PGMN3: 3.66
+2025-08-26 09:49:08,471 - __main__ - INFO - Atualizando previous_close_correct para PINE3
+2025-08-26 09:49:08,637 - __main__ - INFO - Preço de fechamento anterior para PINE3: 6.08
+2025-08-26 09:49:08,638 - __main__ - INFO - Atualizado previous_close_correct para PINE3: 6.08
+2025-08-26 09:49:08,638 - __main__ - INFO - Atualizando previous_close_correct para PINE4
+2025-08-26 09:49:08,776 - __main__ - INFO - Preço de fechamento anterior para PINE4: 6.4
+2025-08-26 09:49:08,778 - __main__ - INFO - Atualizado previous_close_correct para PINE4: 6.4
+2025-08-26 09:49:08,778 - __main__ - INFO - Atualizando previous_close_correct para PLPL3
+2025-08-26 09:49:08,918 - __main__ - INFO - Preço de fechamento anterior para PLPL3: 13.27
+2025-08-26 09:49:08,931 - __main__ - INFO - Atualizado previous_close_correct para PLPL3: 13.27
+2025-08-26 09:49:08,931 - __main__ - INFO - Atualizando previous_close_correct para PMAM3
+2025-08-26 09:49:09,105 - __main__ - INFO - Preço de fechamento anterior para PMAM3: 1.33
+2025-08-26 09:49:09,106 - __main__ - INFO - Atualizado previous_close_correct para PMAM3: 1.33
+2025-08-26 09:49:09,107 - __main__ - INFO - Atualizando previous_close_correct para PNVL3
+2025-08-26 09:49:09,292 - __main__ - INFO - Preço de fechamento anterior para PNVL3: 9.96
+2025-08-26 09:49:09,298 - __main__ - INFO - Atualizado previous_close_correct para PNVL3: 9.96
+2025-08-26 09:49:09,298 - __main__ - INFO - Atualizando previous_close_correct para POMO3
+2025-08-26 09:49:09,479 - __main__ - INFO - Preço de fechamento anterior para POMO3: 7.31
+2025-08-26 09:49:09,487 - __main__ - INFO - Atualizado previous_close_correct para POMO3: 7.31
+2025-08-26 09:49:09,487 - __main__ - INFO - Atualizando previous_close_correct para POMO4
+2025-08-26 09:49:09,604 - __main__ - INFO - Preço de fechamento anterior para POMO4: 9.21
+2025-08-26 09:49:09,605 - __main__ - INFO - Atualizado previous_close_correct para POMO4: 9.21
+2025-08-26 09:49:09,605 - __main__ - INFO - Atualizando previous_close_correct para PORT3
+2025-08-26 09:49:09,743 - __main__ - INFO - Preço de fechamento anterior para PORT3: 17.99
+2025-08-26 09:49:09,746 - __main__ - INFO - Atualizado previous_close_correct para PORT3: 17.99
+2025-08-26 09:49:09,746 - __main__ - INFO - Atualizando previous_close_correct para POSI3
+2025-08-26 09:49:09,851 - __main__ - INFO - Preço de fechamento anterior para POSI3: 4.32
+2025-08-26 09:49:09,853 - __main__ - INFO - Atualizado previous_close_correct para POSI3: 4.32
+2025-08-26 09:49:09,853 - __main__ - INFO - Atualizando previous_close_correct para PRIO3
+2025-08-26 09:49:09,854 - __main__ - INFO - Preço de fechamento anterior para PRIO3: 37.91
+2025-08-26 09:49:09,855 - __main__ - INFO - Atualizado previous_close_correct para PRIO3: 37.91
+2025-08-26 09:49:09,855 - __main__ - INFO - Atualizando previous_close_correct para PRNR3
+2025-08-26 09:49:09,991 - __main__ - INFO - Preço de fechamento anterior para PRNR3: 15.38
+2025-08-26 09:49:09,993 - __main__ - INFO - Atualizado previous_close_correct para PRNR3: 15.38
+2025-08-26 09:49:09,993 - __main__ - INFO - Atualizando previous_close_correct para PSSA3
+2025-08-26 09:49:10,115 - __main__ - INFO - Preço de fechamento anterior para PSSA3: 50.9
+2025-08-26 09:49:10,116 - __main__ - INFO - Atualizado previous_close_correct para PSSA3: 50.9
+2025-08-26 09:49:10,117 - __main__ - INFO - Atualizando previous_close_correct para PTBL3
+2025-08-26 09:49:10,207 - __main__ - INFO - Preço de fechamento anterior para PTBL3: 3.82
+2025-08-26 09:49:10,211 - __main__ - INFO - Atualizado previous_close_correct para PTBL3: 3.82
+2025-08-26 09:49:10,211 - __main__ - INFO - Atualizando previous_close_correct para PTNT3
+2025-08-26 09:49:10,425 - __main__ - INFO - Preço de fechamento anterior para PTNT3: 9.08
+2025-08-26 09:49:10,426 - __main__ - INFO - Atualizado previous_close_correct para PTNT3: 9.08
+2025-08-26 09:49:10,426 - __main__ - INFO - Atualizando previous_close_correct para PTNT4
+2025-08-26 09:49:10,645 - __main__ - INFO - Preço de fechamento anterior para PTNT4: 4.75
+2025-08-26 09:49:10,646 - __main__ - INFO - Atualizado previous_close_correct para PTNT4: 4.75
+2025-08-26 09:49:10,647 - __main__ - INFO - Atualizando previous_close_correct para QUAL3
+2025-08-26 09:49:10,769 - __main__ - INFO - Preço de fechamento anterior para QUAL3: 1.8199999999999998
+2025-08-26 09:49:10,770 - __main__ - INFO - Atualizado previous_close_correct para QUAL3: 1.8199999999999998
+2025-08-26 09:49:10,770 - __main__ - INFO - Atualizando previous_close_correct para RADL3
+2025-08-26 09:49:10,877 - __main__ - INFO - Preço de fechamento anterior para RADL3: 18.7
+2025-08-26 09:49:10,878 - __main__ - INFO - Atualizado previous_close_correct para RADL3: 18.7
+2025-08-26 09:49:10,878 - __main__ - INFO - Atualizando previous_close_correct para RAIL3
+2025-08-26 09:49:11,000 - __main__ - INFO - Preço de fechamento anterior para RAIL3: 15.01
+2025-08-26 09:49:11,005 - __main__ - INFO - Atualizado previous_close_correct para RAIL3: 15.01
+2025-08-26 09:49:11,005 - __main__ - INFO - Atualizando previous_close_correct para RAIZ4
+2025-08-26 09:49:11,108 - __main__ - INFO - Preço de fechamento anterior para RAIZ4: 1.04
+2025-08-26 09:49:11,110 - __main__ - INFO - Atualizado previous_close_correct para RAIZ4: 1.04
+2025-08-26 09:49:11,110 - __main__ - INFO - Atualizando previous_close_correct para RANI3
+2025-08-26 09:49:11,439 - __main__ - INFO - Preço de fechamento anterior para RANI3: 7.6
+2025-08-26 09:49:11,441 - __main__ - INFO - Atualizado previous_close_correct para RANI3: 7.6
+2025-08-26 09:49:11,441 - __main__ - INFO - Atualizando previous_close_correct para RAPT3
+2025-08-26 09:49:11,672 - __main__ - INFO - Preço de fechamento anterior para RAPT3: 6.39
+2025-08-26 09:49:11,673 - __main__ - INFO - Atualizado previous_close_correct para RAPT3: 6.39
+2025-08-26 09:49:11,673 - __main__ - INFO - Atualizando previous_close_correct para RAPT4
+2025-08-26 09:49:11,674 - __main__ - INFO - Preço de fechamento anterior para RAPT4: 6.8
+2025-08-26 09:49:11,675 - __main__ - INFO - Atualizado previous_close_correct para RAPT4: 6.8
+2025-08-26 09:49:11,676 - __main__ - INFO - Atualizando previous_close_correct para RCSL3
+2025-08-26 09:49:11,998 - __main__ - INFO - Preço de fechamento anterior para RCSL3: 1.62
+2025-08-26 09:49:12,000 - __main__ - INFO - Atualizado previous_close_correct para RCSL3: 1.62
+2025-08-26 09:49:12,000 - __main__ - INFO - Atualizando previous_close_correct para RCSL4
+2025-08-26 09:49:12,107 - __main__ - INFO - Preço de fechamento anterior para RCSL4: 1.1400000000000001
+2025-08-26 09:49:12,109 - __main__ - INFO - Atualizado previous_close_correct para RCSL4: 1.1400000000000001
+2025-08-26 09:49:12,109 - __main__ - INFO - Atualizando previous_close_correct para RDNI3
+2025-08-26 09:49:12,280 - __main__ - INFO - Preço de fechamento anterior para RDNI3: 2.07
+2025-08-26 09:49:12,281 - __main__ - INFO - Atualizado previous_close_correct para RDNI3: 2.07
+2025-08-26 09:49:12,281 - __main__ - INFO - Atualizando previous_close_correct para RDOR3
+2025-08-26 09:49:12,373 - __main__ - INFO - Preço de fechamento anterior para RDOR3: 37.77
+2025-08-26 09:49:12,374 - __main__ - INFO - Atualizado previous_close_correct para RDOR3: 37.77
+2025-08-26 09:49:12,374 - __main__ - INFO - Atualizando previous_close_correct para REAG3
+2025-08-26 09:49:12,511 - __main__ - INFO - Preço de fechamento anterior para REAG3: 3.89
+2025-08-26 09:49:12,512 - __main__ - INFO - Atualizado previous_close_correct para REAG3: 3.89
+2025-08-26 09:49:12,512 - __main__ - INFO - Atualizando previous_close_correct para RECV3
+2025-08-26 09:49:12,636 - __main__ - INFO - Preço de fechamento anterior para RECV3: 12.77
+2025-08-26 09:49:12,644 - __main__ - INFO - Atualizado previous_close_correct para RECV3: 12.77
+2025-08-26 09:49:12,644 - __main__ - INFO - Atualizando previous_close_correct para REDE3
+2025-08-26 09:49:12,854 - __main__ - INFO - Preço de fechamento anterior para REDE3: 6.29
+2025-08-26 09:49:12,858 - __main__ - INFO - Atualizado previous_close_correct para REDE3: 6.29
+2025-08-26 09:49:12,858 - __main__ - INFO - Atualizando previous_close_correct para RENT3
+2025-08-26 09:49:12,859 - __main__ - INFO - Preço de fechamento anterior para RENT3: 34.59
+2025-08-26 09:49:12,860 - __main__ - INFO - Atualizado previous_close_correct para RENT3: 34.59
+2025-08-26 09:49:12,860 - __main__ - INFO - Atualizando previous_close_correct para RNEW11
+2025-08-26 09:49:13,055 - __main__ - INFO - Preço de fechamento anterior para RNEW11: 3.05
+2025-08-26 09:49:13,056 - __main__ - INFO - Atualizado previous_close_correct para RNEW11: 3.05
+2025-08-26 09:49:13,056 - __main__ - INFO - Atualizando previous_close_correct para RNEW3
+2025-08-26 09:49:13,241 - __main__ - INFO - Preço de fechamento anterior para RNEW3: 1.02
+2025-08-26 09:49:13,243 - __main__ - INFO - Atualizado previous_close_correct para RNEW3: 1.02
+2025-08-26 09:49:13,243 - __main__ - INFO - Atualizando previous_close_correct para RNEW4
+2025-08-26 09:49:13,429 - __main__ - INFO - Preço de fechamento anterior para RNEW4: 0.98
+2025-08-26 09:49:13,430 - __main__ - INFO - Atualizado previous_close_correct para RNEW4: 0.98
+2025-08-26 09:49:13,430 - __main__ - INFO - Atualizando previous_close_correct para ROMI3
+2025-08-26 09:49:13,571 - __main__ - INFO - Preço de fechamento anterior para ROMI3: 7.72
+2025-08-26 09:49:13,573 - __main__ - INFO - Atualizado previous_close_correct para ROMI3: 7.72
+2025-08-26 09:49:13,573 - __main__ - INFO - Atualizando previous_close_correct para RPAD3
+2025-08-26 09:49:13,772 - __main__ - INFO - Preço de fechamento anterior para RPAD3: 4.6899999999999995
+2025-08-26 09:49:13,774 - __main__ - INFO - Atualizado previous_close_correct para RPAD3: 4.6899999999999995
+2025-08-26 09:49:13,774 - __main__ - INFO - Atualizando previous_close_correct para RPAD5
+2025-08-26 09:49:13,974 - __main__ - INFO - Preço de fechamento anterior para RPAD5: 7.15
+2025-08-26 09:49:13,975 - __main__ - INFO - Atualizado previous_close_correct para RPAD5: 7.15
+2025-08-26 09:49:13,976 - __main__ - INFO - Atualizando previous_close_correct para RPMG3
+2025-08-26 09:49:14,189 - __main__ - INFO - Preço de fechamento anterior para RPMG3: 2.92
+2025-08-26 09:49:14,190 - __main__ - INFO - Atualizado previous_close_correct para RPMG3: 2.92
+2025-08-26 09:49:14,190 - __main__ - INFO - Atualizando previous_close_correct para RSID3
+2025-08-26 09:49:14,406 - __main__ - INFO - Preço de fechamento anterior para RSID3: 1.94
+2025-08-26 09:49:14,407 - __main__ - INFO - Atualizado previous_close_correct para RSID3: 1.94
+2025-08-26 09:49:14,408 - __main__ - INFO - Atualizando previous_close_correct para RSUL4
+2025-08-26 09:49:14,671 - __main__ - INFO - Preço de fechamento anterior para RSUL4: 66.46
+2025-08-26 09:49:14,672 - __main__ - INFO - Atualizado previous_close_correct para RSUL4: 66.46
+2025-08-26 09:49:14,672 - __main__ - INFO - Atualizando previous_close_correct para SANB11
+2025-08-26 09:49:14,764 - __main__ - INFO - Preço de fechamento anterior para SANB11: 27.21
+2025-08-26 09:49:14,765 - __main__ - INFO - Atualizado previous_close_correct para SANB11: 27.21
+2025-08-26 09:49:14,765 - __main__ - INFO - Atualizando previous_close_correct para SAPR11
+2025-08-26 09:49:14,841 - __main__ - INFO - Preço de fechamento anterior para SAPR11: 33.83
+2025-08-26 09:49:14,843 - __main__ - INFO - Atualizado previous_close_correct para SAPR11: 33.83
+2025-08-26 09:49:14,843 - __main__ - INFO - Atualizando previous_close_correct para SAPR3
+2025-08-26 09:49:15,060 - __main__ - INFO - Preço de fechamento anterior para SAPR3: 7.73
+2025-08-26 09:49:15,061 - __main__ - INFO - Atualizado previous_close_correct para SAPR3: 7.73
+2025-08-26 09:49:15,061 - __main__ - INFO - Atualizando previous_close_correct para SAPR4
+2025-08-26 09:49:15,371 - __main__ - INFO - Preço de fechamento anterior para SAPR4: 6.5
+2025-08-26 09:49:15,372 - __main__ - INFO - Atualizado previous_close_correct para SAPR4: 6.5
+2025-08-26 09:49:15,372 - __main__ - INFO - Atualizando previous_close_correct para SBFG3
+2025-08-26 09:49:15,373 - __main__ - INFO - Preço de fechamento anterior para SBFG3: 10.48
+2025-08-26 09:49:15,374 - __main__ - INFO - Atualizado previous_close_correct para SBFG3: 10.48
+2025-08-26 09:49:15,374 - __main__ - INFO - Atualizando previous_close_correct para SBSP3
+2025-08-26 09:49:15,465 - __main__ - INFO - Preço de fechamento anterior para SBSP3: 118.93
+2025-08-26 09:49:15,466 - __main__ - INFO - Atualizado previous_close_correct para SBSP3: 118.93
+2025-08-26 09:49:15,466 - __main__ - INFO - Atualizando previous_close_correct para SCAR3
+2025-08-26 09:49:15,636 - __main__ - INFO - Preço de fechamento anterior para SCAR3: 20.48
+2025-08-26 09:49:15,650 - __main__ - INFO - Atualizado previous_close_correct para SCAR3: 20.48
+2025-08-26 09:49:15,650 - __main__ - INFO - Atualizando previous_close_correct para SEER3
+2025-08-26 09:49:15,871 - __main__ - INFO - Preço de fechamento anterior para SEER3: 8.75
+2025-08-26 09:49:15,873 - __main__ - INFO - Atualizado previous_close_correct para SEER3: 8.75
+2025-08-26 09:49:15,873 - __main__ - INFO - Atualizando previous_close_correct para SEQL3
+2025-08-26 09:49:16,069 - __main__ - INFO - Preço de fechamento anterior para SEQL3: 0.96
+2025-08-26 09:49:16,076 - __main__ - INFO - Atualizado previous_close_correct para SEQL3: 0.96
+2025-08-26 09:49:16,076 - __main__ - INFO - Atualizando previous_close_correct para SHUL4
+2025-08-26 09:49:16,224 - __main__ - INFO - Preço de fechamento anterior para SHUL4: 4.89
+2025-08-26 09:49:16,226 - __main__ - INFO - Atualizado previous_close_correct para SHUL4: 4.89
+2025-08-26 09:49:16,226 - __main__ - INFO - Atualizando previous_close_correct para SIMH3
+2025-08-26 09:49:16,227 - __main__ - INFO - Preço de fechamento anterior para SIMH3: 4.49
+2025-08-26 09:49:16,229 - __main__ - INFO - Atualizado previous_close_correct para SIMH3: 4.49
+2025-08-26 09:49:16,229 - __main__ - INFO - Atualizando previous_close_correct para SLCE3
+2025-08-26 09:49:16,348 - __main__ - INFO - Preço de fechamento anterior para SLCE3: 17.19
+2025-08-26 09:49:16,363 - __main__ - INFO - Atualizado previous_close_correct para SLCE3: 17.19
+2025-08-26 09:49:16,363 - __main__ - INFO - Atualizando previous_close_correct para SMFT3
+2025-08-26 09:49:16,475 - __main__ - INFO - Preço de fechamento anterior para SMFT3: 23.29
+2025-08-26 09:49:16,486 - __main__ - INFO - Atualizado previous_close_correct para SMFT3: 23.29
+2025-08-26 09:49:16,486 - __main__ - INFO - Atualizando previous_close_correct para SMTO3
+2025-08-26 09:49:16,629 - __main__ - INFO - Preço de fechamento anterior para SMTO3: 17.05
+2025-08-26 09:49:16,636 - __main__ - INFO - Atualizado previous_close_correct para SMTO3: 17.05
+2025-08-26 09:49:16,636 - __main__ - INFO - Atualizando previous_close_correct para SNSY5
+2025-08-26 09:49:16,817 - __main__ - INFO - Preço de fechamento anterior para SNSY5: 3.55
+2025-08-26 09:49:16,818 - __main__ - INFO - Atualizado previous_close_correct para SNSY5: 3.55
+2025-08-26 09:49:16,819 - __main__ - INFO - Atualizando previous_close_correct para SOJA3
+2025-08-26 09:49:16,910 - __main__ - INFO - Preço de fechamento anterior para SOJA3: 10.3
+2025-08-26 09:49:16,913 - __main__ - INFO - Atualizado previous_close_correct para SOJA3: 10.3
+2025-08-26 09:49:16,913 - __main__ - INFO - Atualizando previous_close_correct para SOND5
+2025-08-26 09:49:17,205 - __main__ - INFO - Preço de fechamento anterior para SOND5: 52.0
+2025-08-26 09:49:17,206 - __main__ - INFO - Atualizado previous_close_correct para SOND5: 52.0
+2025-08-26 09:49:17,206 - __main__ - INFO - Atualizando previous_close_correct para SOND6
+2025-08-26 09:49:17,375 - __main__ - INFO - Preço de fechamento anterior para SOND6: 50.01
+2025-08-26 09:49:17,377 - __main__ - INFO - Atualizado previous_close_correct para SOND6: 50.01
+2025-08-26 09:49:17,377 - __main__ - INFO - Atualizando previous_close_correct para SRNA3
+2025-08-26 09:49:17,532 - __main__ - INFO - Preço de fechamento anterior para SRNA3: 12.11
+2025-08-26 09:49:17,533 - __main__ - INFO - Atualizado previous_close_correct para SRNA3: 12.11
+2025-08-26 09:49:17,533 - __main__ - INFO - Atualizando previous_close_correct para SUZB3
+2025-08-26 09:49:17,642 - __main__ - INFO - Preço de fechamento anterior para SUZB3: 53.76
+2025-08-26 09:49:17,643 - __main__ - INFO - Atualizado previous_close_correct para SUZB3: 53.76
+2025-08-26 09:49:17,643 - __main__ - INFO - Atualizando previous_close_correct para SYNE3
+2025-08-26 09:49:17,813 - __main__ - INFO - Preço de fechamento anterior para SYNE3: 6.6
+2025-08-26 09:49:17,824 - __main__ - INFO - Atualizado previous_close_correct para SYNE3: 6.6
+2025-08-26 09:49:17,824 - __main__ - INFO - Atualizando previous_close_correct para TAEE11
+2025-08-26 09:49:17,922 - __main__ - INFO - Preço de fechamento anterior para TAEE11: 33.7
+2025-08-26 09:49:17,923 - __main__ - INFO - Atualizado previous_close_correct para TAEE11: 33.7
+2025-08-26 09:49:17,924 - __main__ - INFO - Atualizando previous_close_correct para TAEE3
+2025-08-26 09:49:18,044 - __main__ - INFO - Preço de fechamento anterior para TAEE3: 11.25
+2025-08-26 09:49:18,052 - __main__ - INFO - Atualizado previous_close_correct para TAEE3: 11.25
+2025-08-26 09:49:18,053 - __main__ - INFO - Atualizando previous_close_correct para TAEE4
+2025-08-26 09:49:18,231 - __main__ - INFO - Preço de fechamento anterior para TAEE4: 11.27
+2025-08-26 09:49:18,243 - __main__ - INFO - Atualizado previous_close_correct para TAEE4: 11.27
+2025-08-26 09:49:18,243 - __main__ - INFO - Atualizando previous_close_correct para TASA3
+2025-08-26 09:49:18,433 - __main__ - INFO - Preço de fechamento anterior para TASA3: 5.48
+2025-08-26 09:49:18,441 - __main__ - INFO - Atualizado previous_close_correct para TASA3: 5.48
+2025-08-26 09:49:18,442 - __main__ - INFO - Atualizando previous_close_correct para TASA4
+2025-08-26 09:49:18,794 - __main__ - INFO - Preço de fechamento anterior para TASA4: 4.6899999999999995
+2025-08-26 09:49:18,795 - __main__ - INFO - Atualizado previous_close_correct para TASA4: 4.6899999999999995
+2025-08-26 09:49:18,795 - __main__ - INFO - Atualizando previous_close_correct para TCSA3
+2025-08-26 09:49:19,074 - __main__ - INFO - Preço de fechamento anterior para TCSA3: 1.53
+2025-08-26 09:49:19,075 - __main__ - INFO - Atualizado previous_close_correct para TCSA3: 1.53
+2025-08-26 09:49:19,075 - __main__ - INFO - Atualizando previous_close_correct para TECN3
+2025-08-26 09:49:19,245 - __main__ - INFO - Preço de fechamento anterior para TECN3: 6.6
+2025-08-26 09:49:19,247 - __main__ - INFO - Atualizado previous_close_correct para TECN3: 6.6
+2025-08-26 09:49:19,247 - __main__ - INFO - Atualizando previous_close_correct para TELB3
+2025-08-26 09:49:19,431 - __main__ - INFO - Preço de fechamento anterior para TELB3: 11.35
+2025-08-26 09:49:19,432 - __main__ - INFO - Atualizado previous_close_correct para TELB3: 11.35
+2025-08-26 09:49:19,432 - __main__ - INFO - Atualizando previous_close_correct para TELB4
+2025-08-26 09:49:19,696 - __main__ - INFO - Preço de fechamento anterior para TELB4: 7.59
+2025-08-26 09:49:19,822 - __main__ - INFO - Atualizado previous_close_correct para TELB4: 7.59
+2025-08-26 09:49:19,822 - __main__ - INFO - Atualizando previous_close_correct para TEND3
+2025-08-26 09:49:20,054 - __main__ - INFO - Preço de fechamento anterior para TEND3: 21.03
+2025-08-26 09:49:20,055 - __main__ - INFO - Atualizado previous_close_correct para TEND3: 21.03
+2025-08-26 09:49:20,055 - __main__ - INFO - Atualizando previous_close_correct para TFCO4
+2025-08-26 09:49:20,299 - __main__ - INFO - Preço de fechamento anterior para TFCO4: 15.86
+2025-08-26 09:49:20,301 - __main__ - INFO - Atualizado previous_close_correct para TFCO4: 15.86
+2025-08-26 09:49:20,301 - __main__ - INFO - Atualizando previous_close_correct para TIMS3
+2025-08-26 09:49:20,455 - __main__ - INFO - Preço de fechamento anterior para TIMS3: 22.64
+2025-08-26 09:49:20,506 - __main__ - INFO - Atualizado previous_close_correct para TIMS3: 22.64
+2025-08-26 09:49:20,506 - __main__ - INFO - Atualizando previous_close_correct para TKNO3
+2025-08-26 09:49:20,656 - __main__ - INFO - Preço de fechamento anterior para TKNO3: 180.0
+2025-08-26 09:49:20,658 - __main__ - INFO - Atualizado previous_close_correct para TKNO3: 180.0
+2025-08-26 09:49:20,658 - __main__ - INFO - Atualizando previous_close_correct para TKNO4
+2025-08-26 09:49:20,857 - __main__ - INFO - Preço de fechamento anterior para TKNO4: 180.0
+2025-08-26 09:49:20,865 - __main__ - INFO - Atualizado previous_close_correct para TKNO4: 180.0
+2025-08-26 09:49:20,865 - __main__ - INFO - Atualizando previous_close_correct para TOTS3
+2025-08-26 09:49:21,029 - __main__ - INFO - Preço de fechamento anterior para TOTS3: 42.3
+2025-08-26 09:49:21,037 - __main__ - INFO - Atualizado previous_close_correct para TOTS3: 42.3
+2025-08-26 09:49:21,037 - __main__ - INFO - Atualizando previous_close_correct para TPIS3
+2025-08-26 09:49:21,340 - __main__ - INFO - Preço de fechamento anterior para TPIS3: 3.6
+2025-08-26 09:49:21,342 - __main__ - INFO - Atualizado previous_close_correct para TPIS3: 3.6
+2025-08-26 09:49:21,342 - __main__ - INFO - Atualizando previous_close_correct para TRAD3
+2025-08-26 09:49:21,605 - __main__ - INFO - Preço de fechamento anterior para TRAD3: 7.2
+2025-08-26 09:49:21,614 - __main__ - INFO - Atualizado previous_close_correct para TRAD3: 7.2
+2025-08-26 09:49:21,614 - __main__ - INFO - Atualizando previous_close_correct para TRIS3
+2025-08-26 09:49:21,854 - __main__ - INFO - Preço de fechamento anterior para TRIS3: 6.38
+2025-08-26 09:49:21,860 - __main__ - INFO - Atualizado previous_close_correct para TRIS3: 6.38
+2025-08-26 09:49:21,860 - __main__ - INFO - Atualizando previous_close_correct para TTEN3
+2025-08-26 09:49:22,103 - __main__ - INFO - Preço de fechamento anterior para TTEN3: 14.45
+2025-08-26 09:49:22,104 - __main__ - INFO - Atualizado previous_close_correct para TTEN3: 14.45
+2025-08-26 09:49:22,104 - __main__ - INFO - Atualizando previous_close_correct para TUPY3
+2025-08-26 09:49:22,430 - __main__ - INFO - Preço de fechamento anterior para TUPY3: 14.32
+2025-08-26 09:49:22,484 - __main__ - INFO - Atualizado previous_close_correct para TUPY3: 14.32
+2025-08-26 09:49:22,484 - __main__ - INFO - Atualizando previous_close_correct para UCAS3
+2025-08-26 09:49:22,742 - __main__ - INFO - Preço de fechamento anterior para UCAS3: 1.33
+2025-08-26 09:49:22,743 - __main__ - INFO - Atualizado previous_close_correct para UCAS3: 1.33
+2025-08-26 09:49:22,743 - __main__ - INFO - Atualizando previous_close_correct para UGPA3
+2025-08-26 09:49:22,912 - __main__ - INFO - Preço de fechamento anterior para UGPA3: 17.99
+2025-08-26 09:49:22,916 - __main__ - INFO - Atualizado previous_close_correct para UGPA3: 17.99
+2025-08-26 09:49:22,916 - __main__ - INFO - Atualizando previous_close_correct para UNIP3
+2025-08-26 09:49:23,023 - __main__ - INFO - Preço de fechamento anterior para UNIP3: 54.0
+2025-08-26 09:49:23,029 - __main__ - INFO - Atualizado previous_close_correct para UNIP3: 54.0
+2025-08-26 09:49:23,029 - __main__ - INFO - Atualizando previous_close_correct para UNIP5
+2025-08-26 09:49:23,255 - __main__ - INFO - Preço de fechamento anterior para UNIP5: 59.86
+2025-08-26 09:49:23,256 - __main__ - INFO - Atualizado previous_close_correct para UNIP5: 59.86
+2025-08-26 09:49:23,256 - __main__ - INFO - Atualizando previous_close_correct para UNIP6
+2025-08-26 09:49:23,443 - __main__ - INFO - Preço de fechamento anterior para UNIP6: 61.32
+2025-08-26 09:49:23,500 - __main__ - INFO - Atualizado previous_close_correct para UNIP6: 61.32
+2025-08-26 09:49:23,500 - __main__ - INFO - Atualizando previous_close_correct para USIM3
+2025-08-26 09:49:23,677 - __main__ - INFO - Preço de fechamento anterior para USIM3: 4.34
+2025-08-26 09:49:23,693 - __main__ - INFO - Atualizado previous_close_correct para USIM3: 4.34
+2025-08-26 09:49:23,693 - __main__ - INFO - Atualizando previous_close_correct para USIM5
+2025-08-26 09:49:23,988 - __main__ - INFO - Preço de fechamento anterior para USIM5: 4.16
+2025-08-26 09:49:24,045 - __main__ - INFO - Atualizado previous_close_correct para USIM5: 4.16
+2025-08-26 09:49:24,045 - __main__ - INFO - Atualizando previous_close_correct para VALE3
+2025-08-26 09:49:24,045 - __main__ - INFO - Preço de fechamento anterior para VALE3: 54.82
+2025-08-26 09:49:24,162 - __main__ - INFO - Atualizado previous_close_correct para VALE3: 54.82
+2025-08-26 09:49:24,162 - __main__ - INFO - Atualizando previous_close_correct para VAMO3
+2025-08-26 09:49:24,163 - __main__ - INFO - Preço de fechamento anterior para VAMO3: 3.86
+2025-08-26 09:49:24,164 - __main__ - INFO - Atualizado previous_close_correct para VAMO3: 3.86
+2025-08-26 09:49:24,164 - __main__ - INFO - Atualizando previous_close_correct para VITT3
+2025-08-26 09:49:24,359 - __main__ - INFO - Preço de fechamento anterior para VITT3: 5.05
+2025-08-26 09:49:24,360 - __main__ - INFO - Atualizado previous_close_correct para VITT3: 5.05
+2025-08-26 09:49:24,361 - __main__ - INFO - Atualizando previous_close_correct para VIVA3
+2025-08-26 09:49:24,468 - __main__ - INFO - Preço de fechamento anterior para VIVA3: 28.04
+2025-08-26 09:49:24,469 - __main__ - INFO - Atualizado previous_close_correct para VIVA3: 28.04
+2025-08-26 09:49:24,470 - __main__ - INFO - Atualizando previous_close_correct para VIVR3
+2025-08-26 09:49:24,779 - __main__ - INFO - Preço de fechamento anterior para VIVR3: 0.64
+2025-08-26 09:49:24,780 - __main__ - INFO - Atualizado previous_close_correct para VIVR3: 0.64
+2025-08-26 09:49:24,780 - __main__ - INFO - Atualizando previous_close_correct para VIVT3
+2025-08-26 09:49:25,011 - __main__ - INFO - Preço de fechamento anterior para VIVT3: 34.17
+2025-08-26 09:49:25,016 - __main__ - INFO - Atualizado previous_close_correct para VIVT3: 34.17
+2025-08-26 09:49:25,016 - __main__ - INFO - Atualizando previous_close_correct para VLID3
+2025-08-26 09:49:25,307 - __main__ - INFO - Preço de fechamento anterior para VLID3: 20.68
+2025-08-26 09:49:25,308 - __main__ - INFO - Atualizado previous_close_correct para VLID3: 20.68
+2025-08-26 09:49:25,308 - __main__ - INFO - Atualizando previous_close_correct para VSTE3
+2025-08-26 09:49:25,475 - __main__ - INFO - Preço de fechamento anterior para VSTE3: 5.78
+2025-08-26 09:49:25,482 - __main__ - INFO - Atualizado previous_close_correct para VSTE3: 5.78
+2025-08-26 09:49:25,482 - __main__ - INFO - Atualizando previous_close_correct para VTRU3
+2025-08-26 09:49:25,483 - __main__ - INFO - Preço de fechamento anterior para VTRU3: 10.35
+2025-08-26 09:49:25,484 - __main__ - INFO - Atualizado previous_close_correct para VTRU3: 10.35
+2025-08-26 09:49:25,484 - __main__ - INFO - Atualizando previous_close_correct para VULC3
+2025-08-26 09:49:25,597 - __main__ - INFO - Preço de fechamento anterior para VULC3: 19.74
+2025-08-26 09:49:25,599 - __main__ - INFO - Atualizado previous_close_correct para VULC3: 19.74
+2025-08-26 09:49:25,599 - __main__ - INFO - Atualizando previous_close_correct para VVEO3
+2025-08-26 09:49:25,815 - __main__ - INFO - Preço de fechamento anterior para VVEO3: 0.9
+2025-08-26 09:49:25,816 - __main__ - INFO - Atualizado previous_close_correct para VVEO3: 0.9
+2025-08-26 09:49:25,817 - __main__ - INFO - Atualizando previous_close_correct para WEGE3
+2025-08-26 09:49:25,817 - __main__ - INFO - Preço de fechamento anterior para WEGE3: 37.52
+2025-08-26 09:49:25,818 - __main__ - INFO - Atualizado previous_close_correct para WEGE3: 37.52
+2025-08-26 09:49:25,818 - __main__ - INFO - Atualizando previous_close_correct para WEST3
+2025-08-26 09:49:26,029 - __main__ - INFO - Preço de fechamento anterior para WEST3: 5.42
+2025-08-26 09:49:26,031 - __main__ - INFO - Atualizado previous_close_correct para WEST3: 5.42
+2025-08-26 09:49:26,031 - __main__ - INFO - Atualizando previous_close_correct para WHRL3
+2025-08-26 09:49:26,234 - __main__ - INFO - Preço de fechamento anterior para WHRL3: 4.24
+2025-08-26 09:49:26,235 - __main__ - INFO - Atualizado previous_close_correct para WHRL3: 4.24
+2025-08-26 09:49:26,236 - __main__ - INFO - Atualizando previous_close_correct para WHRL4
+2025-08-26 09:49:26,404 - __main__ - INFO - Preço de fechamento anterior para WHRL4: 4.55
+2025-08-26 09:49:26,406 - __main__ - INFO - Atualizado previous_close_correct para WHRL4: 4.55
+2025-08-26 09:49:26,406 - __main__ - INFO - Atualizando previous_close_correct para WIZC3
+2025-08-26 09:49:26,514 - __main__ - INFO - Preço de fechamento anterior para WIZC3: 8.17
+2025-08-26 09:49:26,520 - __main__ - INFO - Atualizado previous_close_correct para WIZC3: 8.17
+2025-08-26 09:49:26,520 - __main__ - INFO - Atualizando previous_close_correct para WLMM4
+2025-08-26 09:49:26,701 - __main__ - INFO - Preço de fechamento anterior para WLMM4: 21.2
+2025-08-26 09:49:26,708 - __main__ - INFO - Atualizado previous_close_correct para WLMM4: 21.2
+2025-08-26 09:49:26,708 - __main__ - INFO - Atualizando previous_close_correct para YDUQ3
+2025-08-26 09:49:26,824 - __main__ - INFO - Preço de fechamento anterior para YDUQ3: 12.95
+2025-08-26 09:49:26,833 - __main__ - INFO - Atualizado previous_close_correct para YDUQ3: 12.95
+2025-08-26 09:49:26,833 - __main__ - INFO - Atualizando previous_close_correct para ZAMP3
+2025-08-26 09:49:27,028 - __main__ - INFO - Preço de fechamento anterior para ZAMP3: 3.48
+2025-08-26 09:49:27,031 - __main__ - INFO - Atualizado previous_close_correct para ZAMP3: 3.48
+2025-08-26 09:49:27,032 - __main__ - INFO - Atualização concluída. 351 símbolos atualizados.
+2025-08-26 09:49:27,032 - __main__ - INFO - MetaTrader5 encerrado
+2025-08-26 09:49:27,032 - __main__ - INFO - Scraper de previous_close_correct concluído com sucesso

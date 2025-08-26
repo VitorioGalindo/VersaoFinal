@@ -1,0 +1,638 @@
+/*==============================================================================*/
+/*	CSS GLOBAL																    */
+/*==============================================================================*/
+* {
+	padding:0;
+	margin:0;
+}
+
+html,
+body {
+	margin:0;
+	padding:0;
+	width:100%; /* Simulação do MIN-WIDTH no IE6 */
+	/*height:100%;
+	min-height:100%;*/
+	background-color:#fff;
+}
+
+a img {border:none;}
+/*==============================================================================*/
+
+/*==============================================================================*/
+/*	ESTRUTURA																    */
+/*==============================================================================*/
+div#divEstruturaPrincipal {
+	width:100%;
+	margin:0 auto;
+	position:relative;
+
+	/* Garante que o conteúdo sempre seja contido pela DIV principal */
+	height:auto !important;
+	/*===============================================================*/
+	
+	height:100%; /* Simulação do MIN-HEIGHT no IE6 */
+	min-height:100%; /* Navegador padrão */
+}
+
+div#divConteudo {
+	width:100%;
+	display:block;
+}
+
+/*
+DIV Criada devido a existencia de bug na ordem de renderização do menu e do conteúdo da página
+encontrado no IE que faz com que o menu flutuante fique oculto pelos objetos do navegador
+*/
+div.divContentPlaceHolder {
+	width:100%;
+	display:block;
+
+	min-height:380px;
+	_height:445px;
+	/**min-height:440px;*/
+}
+
+div#divRodape {
+	width:100%;
+	height:19px;
+	position:absolute;
+	bottom:0px;
+	left:0;
+	/*display:block;*/
+	display:none;
+	padding:0;
+	margin:0;
+	background:#fff url(Imagem/RodapeFundo.gif) repeat-x center center;
+	border-top:solid 1px #cccccc;
+	border-bottom:solid 1px #cccccc;
+}
+
+div#divRodape div.divRodapeConteudoLatEsq, div#divRodape div.divRodapeConteudoLatDir {
+	width:1px;
+	height:100%;
+	float:left;
+	display:inline;
+	clear:none;
+	background-color:#ccc;
+}
+div#divRodape div.divRodapeConteudoLatDir {float:right;}
+
+div#divRodape div#divRodapeConteudo {
+	width:100px;
+	height:auto;
+	float:left;
+	display:inline;
+	clear:none;
+	margin:3px 30px 0 30px;
+	font:normal normal normal 10px Verdana;
+	color:#333;
+}
+/*==============================================================================*/
+
+/*==============================================================================*/
+/*	MEUS SISTEMAS      														    */
+/*==============================================================================*/
+div.divMenuSistemas
+{
+	width:13px;
+	height:auto;
+	min-height:22px;
+	position:relative;
+	float:right;
+	margin:0;
+	padding:0;
+	font:normal normal normal 10px Verdana;
+	z-index:100;
+}
+
+div.divMenuSistemasFechado
+{
+	width:13px;
+	height:23px;
+	float:right;
+	position:absolute;
+	top:0;
+	right:0;
+	cursor:pointer;
+	background:url(Imagem/MenuSistemasFechado.gif) no-repeat right bottom;
+	z-index:100;
+}
+
+div.divMenuSistemasAberto
+{
+	width:180px;
+	height:auto;
+	float:left;
+	position:absolute;
+	right:-2px;
+	margin:0;
+	padding:0;
+	*padding:0 0 4px;
+	_padding:0;
+	z-index:102;
+	background:#f7f7f7 url(Imagem/MenuSistemasItensRodape.gif) no-repeat center bottom;
+	/*display:none;*/
+}
+
+div.divMenuSistemasAberto h3
+{
+	width:160px;
+	height:18px;
+	float:left;
+	display:inline;
+	margin:0;
+	padding:5px 0 0 20px;
+	font:normal normal normal 10px Verdana;
+	color:#ffffff;
+	cursor:pointer;
+	background:url(Imagem/MenuSistemasTopoFundo.gif) no-repeat center center;
+}
+
+div.divMenuSistemasAberto ul
+{
+	width:178px;
+	min-height:20px;
+	max-height:200px;
+	_height:140px;
+	float:left;
+
+	display:block;
+
+	margin:0 0 4px 0;
+	padding:0;
+
+	border-left:solid 1px #cccccc;
+	border-right:solid 1px #cccccc;
+	background-color:Transparent;
+	overflow:auto;
+}
+
+div.divMenuSistemasAberto ul li
+{
+	display:block;
+	margin:0 0 0 12px;
+	padding:6px 4px 7px;
+	list-style:none;
+	border-bottom:solid 1px #d8d8d8;
+	border-left:solid 1px #d8d8d8;
+	background-color:Transparent;
+}
+
+div.divMenuSistemasAberto ul li a
+{
+	text-decoration:none;
+	cursor:pointer;
+	color:#000;
+}
+div.divMenuSistemasAberto ul li a:hover {color:#0C7766;}
+
+
+/*==============================================================================*/
+/*	HISTÓRICO NAVEGAÇÃO														    */
+/*==============================================================================*/
+div.divHistoricoNavegacao {
+	display:block;
+	padding:18px 0 3px 28px;
+	clear:both;
+	text-align:left;
+	font:normal normal normal 9px Verdana;
+	color:#999;
+}
+div.divHistoricoNavegacao a {
+	color:#999;
+	text-decoration:none;
+}
+div.divHistoricoNavegacao a:hover {
+	color:#999;
+	text-decoration:underline;
+}
+/*==============================================================================*/
+
+/*==============================================================================*/
+/*	TÍTULO PÁGINA      														    */
+/*==============================================================================*/
+h1.h1TituloPagina {
+	display:block;
+	padding:0 0 0 52px;
+	margin:0 0 10px 0;
+	clear:both;
+	
+	text-align:left;
+	font:normal normal bold 15px Trebuchet MS;
+	color:#0C7766;
+	background:url(Imagem/MarcadorSeta02.gif) no-repeat 29px center;
+}
+/*==============================================================================*/
+
+/*==============================================================================*/
+
+/*==============================================================================*/
+/*	CAIXA 00																    */
+/*==============================================================================*/
+div.divCaixa00TopoBorda
+{
+	width:798px;
+	height:20px;
+	margin:0 auto;
+	border:solid 1px #cccccc;
+	border-bottom:none;
+}
+
+div.divCaixa00Topo
+{
+	width:796px;
+	height:18px;
+	margin:1px 1px 1px 1px;
+	padding:3px 0 0 0;
+	clear:both;
+	text-align:center;
+	font:normal normal bold 10px Verdana;
+	color:#ffffff;
+	background:url(Imagem/Caixa00TopoFundo.gif) repeat-x center top;
+}
+
+div.divCaixa00 div.divTituloSubSecao
+{
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+div.divCaixa00SubSecao
+{
+	width:760px;
+	height:28px;
+	margin:0 auto 0;
+	padding:0 0 0 0;
+	clear:both;
+	text-align:center;
+	background:url(Imagem/NovaPesquisaFundo.gif) repeat-x center bottom;
+}
+
+div.divCaixa00SubSecao span
+{
+	width:90%;
+	height:auto;
+	float:left;
+	margin:5px 0 0 0;
+	text-align:center;
+	font:normal normal bold 10px Verdana;
+	color:#000000;
+	padding:5px 0 0 0;
+}
+div.divCaixa00SubSecao div.divCaixa00SubSecaoLatEsq
+{
+	width:5%;
+	height:28px;
+	float:left;
+	background:url(Imagem/NovaPesquisaLatEsq.gif) no-repeat left bottom;
+}
+div.divCaixa00SubSecao div.divCaixa00SubSecaoLatDir
+{
+	width:5%;
+	height:28px;
+	float:right;
+	background:url(Imagem/NovaPesquisaLatDir.gif) no-repeat right bottom;
+}
+
+div.divCaixa00
+{
+	width:800px;
+	height:auto;
+	margin:0 auto 0px;
+	clear:both;
+	font:normal normal normal 10px Verdana;
+	color:#000;
+	background-color:#f7f7f7;
+}
+
+div.divCaixa00 div.divCaixa00BorSup,
+div.divCaixa00 div.divCaixa00BorInf,
+div.divCaixa00 div.divCaixa00BorEsq,
+div.divCaixa00 div.divCaixa00BorDir
+{
+	width:100%;
+	height:10px;
+	float:left;
+	clear:both;
+}
+div.divCaixa00 div.divCaixa00BorSup
+{
+	background:url(Imagem/Caixa00BorSup.gif) repeat-x center top;
+	background-color:#f7f7f7;
+}
+div.divCaixa00 div.divCaixa00BorInf
+{
+	background:url(Imagem/Caixa00BorInf.gif) repeat-x center bottom;
+	background-color:#f7f7f7;
+}
+
+div.divCaixa00 div.divCaixa00BorEsq
+{
+	background:url(Imagem/Caixa00BorEsq.gif) repeat-y left center;
+	height:100%;
+	background-color:#f7f7f7;
+}
+div.divCaixa00 div.divCaixa00BorDir
+{
+	background:url(Imagem/Caixa00BorDir.gif) repeat-y right center;
+	height:auto;
+}
+
+div.divCaixa00 div.divCaixa00CanSupEsq, div.divCaixa00 div.divCaixa00CanSupDir, div.divCaixa00 div.divCaixa00CanInfEsq, div.divCaixa00 div.divCaixa00CanInfDir
+{
+	width:20px;
+	height:10px;
+}
+/*Cantos*/
+div.divCaixa00 div.divCaixa00CanSupEsq
+{
+	background:url(Imagem/Caixa00CanSupEsq.gif) no-repeat left top;
+	float:left;
+	width:20px;
+	height:10px;
+}
+div.divCaixa00 div.divCaixa00CanSupDir
+{
+	background:url(Imagem/Caixa00CanSupDir.gif) no-repeat right top;
+	float:right;
+	width:20px;
+	height:10px;
+}
+div.divCaixa00 div.divCaixa00CanInfEsq
+{
+	background:url(Imagem/Caixa00CanInfEsq.gif) no-repeat left bottom;
+	float:left;
+	width:20px;
+	height:10px;
+}
+div.divCaixa00 div.divCaixa00CanInfDir
+{
+	background:url(Imagem/Caixa00CanInfDir.gif) no-repeat right bottom;
+	float:right;
+	width:20px;
+	height:10px;
+}
+
+div.divCaixa00 div.divCaixa00Conteudo
+{
+	width:auto;
+	height:auto;
+	float:left;
+	padding:0 0 0 20px;
+	line-height:24px;
+}
+
+div.divCaixa00 div.divCaixa00Conteudo fieldset
+{
+	position:static !important;
+}
+
+div.divCaixa00 div.divCaixa00Painel
+{
+	width:100px;
+	height:100px;
+	float:left;	
+	
+}
+
+
+div.divCaixa00 div.divCaixa00Parametro
+{	
+	padding: 0px 0px 8px 0px;
+	font:normal normal normal 11px Verdana;
+}
+
+/*==============================================================================*/
+
+/*==============================================================================*/
+/*	JANELAS DE ENTRADA E SAÍDA DO SISTEMA									    */
+/*==============================================================================*/
+div.divJanelaSis
+{
+	width:360px;
+	min-height:159px;
+	height:auto;
+	position:relative;
+	margin:120px auto 0;
+	background-color:Transparent;
+}
+
+/*Topo*/
+div.divJanelaSisTopo
+{
+	width:100%;
+	height:34px;
+	position:relative;
+	text-align:center;
+}
+div.divJanelaSisTopoLatEsq
+{
+	width:4px;
+	height:34px;
+	float:left;
+	display:inline;
+	margin:0;
+	padding:0;
+	background:url(Imagem/JanelaSis00TopoLatEsq.gif) no-repeat left center;
+}
+div.divJanelaSisTopoLatDir
+{
+	width:7px;
+	height:34px;
+	float:right;
+	display:inline;
+	background:url(Imagem/JanelaSis00TopoLatDir.gif) no-repeat right center;
+}
+
+div.divJanelaSisTitulo
+{
+	width:349px;
+	height:27px;
+	float:left;
+	display:inline;
+	padding-top:7px;
+	font:normal normal bold 15px Trebuchet MS;
+	color:#0C7766;
+	background:url(Imagem/JanelaSis00TopoFundo.gif) repeat-x center center;
+}
+/*Topo*/
+/*Conteudo*/
+div.divJanelaSisConteudo
+{
+	width:100%;
+	height:auto;
+	float:left;
+	margin-top:1px;
+	background:url(Imagem/JanelaSis00Fundo.gif) no-repeat center top;
+	background-size: cover;
+}
+
+div.divJanelaSisCampos,
+div.divJanelaSisCamposLogOut
+{
+	width:360px;
+	height:100%;
+	float:left;
+	background:url(Imagem/JanelaSis00Rodape.gif) no-repeat center bottom;
+	padding:0 0 10px;
+	*padding:0 0 20px;
+}
+
+div.divJanelaSisCamposLogOut
+{
+	padding:0 0 10px;
+	*padding:0 0 10px;
+}
+
+/*Janela*/
+
+div.divBotoesNavegacao
+{
+	width:335px;
+	height:30px;
+	margin:10px auto 5px;
+	padding:5px 0 0 0;
+	clear:both;
+	text-align:center;
+}
+
+div.divBotoesNavegacao2b
+{
+	width:235px;
+	height:20px;
+	margin:10px auto 5px;
+	padding:0 0 0 0;
+	clear:both;
+}
+
+div.divBotoesNavegacao input, div.divBotoesNavegacao2b input
+{
+	float:left;
+	margin:0 5px 0 5px;
+}
+
+div.divPontilhado
+{
+	width:800px;
+	height:20px;
+	margin:0 auto 0;
+	padding:0 0 0 0;
+	clear:both;
+	
+	font:normal normal bold 14px Trebuchet MS;
+	
+	background:url(Imagem/pontilhado.gif) repeat-x center bottom;
+	/*background:Transparent url(Imagem/pontilhado.gif) repeat-x center bottom;*/
+}
+
+/*==============================================================================*/
+
+/*================================================================================================================================================*/
+/*	JANELAS DE ENTRADA E SAÍDA DO SISTEMA									    
+
+	Descrição das classes:
+	.ajax__tab_header: A container element that wraps all of the tabs at the top ofthe TabContainer. Child CSS classes:.ajax__tab_outer.
+	.ajax__tab_outer:An outer element of a tab, often used to set the left-side background image of the tab.Child CSS classes:.ajax__tab_inner.
+	.ajax__tab_inner:An inner element of a tab, often used to set the right-side image of the tab. Child CSS classes:.ajax__tab_tab.
+	.ajax__tab_tab:An element of the tab that contains the text content. Child CSS classes:none.
+	.ajax__tab_body:A container element that wraps the area where a TabPanel is displayed. Child CSS classes:none.
+	.ajax__tab_hover . This is applied to a tab when the mouse is hovering over. Child CSS classes:.ajax__tab_outer.
+	.ajax__tab_active:This is applied to a tab when it is the currently selected tab. Child CSS classes:.ajax__tab_outer.
+*/
+/*================================================================================================================================================*/
+.lapelas00
+{
+	width:800px;
+	height:auto;
+	margin:25px auto;
+	background-color:Green;
+}
+
+.lapelas00 .ajax__tab_header
+{
+	position:relative;
+	bottom:-1px;
+	font-family:verdana,tahoma,helvetica;
+	font-size:11px;
+}
+.lapelas00 .ajax__tab_outer
+{
+	padding-right:4px;
+	background:url(Imagem/LapSisLatDir.gif) no-repeat right bottom;
+	height:21px;
+}
+.lapelas00 .ajax__tab_inner
+{
+	padding-left:3px;
+	background:url(Imagem/LapSisLatEsq.gif) no-repeat left bottom;
+}
+.lapelas00 .ajax__tab_tab
+{
+	height:13px;
+	padding:4px;
+	margin:0;
+	background:url(Imagem/LapSisFundo.gif) repeat-x center bottom;
+}
+.lapelas00 .ajax__tab_hover .ajax__tab_outer
+{
+	background:url(Imagem/LapSisLatDirSel.gif) no-repeat right bottom;
+}
+.lapelas00 .ajax__tab_hover .ajax__tab_inner
+{
+	background:url(Imagem/LapSisLatEsqSel.gif) no-repeat left bottom;
+}
+.lapelas00 .ajax__tab_hover .ajax__tab_tab
+{
+	background:url(Imagem/LapSisFundoSel.gif) repeat-x center bottom;
+}
+.lapelas00 .ajax__tab_active .ajax__tab_outer
+{
+	background:url(Imagem/LapSisLatDirSel.gif) no-repeat right bottom;
+}
+.lapelas00 .ajax__tab_active .ajax__tab_inner
+{
+	background:url(Imagem/LapSisLatEsqSel.gif) no-repeat left bottom;
+}
+.lapelas00 .ajax__tab_active .ajax__tab_tab
+{
+	background:url(Imagem/LapSisFundoSel.gif) repeat-x center bottom;
+}
+.lapelas00 .ajax__tab_body
+{
+	font-family:verdana,tahoma,helvetica;
+	font-size:10pt;
+	border:none;
+	border-top:solid 1px #cccccc;
+	padding:0;
+	background-color:#ffffff;
+	background-color:Blue;
+}
+
+/*================================================================================================================================================*/
+
+.AjaxLoading
+{
+	width:100%;
+	height:100%;
+	padding:10px 0px 10px 0px;
+	background:url(Imagem/load_CVM.gif) no-repeat center center;
+}
+
+.AjaxLoadingPequeno
+{
+	width:100%;
+	height:100%;
+	background:url(Imagem/load_CVM_pequeno.gif) no-repeat center center;
+}
+
+.divGrid00
+{
+	width:800px;
+	margin:0px auto 0px;
+	padding:0px 0px 15px 0px;
+	clear:both;
+	overflow-x:auto;
+	overflow-y:hidden !important;
+}

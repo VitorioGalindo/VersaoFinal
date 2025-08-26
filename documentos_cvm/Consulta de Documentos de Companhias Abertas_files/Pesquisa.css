@@ -1,0 +1,39 @@
+.fldFormularioPesquisa
+{
+	width:100%;
+	height:auto;
+	float:left;
+
+	background-color:Transparent;
+	border:none;
+}
+
+fieldset.fldFormularioPesquisa label
+{
+	clear:none;
+	display:inline;
+}
+
+fieldset.fldFormularioPesquisa input
+{
+	clear:none;
+	display:inline;
+}
+fieldset.fldFormularioPesquisa select
+{
+	clear:none;
+	display:inline;
+}
+fieldset.fldFormularioPesquisa option, fieldset.fldFormularioPesquisa select option
+{
+	width:auto;
+}
+
+fieldset.fldFormularioPesquisa img
+{
+}
+
+fieldset.fldFormularioPesquisa span
+{
+	float:left;
+}

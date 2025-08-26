@@ -1,0 +1,305 @@
+﻿.ui-accordion-content-active {
+    border: 1px solid #ffffff;
+    background: none;
+}
+
+.ui-accordion-header-icon.ui-icon.ui-icon-plus {
+    background-image: url(jquery/ui/images/ui-icons_0C7766_256x240.png);
+    background-color: #ffffff;
+}
+
+.ui-accordion-header-icon.ui-icon.ui-icon-minus {
+    background-image: url(jquery/ui/images/ui-icons_0C7766_256x240.png);
+    background-color: #ffffff;
+}
+
+.ui-icon {
+    margin-left: 10px;
+}
+
+.alinhaColunaEsquerda {
+    float: left !important;
+}
+
+
+.tituloLocalPublicacao {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-bottom: solid !important;
+    border-bottom-width: thin !important;
+    background-color: #e5e5e5 !important;
+    border-left: 0px !important;
+    text-align: left !important;
+}
+
+.linhaLocalPublicacao {
+    background-color: #ffffff !important;
+    border-bottom: solid 1px #cdcfd1 !important;
+    text-align: left !important;
+}
+
+
+
+.ui-accordion-header {
+    border: 1px solid #ffffff;
+    color: #0C7766;
+}
+
+.textoPequeno {
+    text-align: center;
+    width: 7%;
+}
+
+.divBorder {
+    border: 1px solid;
+    margin: 0px 30px;
+    padding: 15px;
+    width: 95%;
+    margin-bottom: 10px;
+}
+
+.textoMedio {
+    text-align: center;
+    width: 11%;
+}
+
+.textoGrande {
+    text-align: left;
+    width: 18%;
+}
+
+#divDadosDocumentoProtocolo {
+    font-size: 0.9em !important;
+}
+
+#divProtocolo {
+    font-size: 0.9em !important;
+}
+
+.assuntoDesmarcado {
+    color: #0C7766 !important;
+    background-color: #ffffff !important;
+    padding-top: 1px !important;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+    padding-bottom: 1px !important;
+    font-size: 20px !important;
+    cursor: pointer !important;
+}
+
+.assuntoMarcado {
+    background-color: #0C7766 !important;
+    color: #ffffff !important;
+    padding-top: 1px !important;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+    padding-bottom: 1px !important;
+    font-size: 20px !important;
+    cursor: pointer !important;
+}
+
+
+.wrapper {
+    margin: 20px auto;
+    width: 400px;
+}
+
+#grdDocumentos spanOrder {
+    display: none;
+}
+
+.ui-button-icon-only .ui-button-text {
+    padding: .0em;
+}
+
+.combo {
+    padding-left: 0px !important;
+}
+
+.ui-autocomplete-multiselect.ui-state-default {
+    display: block;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 3px 7px;
+    padding-bottom: 0px;
+    overflow: hidden;
+    cursor: text;
+}
+
+.ui-autocomplete-multiselect .ui-autocomplete-multiselect-item .ui-icon {
+    float: right;
+    cursor: pointer;
+    color: #0C7766;
+}
+
+.ui-autocomplete-multiselect .ui-autocomplete-multiselect-item {
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1px 3px;
+    margin-right: 2px;
+    margin-bottom: 3px;
+    color: #333;
+    background-color: #f6f6f6;
+}
+
+.centerCol {
+    text-align: center;
+}
+
+.ui-autocomplete-multiselect input {
+    display: inline-block;
+    border: none;
+    outline: none;
+    height: auto;
+    margin: 2px;
+    overflow: visible;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.ui-autocomplete-multiselect.ui-state-active {
+    outline: none;
+    border: 1px solid #7ea4c7;
+    -moz-box-shadow: 0 0 5px rgba(50, 150, 255, 0.5);
+    -webkit-box-shadow: 0 0 5px rgba(50, 150, 255, 0.5);
+    -khtml-box-shadow: 0 0 5px rgba(50, 150, 255, 0.5);
+    box-shadow: 0 0 5px rgba(50, 150, 255, 0.5);
+}
+
+.ui-autocomplete-multiselect.ui-state-default {
+    display: block;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 3px 7px;
+    padding-bottom: 0px;
+    overflow: hidden;
+    cursor: text;
+    width: 100% !important;
+}
+
+.ui-autocomplete {
+    border-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#divSetaPesquisa:focus {
+    border-color: #428674;
+    border-width: 2px;
+}
+
+h3#filtrosPesquisa {
+    border: 1px solid #cccccc;
+    margin-top: 15px;
+}
+
+.fieldset-consulta-externa {
+    padding: 1em 0 !important;
+    background-color: #f7f7f7;
+    border: 1px solid #cccccc;
+}
+
+    .fieldset-consulta-externa label {
+        text-transform: uppercase;
+        font-size: 10px;
+    }
+
+.parametros-associacao .chosen-container-single {
+    width: 100% !important;
+}
+
+
+.fieldset-consulta-externa #btnConsulta {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+    .fieldset-consulta-externa #btnConsulta:hover {
+        background: linear-gradient(to top, #075F51 0%, #075F51 100%) !important;
+    }
+
+.fieldset-consulta-externa a.chosen-single {
+    height: 35px;
+    border-radius: 0;
+    background-image: none;
+    background-color: #ffffff;
+}
+
+.fieldset-consulta-externa input[type="radio"],
+.fieldset-consulta-externa input[type="checkbox"] {
+    position: relative;
+    top: 4px;
+}
+
+.fieldset-consulta-externa label[for] {
+    font-size: 12px;
+    cursor: pointer;
+    display: initial;
+    text-transform: initial;
+}
+
+.fieldset-consulta-externa .select2-container-multi .select2-choices .select2-search-choice {
+    font-size: 13px;
+    background: transparent;
+    background-image: none !important;
+    background-color: #ffffff !important;
+    border: 1px solid #0C7766 !important;
+}
+
+.fieldset-consulta-externa .combo {
+    padding-right: 0;
+}
+
+.fieldset-consulta-externa .select2-search-choice-close {
+    top: 2px;
+}
+
+.fieldset-consulta-externa .ui-autocomplete-multiselect .ui-autocomplete-multiselect-item,
+.palavra-chave .ui-autocomplete-multiselect .ui-autocomplete-multiselect-item {
+    border: 1px solid #0C7766;
+    background-color: #ffffff;
+    box-shadow: none;
+    margin: 5px 2px;
+}
+
+.fieldset-consulta-externa i.fi-info {
+    padding-right: 5px;
+    color: #0C7766;
+}
+
+.fieldset-consulta-externa .ui-icon-close {
+    background-image: url(jquery/ui/images/ui-icons_888888_256x240.png);
+}
+
+.fieldset-consulta-externa .ui-state-active .ui-icon,
+.fieldset-consulta-externa .ui-state-default .ui-icon {
+    background-color: transparent !important;
+}
+
+.padding-none {
+    padding: 0;
+}
+
+.padding-left-none {
+    padding-left: 0;
+}
+
+.parametros-ipe {
+    margin-bottom: 2em;
+}
+
+    .parametros-ipe ul.select2-choices {
+        background: transparent;
+        margin-left: -5px;
+        border: none;
+    }
+
+    .parametros-ipe ul li.select2-search-choice,
+    .select2-container-multi .select2-choices .select2-search-choice {
+        background: transparent;
+        background-image: none !important;
+        background-color: #ffffff !important;
+        border: 1px solid #002C63 !important;
+        padding: 5px 5px 5px 18px !important;
+    }

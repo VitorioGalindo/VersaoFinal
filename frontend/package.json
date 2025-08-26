@@ -1,0 +1,33 @@
+{
+  "name": "apex-finance-dashboard",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@google/genai": "^1.10.0",
+    "@uiw/react-md-editor": "^4.0.8",
+    "draft-js": "^0.11.7",
+    "quill": "^2.0.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-draft-wysiwyg": "^1.15.0",
+    "react-is": "^19.1.1",
+    "recharts": "^3.1.0",
+    "socket.io-client": "^4.8.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^16.0.0",
+    "@types/node": "^22.14.0",
+    "jsdom": "^24.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "vitest": "^1.6.0"
+  }
+}

@@ -1,0 +1,2 @@
+PortfolioDashboard.tsx:41 TypeError: Cannot read properties of undefined (reading 'valor_cota')
+    at loadSummary (PortfolioDashboard.tsx:33:42)

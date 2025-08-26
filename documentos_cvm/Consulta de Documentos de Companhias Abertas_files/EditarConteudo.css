@@ -1,0 +1,60 @@
+/*
+//	EDITAR DETALHE
+*/
+div.divEditarConteudo
+{
+	width:718px;
+	height:auto;
+	min-height:350px;
+	margin:30px auto 0px;
+	clear:both;
+	vertical-align:middle;
+	
+	background:url(Imagem/EditarConteudoFundo.jpg) repeat-x center bottom;
+	border:solid 1px #cccc99;
+}
+div.divEditarConteudo h2
+{
+	width:auto;
+	height:25px;
+	float:left;
+	margin:10px 0px 10px 15px;
+	padding:9px 0px 0px 27px;
+	
+	clear:both;
+
+	font:normal normal bold 14px Trebuchet MS;
+	text-align:center;
+	color:#0C7766;
+	
+	background:url(Imagem/IconeEditar.gif) no-repeat left center;
+}
+
+div.divEditarConteudo fieldset
+{
+	padding:0px;
+	margin:0px;
+	border:none;
+}
+
+div.divEditarConteudo select 
+{
+	height:17px;
+	*height:21px;
+	margin:0px 0px 0px 0px;
+	font:normal normal normal 10px Verdana;
+}
+
+div.divEditarOpcoes
+{
+	width:335px;
+	height:auto;
+	margin:10px auto 10px;
+	clear:both;
+}
+
+div.divEditarOpcoes input
+{
+	float:left;
+	margin:0px 5px 0px 5px;
+}

@@ -1,0 +1,133 @@
+// http://jsfiddle.net/mekwall/sgxKJ/
+
+$.widget("ui.autocomplete", $.ui.autocomplete, {
+    options: $.extend({}, this.options, {
+        multiselect: false
+    }),
+    _create: function() {
+        this._super();
+
+        var self = this,
+            o = self.options;
+
+        if (o.multiselect) {
+            console.log('multiselect true');
+
+            self.selectedItems = {};
+            self.multiselect = $("<div></div>")
+                .addClass("ui-autocomplete-multiselect ui-state-default ui-widget")
+                .css("width", self.element.width())
+                .insertBefore(self.element)
+                .append(self.element)
+                .bind("click.autocomplete", function() {
+                    self.element.focus();
+                });
+
+            //var fontSize = parseInt(self.element.css("fontSize"), 10);
+            function autoSize(e) {
+                // Hackish autosizing
+                //var $this = $(this);
+                //$this.width(1).width(this.scrollWidth + fontSize - 1);
+            };
+
+            var kc = $.ui.keyCode;
+            self.element.bind({
+                "keydown.autocomplete": function(e) {
+                    if ((this.value === "") && (e.keyCode == kc.BACKSPACE)) 
+                    {
+                        var prev = self.element.prev();
+                        delete self.selectedItems[prev[0].id];
+                        prev.remove();
+
+                        var retorno = $("#retornoAutoComplete").val();
+                        var valores = retorno.split(",");
+                        retorno = "";
+
+                        for (i = 0; i < valores.length; i++) {
+                            if ((valores[i] != prev[0].id) && (valores[i] != "")) {
+                                retorno += "," + valores[i];
+                            }
+                        }
+
+                        $("#retornoAutoComplete").val(retorno);                
+                    }
+                },
+                "focus.autocomplete blur.autocomplete": function() {
+                    self.multiselect.toggleClass("ui-state-active");
+                },
+                "keypress.autocomplete change.autocomplete focus.autocomplete blur.autocomplete": autoSize
+            }).trigger("change");
+
+            o.select = o.select || function(e, ui) {
+                $("<div id='" + ui.item.key + "'></div>")
+                    .addClass("ui-autocomplete-multiselect-item")
+                    .text(ui.item.label)
+                    .append(
+                        $("<span></span>")
+                            .addClass("ui-icon ui-icon-close")
+                            .click(function() {
+                                var item = $(this).parent();
+                                delete self.selectedItems[item[0].id];
+                                item.remove();
+
+                                var retorno = $("#retornoAutoComplete").val();
+                                var valores = retorno.split(",");
+                                retorno = "";
+
+                                for (i = 0; i < valores.length; i++) {
+                                    if ((valores[i] != item[0].id) && (valores[i] != "")) {
+                                        retorno += "," + valores[i];
+                                    }
+                                }
+
+                                $("#retornoAutoComplete").val(retorno);
+                            })
+                    )
+                    .insertBefore(self.element);
+
+                var retorno = $("#retornoAutoComplete").val();
+                retorno += "," + ui.item.key
+                $("#retornoAutoComplete").val(retorno);
+                self.selectedItems[ui.item.key] = ui.item.key;
+                self._value("");
+                return false;
+            },
+
+            o.change = function(event, ui) {
+                if (ui.item) {
+                    return;
+                }
+
+                var value = this.value,
+				valueLowerCase = value.toLowerCase(),
+				valid = false;
+
+                self.element.children("option").each(function() {
+                    if ($(this).text().toLowerCase() === valueLowerCase) {
+                        this.selected = valid = true;
+                        return false;
+                    }
+                });
+
+                if (valid) {
+                    return;
+                }
+
+                var item = $(this);
+                item
+                .val("");
+			    //.attr("title", "Empresa " + value + " não foi localizada.");
+			    //.tooltip("open");
+
+                self._value("");
+                
+                //this._delay(function() {
+                //    item.tooltip("close").attr("title", "");
+                //}, 2500);                         
+            }
+
+        }
+
+        return this;
+    }
+});
